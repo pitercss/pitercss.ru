@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CSS-in-JS 101</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="shortcut icon" type="image/x-icon" href="https://cdn.evilmartians.com/front/blocks/common/images/favicon-1e00adc.ico">
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>CSS-in-JS 101</h1>
+		<p>Eвгений Шкодин, Злые Марсиане</p>
+	</header>
+
+	<section class="slide" id="cover">
+		<h2>CSS-in-JS 101</h2>
+		<p>представляет <a href="http://twitter.com/iffjey">Eвгений Шкодин</a></p>
+		<p class="evilmartians" align="center">
+			<a href="https://evilmartians.com/">
+				<img src="pictures/evil-martians-logo.png" alt="Sponsored by Evil Martians" width="260" height="236">
+			</a>
+		</p>		
+		<style>
+			#cover h2 {
+				margin:30px 0 0;
+				text-align:center;
+				font-size:70px;
+			}
+			#cover p {
+				margin:10px 0 0;
+				text-align:center;
+				font-style:italic;
+				font-size:20px;
+			}
+			#cover .evilmartians {
+				margin-top: 75px
+			}
+			.evilmartians a {
+				background: none;
+			}
+		</style>
+	</section>
+
+	<section class="slide" id="alert">
+		<h2 class="shout shrink">
+      Внимание! 
+        <img src="pictures/alert.svg" alt="alert-sign" height="250" />
+		  Синдром самозванца
+		</h2>
+		<style>
+			#alert h2 {
+        font-size: 100px;
+        padding: 0 40px;
+      }
+      #alert img{
+        margin: 0 150px;
+      }
+		</style>
+	</section>
+
+	<section class="slide" id="disclaimer">
+    <h2>Disclaimer</h2>
+    <div>
+      <p class="note">styled-components - визуальные примитивы для эпохи компонентов.</p>
+      <p>Используют лучшие части ES6 и CSS для оформления ваших приложений без проблем</p>
+    </div>
+    <style>
+      #disclaimer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-image: url("pictures/styled-components-disclaimer.png"), linear-gradient(20deg,rgb(219,112,147),#daa357);
+        background-position: center;
+        color: #fff;
+      }
+      #disclaimer h2{
+        color: #fff;
+      }
+      #disclaimer .note {
+        font-weight: bold;
+        color: #fff;
+        margin: 0;
+      }
+      #disclaimer p {
+        font-size: 22px;
+      }
+    </style>
+	</section>
+
+	<section class="slide code-example" id="creating">
+    <h2>Создание компонента</h2>
+    <pre>
+      <code><span class="operator">import</span> styled <span class="operator">from</span> <span class="value">"styled-components"</span></code>
+      <code> </code>
+      <code><span class="property">const</span> Input <span class="operator">=</span> styled.input <span class="value">`</span></code>
+      <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0.5em</span>;</code>
+      <code>    <span class="property">margin</span><span class="punctuation">:</span> <span class="value">0.5em</span>;</code>
+      <code>    <span class="property">color</span><span class="punctuation">:</span> <span class="value">palevioletred</span>;</code>
+      <code>    <span class="property">background</span><span class="punctuation">:</span> <span class="value">white</span>;</code>
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">none</span>;</code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+    <style>
+      #creating code {
+        font-size: 20px;
+      }
+    </style>
+	</section>
+
+	<section class="slide code-example" id="rendering">
+  <h2>Использование компонента</h2>
+  <pre>
+      <code>render(</code>
+      <code>    &lt;div&gt;</code>
+      <code>      <span class="property">&lt;Input</span> placeholder<span class="operator">=</span><span class="value">"Сопротивление бесполезно"</span> <span class="property">/&gt;</span></code>
+      <code>      <span class="property">&lt;Input</span> placeholder<span class="operator">=</span><span class="value">"Сдавайтесь"</span> <span class="property">/&gt;</span></code>
+      <code>    &lt;/div&gt;</code>
+      <code>);</code>
+    </pre>
+    <input class="test-input" placeholder="Сопротивление бесполезно" />
+    <input class="test-input" placeholder="Сдавайтесь" />
+    <style>
+      #rendering code {
+        font-size: 24px;
+      }
+      .test-input {
+        height: 60px;
+        width: 380px;
+        font-size: 25px;
+        padding: 0.5em;
+        margin: 0.5em;
+        color: palevioletred;
+        background: white;
+        border: none;
+        vertical-align: middle;
+      }
+    </style>
+	</section>
+
+	<section class="slide code-example" id="interpolations">
+    <h2>Динамические свойства и интерполяция</h2>
+    <pre>
+      <code><span class="operator">import</span> styled <span class="operator">from</span> <span class="value">"styled-components"</span></code>
+      <code> </code>
+      <code><span class="property">const</span> Button <span class="operator">=</span> styled.button <span class="value">`</span></code>
+      <code>    <span class="property">background</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span> props.primary <span class="operator">?</span> <span class="value">'palevioletred'</span> <span class="operator">:</span> <span class="value">'white'</span><span class="interpolation">}</span> ;</code>
+      <code>    <span class="property">color</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span> props.primary <span class="operator">?</span> <span class="value">'white'</span> <span class="operator">:</span> <span class="value">'palevioletred'</span><span class="interpolation">}</span> ;</code>
+      <code>    <span class="property">margin</span><span class="punctuation">:</span> <span class="value">1em</span>;</code>
+      <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0.25em 1em</span>;</code>
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">2px solid palevioletred</span>;</code>
+      <code>    <span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">3px</span>;</code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+    <style>
+      #interpolations code {
+        font-size: 19px;
+      }
+    </style>
+	</section>
+
+	<section class="slide code-example">
+    <pre>
+      <code>render(</code>
+      <code>    &lt;div&gt;</code>
+      <code>      <span class="property">&lt;Button&gt;</span>Сдаться<span class="property">&lt;/Button&gt;</span></code></code>
+      <code>      <span class="property">&lt;Button</span> <span class="value">primary</span><span class="property">&gt;</span>Подчиниться<span class="property">&lt;/Button&gt;</span></code></code>
+      <code>    &lt;/div&gt;</code>
+      <code>);</code>
+    </pre>
+
+    <button class="test-button">Сдаться</button>
+    <button class="test-button primary">Подчиниться</button>
+    <style>
+      .test-button {
+        height: 60px;
+        width: 300px;
+        font-size: 25px;
+        padding: 0.5em;
+        margin: 0.5em;
+        color: palevioletred;
+        background: white;
+        border: none;
+        border-radius: 6px;
+        border: 4px solid palevioletred;
+        vertical-align: middle;
+      }
+      .test-button.primary {
+        color: white;
+        background: palevioletred;
+      }
+    </style>
+	</section>
+
+	<section class="slide code-example" id="injecting">
+    <h2>Слияние стилей</h2>
+    <pre>
+      <code><span class="operator">import</span> styled <span class="operator">from</span> <span class="value">"styled-components"</span></code>
+      <code><span class="operator">import</span> Button <span class="operator">from</span> <span class="value">"./components/Button"</span></code>
+      <code> </code>
+      <code><span class="property">const</span> StyledButton <span class="operator">=</span> styled(Button) <span class="value">`</span></code>
+      <code>    <span class="property">background</span><span class="punctuation">:</span> <span class="value">yellow</span>;</code>
+      <code>    <span class="property">color</span><span class="punctuation">:</span> <span class="value">blue</span>;</code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+    <style>
+      #injecting code {
+        font-size: 19px;
+      }
+    </style>
+  </section>
+  
+  <section class="slide code-example">
+    <h2>Вложенные правила</h2>
+    <pre>
+      <code><span class="property">const</span> Link <span class="operator">=</span> styled.a <span class="value">`</span></code>
+      <code>    <span class="property">color</span><span class="punctuation">:</span> <span class="value">green</span>;</code>
+      <code> </code>
+      <code>    &<span class="interpolation">:visited {</span></code>
+      <code>          <span class="property">color</span><span class="punctuation">:</span> <span class="value">grey</span>;</code>
+      <code>    <span class="interpolation">}</span></code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+  </section>
+
+  <section class="slide code-example" id="inject-global">
+    <h2>Глобальные стили</h2>
+    <pre>
+      <code><span class="operator">import</span> { injectGlobal } <span class="operator">from</span> <span class="value">"styled-components"</span></code>
+      <code> </code>
+      <code>injectGlobal<span class="value">`</span></code>
+      <code>    <span class="property">@font-face </span><span class="punctuation">{</code>
+      <code>        <span class="property">font-family</span><span class="punctuation">:</span> <span class="value">'Operator Mono'</span>;</code>
+      <code>        <span class="property">src</span><span class="punctuation">:</span> <span class="value">url('../fonts/Operator-Mono.ttf')</span>;</code>
+      <code>    <span class="punctuation">}</span></code>
+      <code> </code>
+      <code>    <span class="property">body </span><span class="punctuation">{</span></code>
+      <code>        <span class="property">margin</span><span class="punctuation">:</span> <span class="value">0</span>;</code>
+      <code>    <span class="punctuation">}</span></code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+    <style>
+      #inject-global code {
+        font-size: 17px;
+      }
+    </style>
+  </section>
+
+  <section class="slide code-example" id="themes">
+    <h2>Темы</h2>
+    <pre>
+      <code><span class="property">const</span> themes <span class="operator">=</span> {</code>
+      <code>    <span class="property">dark</span><span class="punctuation">:</span> {</code>
+      <code>        <span class="property">buttonBackground</span><span class="punctuation">:</span> <span class="value">'#000'</span>,</code>
+      <code>        <span class="property">buttonColor</span><span class="punctuation">:</span> <span class="value">'#fff'</span></code>
+      <code>    },</code>
+      <code>    <span class="property">light</span><span class="punctuation">:</span> {</code>
+      <code>        <span class="property">buttonBackground</span><span class="punctuation">:</span> <span class="value">'#fff'</span>,</code>
+      <code>        <span class="property">buttonColor</span><span class="punctuation">:</span> <span class="value">'#000'</span></code>
+      <code>    }</code>
+      <code>};</code>
+    </pre>
+    <style>
+      #themes code {
+        font-size: 19px;
+      }
+    </style>
+  </section>
+
+  <section class="slide code-example">
+    <pre>
+      <code><span class="operator">import</span> { ThemeProvider } <span class="operator">from</span> <span class="value">"styled-components"</span></code>
+      <code> </code>
+      <code>render(</code>
+      <code>    <span class="property">&lt;ThemeProvider</span> theme<span class="operator">=</span>{ themes[<span class="value">currentTheme</span>] } <span class="property">&gt;</span></span></code>
+      <code>        <span class="property">&lt;App/&gt;</span></code>
+      <code>    <span class="property">&lt;/ThemeProvider&gt;</span></code>
+      <code>);</code>
+    </pre>
+  </section>
+  
+  <section class="slide code-example">
+    <pre>
+      <code><span class="property">const</span> Button <span class="operator">=</span> styled.button <span class="value">`</span></code>
+      <code>    <span class="property">background</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span> props.theme.buttonBackground <span class="interpolation">}</span>;</code>
+      <code>    <span class="property">color</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span> props.theme.buttonColor <span class="interpolation">}</span> ;</code>
+      <code>    <span class="property">margin</span><span class="punctuation">:</span> <span class="value">1em</span>;</code>
+      <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0.25em 1em</span>;</code>
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">2px solid palevioletred</span>;</code>
+      <code>    <span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">3px</span>;</code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+  </section>
+
+  <section class="slide code-example" id="animation">
+    <h2>Создание анимации</h2>
+    <pre>
+      <code><span class="operator">import</span> { keyframes } <span class="operator">from</span> <span class="value">"styled-components"</span></code>
+      <code> </code>
+      <code><span class="property">const</span> rotate360 <span class="operator">=</span> keyframes <span class="value">`</span></code>
+      <code>    <span class="value">from</span> <span class="punctuation">{</span></code>
+      <code>        <span class="property">transform</span><span class="punctuation">:</span> <span class="value">rotate<span class="punctuation">(</span>0deg<span class="punctuation">)</span></span>;</code>
+      <code>    <span class="punctuation">}</span></code>
+      <code>    <span class="value">to</span> <span class="punctuation">{</span></code>
+      <code>        <span class="property">transform</span><span class="punctuation">:</span> <span class="value">rotate<span class="punctuation">(</span>360deg<span class="punctuation">)</span></span>;</code>
+      <code>    <span class="punctuation">}</span></code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+    <style>
+      #animation code {
+        font-size: 20px;
+      }
+    </style>
+  </section>
+
+  <section class="slide code-example">
+    <pre>
+      <code><span class="operator">import</span> styled <span class="operator">from</span> <span class="value">"styled-components"</span></code>
+      <code> </code>
+      <code><span class="property">const</span> Rotate <span class="operator">=</span> styled.div <span class="value">`</span></code>
+      <code>    <span class="property">display</span><span class="punctuation">:</span> <span class="value">inline-block</span>;</code>      
+      <code>    <span class="property">animation</span><span class="punctuation">:</span> <span class="interpolation">${</span>rotate360<span class="interpolation">}</span> <span class="value">2s linear infinite</span>;</code>
+      <code>    <span class="property">font-size</span><span class="punctuation">:</span> <span class="value">1.2rem</span>;</code>      
+      <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">2rem 1rem</span>;</code>      
+      <code><span class="value">`</span>;</code>
+    </pre>
+  </section>
+
+  <section class="slide code-example" id="test-animation">
+    <div class="wrapper">
+      <pre>
+        <code>render(</code>
+        <code>    &lt;div&gt;</code>
+        <code>      <span class="property">&lt;Rotate&gt;</span>&lt; 💅 &gt;<span class="property">&lt;/Rotate&gt;</span></code></code>
+        <code>    &lt;/div&gt;</code>
+        <code>);</code>
+      </pre>
+  
+      <div class="test-animation">&lt; 💅 &gt;</div>
+    </div>
+      
+      <style>
+        @keyframes test-animation {
+          from {transform: rotate(0deg);}
+          to {transform: rotate(360deg);}
+        }
+        .test-animation {
+          display: inline-block;
+          animation: test-animation 2s linear infinite;
+          padding: 2rem 1rem;
+          font-size: 5rem;
+          color: white;
+        }
+        #test-animation .wrapper {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          margin-top: 100px;
+        }
+      </style>
+    </section>
+
+	<section class="slide" id="manifesto">
+		<figure>
+			<img class="cover" src="pictures/manifesto.png" alt="React: CSS-in-JS plan">
+			<figcaption class="white">
+				<a href="https://speakerdeck.com/vjeux/react-css-in-js">© Christopher “Vjeux” Chedeau</a>
+			</figcaption>
+		</figure>
+		<style>
+			#manifesto {
+				background: #000; 
+			}
+		</style>
+  </section>
+  
+	<section class="slide" id="separation-of-concerns">
+		<figure>
+			<img class="cover" src="pictures/separation-of-concerns.png" alt="Separation of concerns">
+			<figcaption>
+				<a href="https://medium.com/@didoo/let-there-be-peace-on-css-8b26829f1be0">© Cristiano Rastelli</a>
+			</figcaption>
+		</figure>
+		<style>
+      #separation-of-concerns.slide::after {
+        right: 45px;
+      }
+		</style>
+  </section>
+  
+  <section class="slide" id="ben-lesh-quotes">
+    <figure>
+      <blockquote class="no-quotes">
+        <p>Я решил перейти от хранения CSS, JS и HTML в разных файлах к тому, чтобы хранить их на разных физических дисках. Чтобы точно разделять задачи.</p>
+      </blockquote>
+      <figcaption>Бен Леш <img class="avatar" src="pictures/benlesh.jpg" alt="Ben Lesh" />  <a href="https://twitter.com/BenLesh">@BenLesh</a></figcaption>
+    </figure>
+    <figure class="next">
+      <blockquote class="no-quotes">
+        <p>- Ты хотел сказать в разных дата-центрах? Ну, чтобы перестраховаться.</p>
+      </blockquote>
+    </figure>
+    <figure class="next">
+      <blockquote class="no-quotes">
+        <p>- В разных вселенных. Работаю сейчас над квантовым хранилищем.</p>
+      </blockquote>
+    </figure>
+  </section>
+
+  <section class="slide" id="opinions">
+    <h2>Точки зрения</h2>
+    <div class="wrapper">
+      <div class="column">
+        <h3>СSS сообщество</h3>
+        <ul>
+          <li>Разделение областей ответственности</li>
+          <li>Вы ломаете Веб!</li>
+          <li>Излишнее использование инструментов</li>
+          <li>Люди используют эту технологию, так как не знают CSS</li>
+        </ul>
+      </div>
+      <div class="column">
+        <h3>CSS-in-JS сообщество</h3>
+        <ul>
+            <li>В CSS есть врожденные проблемы</li>
+            <li>Каскадность и наследование</li>
+            <li>Глобальная область видимости</li>
+            <li>Плохо масштабируется и не создан для этого</li>
+          </ul>
+      </div>
+    </div>
+    <div class="source">
+      Источник: <a href="https://medium.com/@didoo/let-there-be-peace-on-css-8b26829f1be0">Let there be peace on css</a>, Кристиано Растелли
+    </div>
+    <style>
+      #opinions .wrapper {
+        display: flex;
+        justify-content: space-between;
+        font-size: 22px;
+      }
+      #opinions h3 {
+        font-weight: bold;
+      }
+      #opinions .column + .column {
+        margin-left: 50px;
+      }
+      #opinions .source {
+        font-size: 17px;
+      }
+    </style>
+  </section>
+
+	<section class="slide" id="libraries">
+    <div class="wrapper">
+      <ul>
+        <li>aphrodite</li>
+        <li>babel-plugin-css-in-js</li>
+        <li>babel-plugin-prestyle</li>
+        <li>bloody-react-styled</li>
+        <li>classy</li>
+        <li>csjs</li>
+        <li>css-constructor</li>
+        <li>css-light</li>
+        <li>css-loader</li>
+        <li>css-ns</li>
+        <li>cssobj</li>
+        <li>cssx-loader</li>
+        <li>emotion</li>
+        <li>es-css-modules</li>
+      </ul>
+      <ul>
+        <li>glamor</li>
+        <li>glamorous</li>
+        <li>hyperstyles</li>
+        <li>i-css</li>
+        <li>j2s</li>
+        <li>jsxstyle</li>
+        <li>linaria</li>
+        <li>pre-style</li>
+        <li>radium</li>
+        <li>react-css-builder</li>
+        <li>react-css-components</li>
+        <li>react-css-modules</li>
+        <li>react-cssom</li>
+        <li>react-cxs</li>
+      </ul>
+      <ul>
+        <li>react-fela</li>
+        <li>react-free-style</li>
+        <li>react-inline-css</li>
+        <li>react-inline-style</li>
+        <li>react-inline</li>
+        <li>react-jss</li>
+        <li>react-look</li>
+        <li>react-native-web</li>
+        <li>react-static-styles</li>
+        <li>react-styl</li>
+        <li>react-style</li>
+        <li>react-styleable</li>
+        <li>react-stylematic</li>
+        <li>react-theme</li>
+      </ul>
+      <ul>
+        <li>reactcss</li>
+        <li>restyles</li>
+        <li>scope-styles</li>
+        <li>smart-css</li>
+        <li>stile-react-media-queries</li>
+        <li>stilr</li>
+        <li>style-it</li>
+        <li>styled-components</li>
+        <li>styled-jsx</li>
+        <li>styletron-react</li>
+        <li>styling</li>
+        <li>superstyle</li>
+        <li>typestyle</li>
+        <li>uranium</li>
+      </ul>
+    </div>
+    <style>
+      #libraries .wrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+      #libraries ul {
+        flex-grow: 1;
+        margin: 0;
+      }
+      #libraries li {
+        font-size: 17px;
+      }
+    </style>
+	</section>
+
+	<section class="slide">
+    <h2>Как выбрать?</h2>
+		<ol>
+			<li>Объекты или строковые литералы <a href="index.html#object-syntax">#Объектный синтаксис</a></li>
+			<li class="next">React или что-то универсальное</li>
+			<li class="next">Поддержка React Native?</li>
+			<li class="next">Поддержка серверного рендеринга?</li>
+			<li class="next">Динамические значения</li>
+			<li class="next">Бонус: интеграция со Sketch?</li>
+		</ol>
+  </section>
+  
+  <section class="slide code-example" id="object-syntax">
+    <pre>
+      <code><span class="operator">import</span> glamorous <span class="operator">from</span> <span class="value">"glamorous"</span></code>
+      <code> </code>
+      <code><span class="property">const</span> Button <span class="operator">=</span> glamorous.button <span class="value">({</span></code>
+      <code>    <span class="property">background</span><span class="punctuation">:</span> props <span class="operator">=></span> props.primary <span class="operator">?</span> <span class="value">'palevioletred'</span> <span class="operator">:</span> <span class="value">'white'</span> ,</code>
+      <code>    <span class="property">color</span><span class="punctuation">:</span> props <span class="operator">=></span> props.primary <span class="operator">?</span> <span class="value">'white'</span> <span class="operator">:</span> <span class="value">'palevioletred'</span> ,</code>
+      <code>    <span class="property">fontSize</span><span class="punctuation">:</span> <span class="value">'1em'</span>,</code>
+      <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">'0.25em 1em'</span>,</code>
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">'2px solid palevioletred'</span>,</code>
+      <code>    <span class="property">borderRadius</span><span class="punctuation">:</span> <span class="value">'3px'</span>,</code>
+      <code><span class="value">)}</span>;</code>
+    </pre>
+  </section>
+
+	<section class="slide" id="libraries-table">
+    <table>
+      <tr class="headrow">
+        <th>Package</th>
+        <th>As Object</th>
+        <th>As TL</th>
+        <th>SSR</th>
+        <th>RN Support</th>
+        <th>Agnostic</th>
+        <th>Dynamic</th>
+        <th>Babel plugins</th>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/rofrischmann/fela/">fela</a></th>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/cssinjs/jss">jss</a></th>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/tuchk4/rockey">rockey</a></th>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/styled-components/styled-components">styled-components</a></th>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/Khan/aphrodite">aphrodite</a></th>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/jxnblk/cxs">csx</a></th>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/threepointone/glam">glam</a></th>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/threepointone/glamor">glamor</a></th>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/paypal/glamorous">glamorous</a></th>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/rtsao/styletron">styletron</a></th>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/milesj/aesthetic">aesthetic</a></th>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/j2css/j2c">j2s</a></th>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th><a href="https://github.com/emotion-js/emotion">emotion</a></th>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+        <td><img src="pictures/checked.svg" alt="+" height="15"/></td>
+      </tr>
+    </table>
+    <p>Источник: <a href="https://github.com/tuchk4/awesome-css-in-js">Awesome-CSS-in-JS</a></p>
+    <style>
+      #libraries-table table {
+        font-size: 16px;
+      }
+      #libraries-table tr:first-child :not(:first-child){
+        text-align: center;
+      }
+      #libraries-table td {
+        text-align: center;
+      }
+    </style>
+  </section>
+  
+  <section class="slide" id="myths">
+    <h2>Мифы</h2>
+    <figure>
+      <img class="cover" src="pictures/myths.jpg" alt="Myths">
+    </figure>
+    <style>
+      #myths {
+        background: #BD9C75;
+      }
+      #myths h2 {
+        display: inline;
+        padding: 10px 20px;
+        color: #89AABC;
+        font-size: 100px;
+        background: rgba(0,0,0,0.4);
+        border: 4px solid #DEC19F;
+      }
+    </style>
+  </section>
+
+  <section class="slide" id="inline">
+    <h2 class="shout myths">
+      CSS-in-JS </br> === </br> инлайн-стили
+    </h2>
+    <style>
+      #inline h2 {
+        font-size: 125px;
+      }
+    </style>
+  </section>
+
+  <section class="slide" id="inline-busted">
+    <h2 class="shout myths">
+      CSS-in-JS </br> === </br> инлайн-стили
+    </h2>
+    <p class="shout shrink"><span class="busted">BUSTED</span></p>
+    <style>
+      #inline-busted h2 {
+        font-size: 125px;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2 class="shout myths">
+      CSS-in-JS </br> медленный
+    </h2>
+  </section>
+
+  <section class="slide">
+      <figure>
+        <blockquote class="no-quotes">
+          <p>Миф: React «быстрее, чем DOM». Реальность: он помогает создать поддерживаемые приложения и *достаточно быстрый* в большинстве ситуаций.</p>
+        </blockquote>
+        <figcaption>Дэн Абрамов <img class="avatar" src="pictures/danabramov.jpg" alt="Дэн Абрамов" />  <a href="https://twitter.com/dan_abramov">@dan_abramov</a></figcaption>
+      </figure>
+      <figure>
+        <blockquote class="no-quotes">
+          <p>Многие люди не понимают одной вещи про CSS-in-JS: проблема скорости решаема, а вот проблемы с поддержкой и масштабированием обычных стилей — нет.</p>
+        </blockquote>
+        <figcaption>Джеймс Кайл <img class="avatar" src="pictures/jameskyle.jpg" alt="Джеймс Кайл" />  <a href="https://twitter.com/thejameskyle">@thejameskyle</a></figcaption>
+      </figure>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout myths">
+        CSS-in-JS </br> медленный
+      </h2>
+      <p class="shout shrink"><span class="busted">BUSTED</span></p>
+    </section>
+
+  <section class="slide" id="dumb">
+    <h2 class="shout myths">
+      CSS-in-JS </br> для глупых разработчиков
+    </h2>
+    <style>
+      #dumb h2 {
+        font-size: 125px;
+      }
+    </style>
+  </section>
+
+  <section class="slide" id="dumb-busted">
+    <h2 class="shout myths">
+      CSS-in-JS </br> для глупых разработчиков
+      <p class="shout shrink"><span class="busted">BUSTED</span></p>
+    </h2>
+    <style>
+      #dumb-busted h2 {
+        font-size: 125px;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Инструменты</h2>
+    <ul>
+      <li>Линтинг - <a href="https://github.com/styled-components/stylelint-processor-styled-components">stylelint-processor-styled-components</a></li>
+      <li class="next">Подсветка синтаксиса - <a href="https://github.com/styled-components/vscode-styled-components">vscode-styled-components</a></li>
+      <li class="next">Тестирование состояний - <a href="https://github.com/styled-components/jest-styled-components">jest-styled-components</a></li>
+      <li class="next">Миксины и хелперы - <a href="https://github.com/styled-components/polished">polished</a> <span class="interpolation">${ ✨ }</span></li>
+      <li class="next">Автодополнение - <a href="https://github.com/ansumanshah/css-in-js">Расширение css-in-js для Atom и VS code</a></li>
+    </ul>
+  </section>
+
+  <section class="slide" id="benefits">
+    <h2>Достоинства</h2>
+    <ul>
+      <li>Помогает мыслить компонентами</li>
+      <li class="next">Поддержка тем из коробки</li>
+      <li class="next">Полная изоляция стилей</li>
+      <li class="next">Изолированные селекторы (по умолчанию)</li>
+      <li class="next">Префиксы (по умолчанию)</li>
+      <li class="next">Выделение критического CSS - стилей необходимых для отображения данного конкретного состояния приложения</li>
+      <li class="next">Отложенное вычисление - стили создаются, только при подключении компонента</li>
+      <li class="next">Удобное использование единого кода в CSS и JS - констант и функций</li>
+      <li class="next">Умная оптимизация с Javascript: удаление кода, который не используется</li>
+      <li class="next">Юнит тесты для CSS</li>
+      <li class="next">Возможность переиспользования стилей на разных платформах: React Native</li>
+    </ul>
+    <style>
+      #benefits ul {
+        font-size: 18px;
+      }
+    </style>
+  </section>
+
+  <section class="slide" id="drawbacks">
+    <h2>Недостатки</h2>
+    <ul>
+      <li><a href="https://blockmetry.com/blog/javascript-disabled">В 0,2% браузеров отключен Javascript</a></li>
+      <li class="next">Инструменты всё ещё не идеальны: автодополнение не поддерживает строковые литералы</li>
+      <li class="next">Читаемые классы для автоматизации тестирования</li>
+      <li class="next">Не все знают Javascript</li>
+      <li class="next">Пользовательский ввод нужно проверять: - <a href="https://reactarmory.com/answers/how-can-i-use-css-in-js-securely">Как использовать CSS-in-JS безопасно?</a></li>
+      <li class="next">Отсутствие атомарного подхода к дизайну приводит к спагетти-коду: <a href="http://bradfrost.com/blog/post/atomic-web-design/">Атомарный веб-дизайн</a></li>
+    </ul>
+    <style>
+      #drawbacks ul {
+        font-size: 22px;
+      }
+    </style>
+  </section>
+
+  <section class="slide code-example" id="sass-styles">
+    <h2>Универсальная кнопка на Sass</h2>
+    <pre>
+      <code>.btn <span class="value">{</span></code>
+      <code>    <span class="property">display</span><span class="punctuation">:</span> <span class="value">inline-block</span>;</code>      
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">none</span>;</code>
+      <code>    <span class="property">border-radius</span><span class="punctuation">:</span> <span class="value">$base-radius</span>;</code>
+      <code>    <span class="property">cursor</span><span class="punctuation">:</span> <span class="value">pointer</span>;</code>
+      <code>    <span class="property">font-size</span><span class="punctuation">:</span> <span class="value">$base-font-size</span>;</code>
+      <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0 12px</span>;</code>
+      <code>    <span class="interpolation">/* больше стилей для обычной кнопки... */</span></code>
+      <code> </code>
+      <code>    &--secondary <span class="value">{</span></code>
+      <code>        <span class="property">background</span><span class="punctuation">:</span> <span class="value">$secondary</span>;</code>
+      <code>    <span class="value">}</span></code>
+      <code> </code>
+      <code>    &--small <span class="value">{</span></code>
+      <code>        <span class="property">font-size</span><span class="punctuation">:</span> <span class="value">($base-font-size * 0.875)</span>;</code>
+      <code>        <span class="property">line-height</span><span class="punctuation">:</span> <span class="value">2.2</span>;</code>
+      <code>        <span class="property">padding</span><span class="punctuation">:</span> <span class="value">0 12px</span>;</code>
+      <code>    <span class="value">}</span></code>
+      <code>    <span class="interpolation">/* больше стилей для других вариаций кнопки... */</span></code>
+      <code><span class="value">}</span>;</code>
+    </pre>
+    <style>
+      #sass-styles code {
+        font-size: 11px;
+      }
+    </style>
+  </section>
+
+  <section class="slide code-example" id="hell">
+    <h2>Ад интерполяций</h2>
+    <pre>
+      <code><span class="property">const</span> Button <span class="operator">=</span> styled.button <span class="value">`</span></code>
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span> props.inverted <span class="operator">?</span> <span class="value">'1px solid #DEC19F'</span> <span class="operator">:</span> <span class="value">'none'</span><span class="interpolation">}</span> ;</code>
+      <code>    <span class="property">cursor</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span> props.disabled <span class="operator">?</span> <span class="value">'not-allowed'</span> <span class="operator">:</span> <span class="value">'pointer'</span><span class="interpolation">}</span> ;</code>
+      <code>    <span class="property">font-size</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span>(props.small <span class="operator">&&</span> <span class="value">styles.baseFontSize * 0.875</span>)</code>
+      <code>        <span class="operator">||</span> (props.large <span class="operator">&&</span> <span class="value">styles.baseFontSize * 1.375</span>) <span class="operator"></span></code>
+      <code>        <span class="operator">||</span> (<span class="value">styles.baseFontSize</span>) <span class="operator"></span></code>
+      <code>    <span class="interpolation">}</span>;</code>
+      <code>    <span class="property">line-height</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span>(props.small <span class="operator">&&</span> <span class="value">'2.2'</span>) <span class="operator">||</span> (props.large <span class="operator">&&</span> <span class="value">'1.25'</span>) <span class="operator">||</span> <span class="value">'2.5'</span><span class="interpolation">}</span>;</code>
+      <code>    <span class="property">display</span><span class="punctuation">:</span> <span class="value">inline-block</span>;</code>
+      <code>    <span class="property">padding</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span></code>
+      <code>        props.large <span class="operator">?</span> <span class="value">'16px 25px 17px'</span> <span class="operator">:</span> <span class="value">'0 12px'</span></code>
+      <code>    <span class="interpolation">}</span>;</code>
+      <code>    <span class="property">border</span><span class="punctuation">:</span> <span class="value">2px solid palevioletred</span>;</code>
+      <code>    <span class="property">background-color</span><span class="punctuation">:</span> <span class="interpolation">${</span>props <span class="operator">=></span></code>
+      <code>        (props.primary <span class="operator">&&</span> <span class="value">styles.colors.primary</span>)</code>
+      <code>        <span class="operator">||</span> (props.danger <span class="operator">&&</span> <span class="value">styles.colors.danger</span>) <span class="operator"></span></code>
+      <code>        <span class="operator">||</span> ((props.inverted <span class="operator">||</span> props.link) <span class="operator">&&</span> <span class="value">'#fff'</span>) <span class="operator"></span></code>
+      <code>        <span class="operator">||</span> (props.disabled <span class="operator">&&</span> <span class="value">styles.colors.brandGrey</span>) <span class="operator"></span></code>
+      <code>    <span class="interpolation">}</span>;</code>
+      <code><span class="value">`</span>;</code>
+    </pre>
+    <style>
+      #hell code {
+        font-size: 11px;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Будущее</h2>
+    <ul>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM">Веб-компоненты + Shadow DOM</a>
+        <img class="next" src="pictures/shadowdom.png" height="300" />
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Ближайшее будущее</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/cssinjs/istf-spec">ISTF - Interoperable Style Transfer Format</a>
+        <img class="next" src="pictures/istf.png" height="300" />
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide" id="summary">
+      <h2>Выводы</h2>
+      <ul>
+        <li>Безопасность через дизайн API, а не через дисциплину</li>
+        <li class="next">Куча инструментов из коробки</li>
+        <li class="next">Не нужно много думать</li>
+        <li class="next">Лучшие практики для написания CSS сразу работают</li>
+        <li class="next">Много больших компаний уже используют это в продакшене: Microsoft, Atlassian, Bloomberg, Reddit, PayPal</li>
+      </ul>
+    </section>
+
+  <section class="slide">
+    <h2>Статьи</h2>
+    <ul>
+      <li>
+        <a href="https://medium.com/seek-blog/a-unified-styling-language-d0c208de2660">A unified styling language</a>, Марк Далглейш
+      </li>
+      <li>
+        <a href="https://medium.com/@okonetchnikov/is-css-in-js-really-bad-for-ux-e9cce7b2da83">Is CSS-in-JS really bad for UX?</a>, Андрей Оконечников
+      </li>
+      <li>
+        <a href="https://medium.com/@steida/css-in-js-the-argument-refined-471c7eb83955">CSS in JS: The Argument Refined</a>, Дэниель Стайгервальд
+      </li>
+      <li>
+        <a href="https://medium.com/object-partners/css-in-js-benefits-drawback-and-tooling-80286b03f9aa">CSS in JS: Benefits, Drawbacks, and Tooling</a>, Дастин Шау
+      </li>
+      <li>
+        <a href="https://mxstbr.blog/2016/11/styled-components-magic-explained/">The magic behind 💅 styled-components</a>, Макс Стойбер
+      </li>
+      <li>
+        <a href="https://medium.com/@tkh44/writing-a-css-in-js-library-from-scratch-96cd23a017b4">Writing A CSS-in-JS Library From Scratch</a>, Кай Хоэнберг
+      </li>
+      <li>
+        <a href="https://medium.com/styled-components/with-styled-components-into-the-future-d1d917e7c22c">With styled-components into the future</a>, Фил Плактан
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide" id="persons">
+    <h2>Люди</h2>
+    <ul>
+      <li>
+          Макс Стойбер
+          <img class="avatar" src="pictures/maxstoiber.jpg" alt="Макс Стойбер" /> <a href="https://twitter.com/mxstbr">@mxstbr</a> - styled-components
+      </li>
+      <li>
+          Глен Маддерн
+          <img class="avatar" src="pictures/glen.png" alt="Глен Маддерн" /> <a href="https://twitter.com/glenmaddern">@glenmaddern</a> - соавтор CSS-модулей
+      </li>
+      <li>
+          Фил Плактан
+          <img class="avatar" src="pictures/phil.jpg" alt="Фил Плактан" /> <a href="https://twitter.com/_philpl">@_philpl</a> - styled-components / ISTF
+      </li>
+      <li>
+          Марк Далглейш
+          <img class="avatar" src="pictures/mark.jpg" alt="Марк Далглейш" /> <a href="https://twitter.com/markdalgleish">@markdalgleish</a> - соавтор CSS-модулей
+      </li>
+      <li>
+          Олег Слободской
+          <img class="avatar" src="pictures/oleg.jpg" alt="Oleg Slobodskoi" /> <a href="https://twitter.com/oleg008">@oleg008</a> - JSS
+      </li>
+      <li>
+          Кай Хоэнберг
+          <img class="avatar" src="pictures/kye.jpg" alt="Kye Hohenberger" /> <a href="https://twitter.com/tkh44">@tkh44</a> - emotion
+      </li>
+    </ul>
+    <style>
+      #persons li {
+        margin-bottom: 5px;
+      }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Ссылки</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/MicheleBertoli/css-in-js">React: CSS in JS techniques comparison</a>, Мишель Бертоли
+      </li>
+      <li>
+        <a href="https://tuchk4.github.io/css-in-js-app">CSS-in-JS perfomance benchmarks test</a>, Валерий Сорокобатько
+      </li>
+      <li>
+        <a href="https://github.com/A-gambit/CSS-IN-JS-Benchmarks">CSS in JS Benchmarks</a>, Григорий Шехет
+      </li>
+      <li>
+        <a href="https://css-in-js-playground.com/">CSS in JS Playground</a>, Дастин Шау
+      </li>
+    </ul>
+  </section>
+
+  <section class="slide" id="questions">
+    <h2>Вопросы?</h2>
+    <div class="wrapper">
+      <div class="container twitter">
+        <img src="pictures/twitter.svg" alt="Evgenii Shkodin" height="50" width="50" /><a href="https://twitter.com/iffjey">iffjey</a>
+      </div>
+      <div>
+        <div class="container twitter">
+          <img src="pictures/twitter.svg" alt="Evil Martians" height="50" width="50" /><a href="https://twitter.com/evilmartians">evilmartians</a>
+        </div>
+        <div class="container internet">
+            <img src="pictures/internet.svg" alt="Evil Martians" height="50" width="50" /><a href="https://evilmartians.com/">evl.ms</a>
+        </div>
+      </div>
+      <div class="container internet">
+        <img src="pictures/internet.svg" alt="Cult of Martians" height="50" width="50" /><a href="https://cultofmartians.com/">cultofmartians.com</a>
+      </div>
+      <a class="evilmartians" href="https://evilmartians.com/">
+				<img src="pictures/evil-martians-logo.png" alt="Sponsored by Evil Martians" width="390" height="354">
+			</a>
+    </div>
+    <style>
+      #questions .container {
+        display: flex;
+        align-items: center;
+      }
+      #questions .wrapper {
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      #questions a {
+        background: none;
+        font-size: 24px;
+      }
+      #questions .evilmartians {
+        position: absolute;
+        bottom: 100px;
+        right: 100px;
+      }
+      .twitter a {
+        color: rgb(71, 160, 236);
+      }
+      .internet img {
+        padding: 7px 10px 10px;
+      }
+      .internet a {
+        color: rgb(0,0,0);
+      }
+    </style>
+  </section>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Декларативное тестирование верстки</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style>
+		.slide .code {
+			white-space: pre;
+			font-family: Verdana;
+		}
+	</style>
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>Декларативное тестирование верстки</h1>
+		<p>Читаемые и поддерживаемые тесты</p>
+	</header>
+	<section class="slide" id="cover">
+		<h2>Декларативное тестирование верстки</h2>
+		<figure>
+			<img class="cover" id="start-slide" src="pictures/layout-testing.png" alt="Тестирование верстки">
+		</figure>
+		<style>
+			#cover h2 {
+				margin:30px 0 0;
+				color:#000;
+				text-align:center;
+				font-size:70px;
+				}
+			#cover #start-slide {
+				top: 80%;
+				left: 30%;
+				max-width: 300px;
+				height: auto;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<pre class="code">
+		{
+			name: 'Viacheslav',
+			email: 'jason.rammoray@gmail.com',
+			company: 'Sidenis',
+			role: 'Front-End Web Developer'
+		}
+		</pre>
+		<style>
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Какие проблемы сопутствуют тестированию верстки?</h2>
+		<ul>
+			<li class="next">Знание минимум одного языка программирования</li>
+			<li class="next">Нехватка времени и / или желания</li>
+			<li class="next">Тестирование вручную</li>
+			<li class="next">Настройка инфраструктуры</li>
+			<li class="next">Заказчик не понимает ценности тестирования как такового</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>А если есть желание, время, да и заказчик молодец?</h2>
+		<p>Наиболее распространенное решение - <a target="_blank" href="http://www.seleniumhq.org/">Selenium</a></p>
+		<ul>
+			<li>Взаимодействие с DOM деревом</li>
+			<li>Клики по элементам</li>
+			<li>Ожидание асинхронного контента</li>
+			<li>Ввод текстовых данных</li>
+			<li>Отправка форм</li>
+			<li>Запуск JavaScript в браузере кода при необходимости</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>А можно ли проще?</h2>
+		<p>Да, с помощью <a target="_blank" href="http://galenframework.com/">Galen</a>.</p>
+		<p>Работает на основе <a target="_blank" href="http://www.seleniumhq.org/">Selenium</a> и предоставляет базовую функциональность по тестированию верстки в декларативном стиле, позволяя:</p>
+		<ul>
+			<li>Проверять размеры элементов</li>
+			<li>Проверять расположение элементов относительно друг друга</li>
+			<li>Проверять цветовые гаммы</li>
+			<li>Создавать собственные правила</li>
+			<li>Генерировать детальные отчеты в html формате</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Пример теста</h2>
+		<pre>
+			<code>@objects</code>
+			<code>	logo .logo</code>
+			<code>	loginBtn .header .btn</code>
+			<code>	== Header section ==</code>
+			<code>		logo:</code>
+			<code>			aligned horizontally all loginBtn</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>В действии</h2>
+		<p>Напишем несколько тестов для главной страницы <a href="https://riskmarket.ru" target="_blank">RiskMarket.</a></p>
+	</section>
+
+	<section class="slide">
+		<h2>Что, если нужно что-то посложнее?</h2>
+		<p>Решений несколько:</p>
+		<ul>
+			<li>Часть тестов писать на JavaScript</li>
+			<li>Определять нужные функции в JavaScript и подключать их через @script в тесте</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Подводя итоги</h2>
+		<ul>
+			<li class="next">Тестировать верстку можно и нужно</li>
+			<li class="next">Это не так сложно как кажется</li>
+			<li class="next">Тесты поддерживаемы (импорты) и читаемы (благодаря собственным правилам)</li>
+			<li class="next">Выгода очевидна при необходимости подержки n браузеров с k вариантами разрешений</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>&lt;Спасибо /&gt;</h2>
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+</body>
+</html>

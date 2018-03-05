@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Баги в&nbsp;браузерах. Кто виноват и&nbsp;что делать?</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+  <link rel="stylesheet" href="custom.css">
+</head>
+
+<body class="shower list">
+  <header class="caption">
+    <h1>Баги в&nbsp;браузерах. Кто виноват и&nbsp;что делать?</h1>
+    <p>Виталий Зюзин</p>
+
+  </header>
+
+  <section class="slide white" id="cover">
+    <h2>Баги в&nbsp;браузерах</h2>
+    <img src="pictures/cover.png" alt="" class="cover">
+    <p>
+      Кто виноват и&nbsp;что делать?
+      <br>
+    </p>
+    <p class="contacts">
+      <b>Виталий Зюзин</b>
+      <br> Разработчик интерфейсов в&nbsp;HTML Academy
+      <br> 2016
+    </p>
+    <style>
+      #cover h2 {
+        margin: 0;
+        color: #FFF;
+        text-align: center;
+        font-size: 70px;
+      }
+
+      #cover p {
+        text-align: center;
+        color: #FFF;
+        font-size: 20px;
+      }
+
+      #cover .contacts {
+        margin: 290px 0 0;
+      }
+
+      #cover p a {
+        color: #FFF;
+      }
+    </style>
+  </section>
+
+  <section class="slide slide-logo question">
+    <h2 class="centered">Кто виноват?</h2>
+    <h2 class="next centered">Разработчики.</h2>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Обо мне</h2>
+      <ul>
+        <li>автор <a href="https://htmlacademy.ru/courses">курсов</a> и&nbsp;разработчик интерфейсов в&nbsp;<a href="https://htmlacademy.ru">HTML&nbsp;Academy</a>;</li>
+        <li>куратор <a href="https://twitter.com/cssunderhood">@cssunderhood</a>;</li>
+        <li>начинающий спикер. 😊</li>
+      </ul>
+  </section>
+
+  <section class="slide slide-logo question">
+    <h2 class="centered shout">Что делать?</h2>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Вопрос #1.</h1>
+      <p class="question-text">Сталкивались&nbsp;ли вы&nbsp;с&nbsp;багами в&nbsp;реализации спецификаций HTML и&nbsp;CSS в&nbsp;современных браузерах?</p>
+  </section>
+
+  <section class="slide slide-logo no-padding centered">
+    <img src="pictures/poll-1.png" alt="">
+    <br>
+    <a href="https://twitter.com/cssunderhood/status/699982091451236354">Опрос в&nbsp;Твиттере</a>
+  </section>
+
+  <section class="slide slide-logo image-grid">
+    <div class="image-grid-item image-grid-item--bro">
+      <img src="pictures/chrome.png" alt="">
+      <span class="image-grid-item-smile">
+        <img src="pictures/bro.png" alt="">
+      </span>
+    </div>
+
+    <div class="image-grid-item next">
+      <img src="pictures/firefox.png" alt="">
+      <span class="image-grid-item-smile">
+        <img src="pictures/bro.png" alt="">
+      </span>
+    </div>
+
+    <div class="image-grid-item next">
+      <img src="pictures/ie.png" alt="">
+      <span class="image-grid-item-smile">
+        <img src="pictures/bro.png" alt="">
+      </span>
+    </div>
+
+    <div class="image-grid-item next">
+      <img src="pictures/safari.png" alt="">
+      <span class="image-grid-item-smile">
+        <img src="pictures/not-bro.png" alt="">
+      </span>
+    </div>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Вопрос #2.</h1>
+      <p class="question-text">Читаете&nbsp;ли вы&nbsp;спецификации HTML/CSS, чтобы найти истину?</p>
+  </section>
+
+  <section class="slide slide-logo no-padding centered">
+    <img src="pictures/poll-2.png" alt="">
+    <br>
+    <a href="https://twitter.com/cssunderhood/status/699985277624918016">Опрос в&nbsp;Твиттере</a>
+  </section>
+
+  <section class="slide slide-logo centered">
+    <img src="pictures/survey1.png" alt="">
+    <br>
+    <a href="http://www.sitepoint.com/results-ultimate-css-survey/">Опрос «The Ultimate CSS Survey»</a>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2 class="centered shout">Какой браузер не&nbsp;прав?</h2>
+  </section>
+
+  <section class="slide slide-logo centered">
+    <h2>Случай #1</h2>
+    <img src="pictures/charts.png" alt="">
+    <a href="https://www.smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css/">&laquo;Designing Flexible, Maintainable Pie Charts With CSS And SVG&raquo;</a>
+  </section>
+
+  <section class="slide with-code slide-logo">
+    <h2 class="centered">Случай #1. HTML.</h2>
+    <pre>
+      <code>&lt;div class="pie"&gt;&lt;/div&gt;</code>
+    </pre>
+  </section>
+
+  <section class="slide with-code slide-logo">
+    <h2 class="centered">Случай #1. CSS.</h2>
+    <pre>
+      <code>.pie {</code>
+      <code>  width: 100px;</code>
+      <code>  height: 100px;</code>
+      <code>  border-radius: 50%;</code>
+      <code>  background-color: yellowgreen;</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide slide-logo centered">
+    <div class="pie" style="display: inline-block;
+    width: 450px; height: 450px;
+    border-radius: 50%;
+    background: yellowgreen;"></div>
+  </section>
+
+  <section class="slide with-code slide-logo">
+    <h2 class="centered">Случай #1. CSS.</h2>
+    <pre>
+      <code>.pie {</code>
+      <code>  width: 100px;</code>
+      <code>  height: 100px;</code>
+      <code>  border-radius: 50%;</code>
+      <code>  background-color: yellowgreen;</code>
+      <code class="mark">  background-image:</code>
+      <code class="mark">    linear-gradient(to right, transparent 50%, #665555 0);</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide slide-logo centered">
+    <div class="pie" style="display: inline-block;
+    width: 450px; height: 450px;
+    border-radius: 50%;
+    background: yellowgreen; background-image:
+  linear-gradient(to right, transparent 50%, #655 0);"></div>
+  </section>
+
+  <section class="slide with-code slide-logo">
+    <h2 class="centered">Случай #1. CSS.</h2>
+    <pre>
+      <code>.pie::before {</code>
+      <code>  content: "";</code>
+      <code>  display: block;</code>
+      <code>  height: 100%;</code>
+      <code>  margin-left: 50%;</code>
+      <code>  border-radius: 0 100% 100% 0 / 50%;</code>
+      <code>  background-color: inherit;</code>
+      <code>  transform-origin: left;</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide slide-logo centered">
+    <style media="screen">
+      .pie-step3::before {
+        content: "";
+        display: block;
+        margin-left: 50%;
+        height: 100%;
+        border-radius: 0 100% 100% 0 / 50%;
+        background-color: inherit;
+        transform-origin: left;
+        outline: 1px dashed;
+        color: black;
+      }
+    </style>
+    <div class="pie pie-step3" style="display: inline-block;
+    width: 450px; height: 450px;
+    border-radius: 50%;
+    background: yellowgreen; background-image:
+  linear-gradient(to right, transparent 50%, #655 0);"></div>
+  </section>
+
+  <section class="slide with-code slide-logo">
+    <h2 class="centered">Случай #1. CSS.</h2>
+    <pre>
+      <code>.pie::before {</code>
+      <code>  content: "";</code>
+      <code>  display: block;</code>
+      <code>  height: 100%;</code>
+      <code>  margin-left: 50%;</code>
+      <code>  border-radius: 0 100% 100% 0 / 50%;</code>
+      <code>  background-color: inherit;</code>
+      <code>  transform-origin: left;</code>
+      <code class="mark">  transform: rotate(0.25turn);</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide slide-logo centered">
+    <style media="screen">
+      .pie-step4::before {
+        content: '';
+        display: block;
+        margin-left: 50%;
+        height: 100%;
+        border-radius: 0 100% 100% 0 / 50%;
+        background-color: inherit;
+        transform-origin: left;
+        outline: 1px dashed;
+        color: black;
+        transform: rotate(0.25turn);
+      }
+    </style>
+    <div class="pie pie-step4" style="display: inline-block;
+    width: 450px; height: 450px;
+    border-radius: 50%;
+    background: yellowgreen; background-image:
+  linear-gradient(to right, transparent 50%, #655 0);"></div>
+  </section>
+
+  <section class="slide slide-logo comparing">
+    <div class="comparing-result">
+      <span class="num num-1" style="left: 30px; top: 170px;">1</span>
+      <span class="num num-2" style="left: 30px; top: 440px;">2</span>
+      <img src="pictures/charts-right.png" alt="">
+      <br>
+      <br>
+      <img src="pictures/charts-wrong.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo to-be-or-not-to-be">
+    <div class="what-is-a-question">
+      <span class="variant">2</span>
+      <span class="emoji">🤔</span>
+      <span class="bro"><img src="pictures/ie.png" alt=""></span>
+    </div>
+  </section>
+
+  <section class="slide slide-logo comparing">
+    <div class="comparing-browser">
+      <img src="pictures/safari.png" alt="">
+      <img src="pictures/not-bro.png" alt="" style="margin-left: 5px;">
+    </div>
+    <div class="comparing-result">
+      <img src="pictures/charts-wrong.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo">
+    <p>
+      <img src="pictures/safari.png" alt="">
+    </p>
+    <p>
+      <a href="https://bugs.webkit.org/show_bug.cgi?id=141008">Баг #141008&nbsp;в WebKit</a>.
+      <br> Safari не&nbsp;поддерживает отрицательные значения
+      <br>
+      <code>animation-delay</code>.
+    </p>
+  </section>
+
+  <section class="slide slide-logo comparing">
+    <div class="comparing-browser">
+      <img src="pictures/chrome.png" alt="">
+      <img src="pictures/opera.png" alt="">
+      <img src="pictures/firefox.png" alt="">
+      <img src="pictures/ie.png" alt="">
+      <img src="pictures/edge.png" alt="">
+      <img src="pictures/bro.png" alt="" style="margin-left: 5px;">
+    </div>
+    <div class="comparing-result">
+      <img src="pictures/charts-right.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo with-code">
+    <h2 class="centered">Случай #2. HTML.</h2>
+    <pre>
+			<code>&lt;div class="flex-container"&gt;</code>
+			<code>  &lt;div class="flex-item">&lt;/div&gt;</code>
+			<code>  &lt;div class="flex-item">&lt;/div&gt;</code>
+			<code>  &lt;div class="flex-item">&lt;/div&gt;</code>
+			<code>  &lt;div class="flex-item">&lt;/div&gt;</code>
+			<code>&lt;/div&gt;</code>
+		</pre>
+  </section>
+
+  <section class="slide slide-logo with-code">
+    <h2 class="centered">Случай #2. CSS.</h2>
+    <pre>
+			<code>.flex-container {</code>
+			<code>  display: flex;</code>
+			<code>}</code>
+			<code>.flex-item {</code>
+			<code>  flex-basis: 150px;</code>
+      <code>  min-height: 100px;</code>
+			<code>}</code>
+		</pre>
+  </section>
+
+  <section class="slide slide-logo comparing centered">
+    <div class="comparing-result"><br>
+      <img src="pictures/flex-with-sizes.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo with-code">
+    <h2 class="centered">Случай #2. CSS.</h2>
+    <pre>
+      <code>.flex-container {</code>
+      <code>  display: flex;</code>
+      <code class="mark">  flex-wrap: wrap;</code>
+      <code class="mark">  align-content: flex-end;</code>
+      <code>}</code>
+      <code>.flex-item {</code>
+			<code>  flex-basis: 150px;</code>
+      <code>  min-height: 100px;</code>
+			<code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide slide-logo comparing no-padding centered" style="padding-top: 7px;">
+    <div class="comparing-result">
+      <span class="num num-1" style="left: 30px; top: 10px;">1</span>
+      <span class="num num-2" style="left: 30px; top: 330px;">2</span>
+      <img src="pictures/flex-wrong.png" alt="">
+      <img src="pictures/flex-right.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo to-be-or-not-to-be">
+    <div class="what-is-a-question">
+      <span class="variant">1</span>
+      <span class="emoji">🤔</span>
+      <span class="bro"><img src="pictures/safari.png" alt=""></span>
+    </div>
+  </section>
+
+  <section class="slide slide-logo comparing">
+    <div class="comparing-browser">
+      <img src="pictures/chrome.png" alt="">
+      <img src="pictures/opera.png" alt="">
+      <img src="pictures/firefox.png" alt="">
+      <img src="pictures/ie.png" alt="">
+      <img src="pictures/not-bro.png" alt="" style="margin-left: 5px;">
+    </div>
+    <div class="comparing-result">
+      <img src="pictures/flex-wrong.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo comparing">
+    <div class="comparing-browser">
+      <img src="pictures/safari.png" alt="">
+      <img src="pictures/edge.png" alt="">
+      <img src="pictures/bro.png" alt="" style="margin-left: 5px;">
+    </div>
+    <div class="comparing-result">
+      <img src="pictures/flex-right.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo" style="padding-top: 50px;">
+    <p>
+      <img src="pictures/chrome.png" alt="" width="200">
+      <img src="pictures/opera.png" alt="" width="200">
+      <img src="pictures/firefox.png" alt="" width="200">
+      <img src="pictures/ie.png" alt="" width="200">
+    </p>
+    <p>
+      Спецификация <a href="https://www.w3.org/TR/css-flexbox-1/#change-201409-align-content-wrapping">изменилась</a>, правильное поведение сейчас в&nbsp;Safari и&nbsp;Edge. Многострочный контейнер&nbsp;&mdash; тот, которому задан
+      <code>flex-wrap: wrap</code>, даже если строка в&nbsp;контейнере одна.
+    </p>
+    <p>
+      <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=324178">Баг #324178&nbsp;в Blink</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1090031">баг #1090031&nbsp;в Gecko</a>.<br>
+      Запутанная история.
+    </p>
+  </section>
+
+  <section class="slide slide-logo with-code">
+    <h2 class="centered">Случай #3. HTML.</h2>
+    <pre>
+			<code>&lt;div class="width"&gt;&lt;/div&gt;</code>
+      <code>&lt;div class="gradient"&gt;&lt;/div&gt;</code>
+		</pre>
+  </section>
+
+  <section class="slide slide-logo with-code">
+    <h2 class="centered">Случай #3. CSS.</h2>
+    <pre>
+			<code>.width {</code>
+			<code>  width: 35%;</code>
+			<code>  background-color: red;</code>
+			<code>}</code>
+			<code>.gradient {</code>
+      <code>  background-image: linear-gradient(to right,</code>
+      <code>    blue 35%, transparent 35%);</code>
+			<code>}</code>
+		</pre>
+  </section>
+
+  <section class="slide slide-logo comparing no-padding centered">
+    <div class="comparing-result">
+      <br>
+      <span class="num num-1" style="left: 240px; top: 60px;">1</span>
+      <span class="num num-2" style="left: 240px; top: 330px;">2</span>
+      <img src="pictures/gradient-wrong.png" alt="">
+      <br>
+      <br>
+      <img src="pictures/gradient-right.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo comparing centered no-padding">
+    <div>
+      <br>
+      <span class="num num-1" style="left: 220px; top: 60px;">1</span>
+      <img width="400" src="pictures/gradient-large-wrong.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo to-be-or-not-to-be">
+    <div class="what-is-a-question">
+      <span class="variant">1</span>
+      <span class="emoji">🤔</span>
+      <span class="bro"><img src="pictures/safari.png" alt=""></span>
+    </div>
+  </section>
+
+  <section class="slide slide-logo comparing">
+    <div class="comparing-browser">
+      <img src="pictures/chrome.png" alt="">
+      <img src="pictures/opera.png" alt="">
+      <img src="pictures/not-bro.png" alt="" style="margin-left: 5px;">
+    </div>
+    <div class="comparing-result">
+      <img src="pictures/gradient-large-wrong.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo">
+    <p>
+      <img src="pictures/chrome.png" alt="">
+      <img src="pictures/opera.png" alt="">
+    </p>
+    <p>
+      <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=233879">Баг #233879&nbsp;в Blink</a>.
+      <br> Ширина
+      <code>width</code> не&nbsp;равна ширине
+      <code>linear-gradient</code>.
+    </p>
+  </section>
+
+  <section class="slide slide-logo comparing">
+    <div class="comparing-browser">
+      <img src="pictures/firefox.png" alt="">
+      <img src="pictures/safari.png" alt="">
+      <img src="pictures/edge.png" alt="">
+      <img src="pictures/bro.png" alt="" style="margin-left: 5px;">
+    </div>
+    <div class="comparing-result">
+      <img src="pictures/gradient-large-right.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo with-code">
+    <h2 class="centered">Случай #4. HTML.</h2>
+    <pre>
+    <code>&lt;div class="gradient"&gt;&lt;/div&gt;</code>
+  </pre>
+  </section>
+
+  <section class="slide slide-logo with-code">
+    <h2 class="centered">Случай #4. CSS.</h2>
+    <pre>
+    <code>body {</code>
+    <code>  background-color: skyblue;</code>
+    <code>}</code>
+    <code>&nbsp;</code>
+    <code>.gradient {</code>
+    <code>  width: 100%;</code>
+    <code>  height: 200px;</code>
+    <code>  background-image: linear-gradient(to right, white, transparent);</code>
+    <code>}</code>
+  </pre>
+  </section>
+
+  <section class="slide slide-logo comparing no-padding centered">
+    <div class="comparing-result">
+      <br>
+      <span class="num num-1" style="left: 20px; top: 80px;">1</span>
+      <span class="num num-2" style="left: 20px; top: 400px;">2</span>
+      <img src="pictures/linear-gradient-wrong.png" alt="">
+      <br>
+      <br>
+      <img src="pictures/linear-gradient-right.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo to-be-or-not-to-be">
+    <div class="what-is-a-question">
+      <span class="variant">1</span>
+      <span class="emoji">🤔</span>
+      <span class="bro"><img src="pictures/chrome.png" alt=""></span>
+    </div>
+  </section>
+
+  <section class="slide slide-logo comparing">
+    <div class="comparing-browser">
+      <img src="pictures/safari.png" alt="">
+      <img src="pictures/not-bro.png" alt="" style="margin-left: 5px;">
+    </div>
+    <div class="comparing-result">
+      <img src="pictures/linear-gradient-wrong.png" alt="">
+    </div>
+  </section>
+
+  <section class="slide slide-logo">
+    <p>
+      <img src="pictures/safari.png" alt="">
+    </p>
+    <p>
+      Спецификация <a href="https://www.w3.org/TR/2012/CR-css3-images-20120417/#color-stop-syntax">изменилась</a>.
+      <br> Safari не&nbsp;использует технику pre-multiplied sRGBA.
+    </p>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Мораль</h2>
+    <ul>
+      <li>не&nbsp;делить браузеры на&nbsp;&laquo;хороших&raquo; или &laquo;плохих&raquo;;</li>
+      <li>обращать внимание на&nbsp;различия между отображениями браузеров;</li>
+      <li>читать спецификацию, обращать внимание на&nbsp;раздел изменений;</li>
+      <li>следить за&nbsp;публикациями сообщества, например, <a href="https://github.com/philipwalton/flexbugs">Flexbugs</a>.</li>
+    </ul>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Немного про тестирование в&nbsp;браузерах</h2>
+    <ul>
+      <li>сервисы: <a href="https://www.browserstack.com">Browserstack</a>, <a href="http://saucelabs.com">Saucelabs</a>;</li>
+      <li class="next"><a href="https://dev.windows.com/en-us/microsoft-edge/tools/vms/mac/">виртуальные машины с&nbsp;Windows</a>;</li>
+      <li class="next"><a href="https://dev.windows.com/en-us/microsoft-edge/tools/remote/">Remote Desktop</a>: EdgeHTML&nbsp;на Windows 10&nbsp;для Mac;
+      </li>
+      <li class="next">или друг/коллега с&nbsp;нужной операционной системой на&nbsp;компьютере.</li>
+    </ul>
+  </section>
+
+  <section class="slide slide-logo no-padding centered">
+    <img src="pictures/poll-4.png" alt="">
+    <br>
+    <a href="https://twitter.com/cssunderhood/status/699990461314961409">Опрос в&nbsp;Твиттере</a>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2 class="shout shrink">Баг найден.
+      <br> Что дальше?</h2>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Проверяем баг в&nbsp;&laquo;ночной&raquo; сборке браузера</h2>
+    <ul>
+      <li><a href="https://nightly.mozilla.org/">Firefox Nightly</a>;</li>
+      <li><a href="https://www.google.com/intl/en/chrome/browser/canary.html">Chrome Canary</a>;</li>
+      <li><a href="http://www.opera.com/ru/developer">Opera Developer</a>;</li>
+      <li><a href="http://nightly.webkit.org/">WebKit Nightly Builds</a>;</li>
+      <li><a href="https://dev.windows.com/en-us/microsoft-edge/platform/changelog/">&laquo;ночные&raquo; сборки Edge</a>.</li>
+    </ul>
+    <div class="next">&laquo;Ночные&raquo; сборки могут содержать новые баги!</div>
+  </section>
+
+  <section class="slide slide-logo no-padding centered">
+    <img src="pictures/poll-3.png" alt="">
+    <br>
+    <a href="https://twitter.com/cssunderhood/status/699985643087253504">Опрос в&nbsp;Твиттере</a>
+  </section>
+
+  <section class="slide slide-logo centered">
+    <img src="pictures/survey2.png" alt="">
+    <br>
+    <a href="http://www.sitepoint.com/results-ultimate-css-survey/">Опрос «The Ultimate CSS Survey»</a>
+  </section>
+
+  <section class="slide slide-logo centered">
+    <img src="pictures/survey3.png" alt="">
+    <br>
+    <a href="http://www.sitepoint.com/results-ultimate-css-survey/">Опрос «The Ultimate CSS Survey»</a>
+  </section>
+
+  <section class="slide slide-logo centered no-padding">
+    <br>
+    <img src="pictures/survey4.png" width="65%" alt="">
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Ищем баг в&nbsp;трекере</h2>
+    <ul>
+      <li><a href="https://bugzilla.mozilla.org/">Firefox Bugzilla</a>;</li>
+      <li><a href="http://www.chromium.org/for-testers/bug-reporting-guidelines">Chromium bugs</a>;</li>
+      <li><a href="https://bugs.opera.com/wizard/">Opera bug report wizard</a>;</li>
+      <li><a href="https://bugs.webkit.org/">WebKit Bugzilla</a>;</li>
+      <li><a href="https://connect.microsoft.com/IE">Internet Explorer и&nbsp;Edge</a>;</li>
+    </ul>
+  </section>
+
+  <div class="slide slide-logo">
+    <h2>Багтрекеры суровы</h2>
+    <ul>
+      <li>дизайн&nbsp;&mdash; привет из&nbsp;&laquo;нулевых&raquo;;</li>
+      <li>пишут на&nbsp;английском;</li>
+      <li>репорты оформлены по-разному.</li>
+    </ul>
+  </div>
+
+  <section class="slide white slide-logo">
+    <img class="cover" src="pictures/bugtracker-3.png" alt="">
+  </section>
+
+  <section class="slide white slide-logo">
+    <img class="cover" src="pictures/bugtracker-1.png" alt="">
+  </section>
+
+  <section class="slide white slide-logo">
+    <img class="cover" src="pictures/bugtracker-2.png" alt="">
+  </section>
+
+  <section class="slide white slide-logo">
+    <img class="cover" src="pictures/bugreport.png" alt="">
+  </section>
+
+  <section class="slide white slide-logo">
+    <h2 class="centered" style="margin-top: -100px;">
+      <a href="https://webcompat.com">Webcompat</a>
+    </h2>
+    <img class="cover" src="pictures/webcompat.png" alt="">
+  </section>
+
+  <section class="slide white slide-logo">
+    <img class="cover" src="pictures/webcompat-2.png" alt="">
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Создаём репорт</h2>
+    <ul>
+      <li>User-Agent;</li>
+      <li>описание бага + ссылка на&nbsp;демо в&nbsp;песочнице или скриншоты;</li>
+      <li>фактический результат;</li>
+      <li>ожидаемый результат.</li>
+    </ul>
+    <p>
+      <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=531371">Пример</a>
+    </p>
+  </section>
+
+  <section class="slide white slide-logo">
+    <img class="cover" src="pictures/bugtracker-4.png" alt="">
+  </section>
+
+  <section class="slide white slide-logo">
+    <img class="cover" src="pictures/bugtracker-5.png" alt="">
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Можно отправить репорт из браузера</h2>
+    <ul>
+      <li>Меню > Справка > Сообщить о проблеме;</li>
+      <li>есть в Chrome, Opera, Firefox;</li>
+      <li>лучше пойти на трекер.</li>
+    </ul>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Что делать, когда репорт отправлен?</h2>
+    <ul>
+      <li>придумать обходной путь с&nbsp;использованием других свойств;</li>
+      <li>придумать &laquo;хак&raquo; + попробовать автоматизировать использование хака;</li>
+      <li>жить с&nbsp;багом, но&nbsp;следить за&nbsp;ним.</li>
+    </ul>
+  </section>
+
+  <section class="slide white">
+    <img src="pictures/flexbox-course.png" alt="" class="cover">
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Автоматизируем &laquo;хаки&raquo;</h2>
+    <ul>
+      <li class="next"><a href="https://github.com/luisrudge/postcss-flexbugs-fixes">PostCSS Flexbugs Fixes</a>&nbsp;&mdash; автоисправление багов
+        <a href="https://github.com/philipwalton/flexbugs">Flexbugs</a>;</li>
+      <li class="next"><a href="https://github.com/gilmoreorless/postcss-gradient-transparency-fix">PostCSS Gradient Transparency Fix</a>&nbsp;&mdash; фикс бага с
+        <code>transparent</code> в&nbsp;линейных градиентах в&nbsp;Safari.</li>
+    </ul>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Важно репортить баги</h2>
+    <p>или хотя&nbsp;бы проверять, есть&nbsp;ли они в&nbsp;трекере.</p>
+    <ul>
+      <li>разработчики не&nbsp;любят баги&nbsp;&mdash; разработчики браузеров тоже;</li>
+      <li>ответственность пользователя, неравнодушное отношение;</li>
+      <li>баги в&nbsp;моей работе находят пользователи, за&nbsp;это им&nbsp;спасибо.</li>
+    </ul>
+  </section>
+
+  <section class="slide slide-logo">
+    <h2>Оффтоп</h2>
+    <p>
+      Репортите баги в&nbsp;оффлайне 🤓
+    </p>
+  </section>
+
+  <section class="slide white slide-logo">
+    <h2 class="shout shrink">Сделаем мир лучше</h2>
+  </section>
+
+  <section class="slide white slide-logo" id="see-more">
+    <h2 class="shout">
+      <img src="pictures/logo.svg" alt="Shower logo">
+      <a href="https://github.com/shower/shower">Shower на&nbsp;GitHub</a>
+    </h2>
+    <style>
+      #see-more h2 {
+        font-size: 100px
+      }
+
+      #see-more img {
+        width: 0.72em;
+        height: 0.72em;
+      }
+    </style>
+  </section>
+
+  <section class="slide white slide-logo">
+    <h2 class="shout shrink no-transition">Спасибо!</h2>
+  </section>
+
+  <section class="slide white slide-logo active" id="ThankYou">
+    <div>
+      <h2>Баги в&nbsp;браузерах. Кто виноват и&nbsp;что делать?</h2>
+      <p>Виталий Зюзин, HTML Academy</p>
+      <ul>
+        <li><a href="http://twitter.com/juwain">@juwain</a></li>
+        <li><a href="http://juwain.ru">juwain.ru</a></li>
+        <li><a href="mailto:juwain@yandex.ru">juwain@yandex.ru</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="progress"></div>
+  <script src="shower/shower.min.js"></script>
+</body>
+
+</html>

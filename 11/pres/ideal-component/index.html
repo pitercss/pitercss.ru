@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Shower Presentation Engine</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+  <style type="text/css">
+    #intro:after {
+      content: none;
+    }
+
+    #intro__title {
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      text-align: center;
+    }
+
+    #intro__button {
+      border: 1px solid;
+      padding: 5px 35px;
+      border-radius: 10px;
+      color: #333;
+      animation-name: intro;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
+      animation-direction: alternate;
+    }
+
+    @keyframes intro {
+      from { opacity: 1;  }
+      to   { opacity: .5; }
+    }
+
+    #text-about__color {
+      color: #000;
+      white-space: nowrap;
+    }
+
+    #text-color__1,
+    #text-color__2,
+    #text-color__3,
+    #text-color__4,
+    #text-color__5,
+    #text-color__6,
+    #text-color__7,
+    #text-color__8,
+    #text-color__9,
+    #text-color__10,
+    #text-color__11 {
+      animation-name: text-color;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
+      animation-direction: alternate;
+    }
+
+    @keyframes text-color {
+      0%   { color: rgba(0, 0, 0, 0); }
+      25%  { color: rgb(0, 204, 255); }
+      75%  { color: rgb(244, 9, 11);  }
+      100% { color: rgb(3, 201, 0);   }
+    }
+
+    #text-color__1  { animation-delay: .1s;  }
+    #text-color__2  { animation-delay: .2s;  }
+    #text-color__3  { animation-delay: .3s;  }
+    #text-color__4  { animation-delay: .4s;  }
+    #text-color__5  { animation-delay: .5s;  }
+    #text-color__6  { animation-delay: .6s;  }
+    #text-color__7  { animation-delay: .7s;  }
+    #text-color__8  { animation-delay: .8s;  }
+    #text-color__9  { animation-delay: .9s;  }
+    #text-color__10 { animation-delay: 1s;   }
+    #text-color__11 { animation-delay: 1.1s; }
+
+    #text-size__1,
+    #text-size__2,
+    #text-size__3,
+    #text-size__4,
+    #text-size__5,
+    #text-size__6,
+    #text-size__7,
+    #text-size__8,
+    #text-size__9,
+    #text-size__10,
+    #text-size__11,
+    #text-size__12,
+    #text-size__13,
+    #text-size__14,
+    #text-size__15,
+    #text-size__16,
+    #text-size__17,
+    #text-size__18,
+    #text-size__19,
+    #text-size__20,
+    #text-size__21,
+    #text-size__22,
+    #text-size__23 {
+      animation-name: text-size;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
+      animation-direction: alternate;
+    }
+
+    @keyframes text-size {
+      0% {
+        font-size: 8px;
+      }
+      100% {
+        font-size: 24px;
+      }
+    }
+
+    #text-size__1  { animation-delay: 0.1s }
+    #text-size__2  { animation-delay: 0.2s }
+    #text-size__3  { animation-delay: 0.3s }
+    #text-size__4  { animation-delay: 0.4s }
+    #text-size__5  { animation-delay: 0.5s }
+    #text-size__6  { animation-delay: 0.6s }
+    #text-size__7  { animation-delay: 0.7s }
+    #text-size__8  { animation-delay: 0.8s }
+    #text-size__9  { animation-delay: 0.9s }
+    #text-size__10 { animation-delay: 1s   }
+    #text-size__11 { animation-delay: 1.1s }
+    #text-size__12 { animation-delay: 1.2s }
+    #text-size__13 { animation-delay: 1.3s }
+    #text-size__14 { animation-delay: 1.4s }
+    #text-size__15 { animation-delay: 1.5s }
+    #text-size__16 { animation-delay: 1.6s }
+    #text-size__17 { animation-delay: 1.7s }
+    #text-size__18 { animation-delay: 1.8s }
+    #text-size__19 { animation-delay: 1.9s }
+    #text-size__20 { animation-delay: 2s   }
+    #text-size__21 { animation-delay: 2.1s }
+    #text-size__22 { animation-delay: 2.2s }
+    #text-size__23 { animation-delay: 2.3s }
+
+    #text-about__line-height {
+      animation-name: line-height;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
+      animation-direction: alternate;
+    }
+
+    @keyframes line-height {
+      0%   { line-height: 1; }
+      100% { line-height: 8; }
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    :root .link,
+    :root .button,
+    :root .button__text,
+    :root .icon,
+    :root .input,
+    :root .input__control {
+      all: initial;
+      display: inline;
+      font: inherit;
+      line-height: inherit;
+      color: inherit;
+      padding: 0;
+      margin: 0;
+      transition: all 3s linear 0s;
+    }
+
+    :root .link_colored {
+      color: #4b86c2;
+    }
+
+    :root .link_underline {
+      text-decoration: underline;
+    }
+
+    :root .link_outline {
+      outline: 1px solid currentColor;
+    }
+
+    :root .button__text,
+    :root .input__control {
+      position: relative;
+    }
+
+    :root .button_basis,
+    :root .input_basis {
+      display: inline-block;
+      position: relative;
+      background-color: #333;
+    }
+
+    :root .button_basis:before,
+    :root .input_basis:before {
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
+      background-color: #fff;
+    }
+
+    :root .button_styled,
+    :root .input_styled {
+      border-radius: 5px;
+    }
+
+    :root .button_styled .button__text,
+    :root .input_styled .input__control {
+      padding: 0 15px;
+    }
+
+    :root .button_styled:before,
+    :root .input_styled:before {
+      border-radius: 4px;
+    }
+
+    :root .icon_basis {
+      display: inline-block;
+      background-color: #c8e4ff;
+      position: relative;
+    }
+
+    :root .icon_styled {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+    }
+
+    :root .icon_circle {
+      border-radius: 50%;
+    }
+
+    :root .slide.active > .icon > .icon_demo {
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      animation-name: icon-demo;
+      animation-iteration-count: 1;
+      animation-duration: 3s;
+      animation-direction: normal;
+      animation-fill-mode: both;
+    }
+
+    @keyframes icon-demo {
+      0%   {
+        transform: translateX(0);
+        background-color: #c8e4ff;
+        border-radius: 50%;
+      }
+      100% {
+        transform: translateX(515px);
+        background-color: transparent;
+        border-radius: 0;
+      }
+    }
+
+    :root .slide.active > .button_demo {
+      animation-name: button-demo;
+      animation-iteration-count: 1;
+      animation-duration: 3s;
+      animation-direction: normal;
+      animation-fill-mode: both;
+    }
+
+    @keyframes button-demo {
+      0% {
+        padding-left: 0px;
+      }
+      100% {
+        padding-left: 35px;
+      }
+    }
+
+    :root .icon_symbol {
+      background-color: transparent;
+    }
+
+    :root .icon_symbol + .button__text {
+      padding-left: 0;
+    }
+
+    :root .input__control {
+      color: ;
+      text-overflow: clip;
+      text-overflow: ellipsis;
+    }
+
+  </style>
+</head>
+<body class="shower list">
+
+  <header class="caption">
+    <h1>Дизайн-система. В поисках «идеального компонента»</h1>
+    <p>Роман Ганин, <a href="https://twitter.com/Realetive">@realetive</a></p>
+  </header>
+
+  <section class="slide" id="intro">
+    <div id="intro__title">
+      <span id="intro__button">Внимание на экран</span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>О себе</h2>
+    <ul>
+      <li class="next">фронтенд-джуниор… <span class="next">с 2013 года;</span></li>
+      <li class="next">люблю типографику, интерфейсы и UI/UX;</li>
+      <li class="next">работаю в <i>&lt;здесь могла быть ваша компания&gt;</i>.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>О докладе</h2>
+    <ul>
+      <li class="next">вдохновлён презентацией Антона Виноградова «Архитектура дизайн-систем» (PiterCSS № 2):  <a href="https://youtu.be/j6v-B45fsDI" target="_blank">https://youtu.be/j6v-B45fsDI</a>;</li>
+      <li class="next">идея доклада родилась в процессе создания «с нуля» полноценной дизайн-системы;</li>
+      <li class="next">для дизайнеров, работающих с интерфейсами, и верстальщиков, знакомых с базовыми принципами вёрстки.</li>
+    </ul>
+    <figure class="next">
+      <blockquote>
+        <p>«Инлайновый контекст форматирования» — <a href="http://bit.ly/inline-context" target="_blank">http://bit.ly/inline-context</a></p>
+      </blockquote>
+      <figcaption>Максим Усачёв aka <a href="https://twitter.com/psyw" target="_blank">psywalker</a> и Илья Стрельцын aka <a href="http://twitter.com/SelenIT2" target="_blank">SelenIT</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>О дизайне</h2>
+    <ol>
+      <li class="next">эмоциональный — лендинги, слайдеры, флаеры, постеры…;</li>
+      <li class="next">информационный — <b>типографика</b>, <b>интерфейсы</b>.</li>
+    </ol>
+    <p class="next">Отличительная особенность интерфейсов — высокая «вариативность», т. е. зависимость от их контента.</p>
+    <p class="next">Самый распространённый тип контента — текст.</p>
+  </section>
+
+  <section class="slide">
+    <h2>Параметры текста</h2>
+    <ol id="text-about">
+      <li class="next">
+        <span id="text-about__color"><span id="text-color__1">ц</span><span id="text-color__2">в</span><span id="text-color__3">е</span><span id="text-color__4">т</span>&nbsp;<span id="text-color__5">(</span><span id="text-color__6">c</span><span id="text-color__7">o</span><span id="text-color__8">l</span><span id="text-color__9">o</span><span id="text-color__10">r</span><span id="text-color__11">)</span></span>;
+      </li>
+      <li class="next">
+        <span id="text-about__size"><span id="text-size__1">р</span><span id="text-size__2">а</span><span id="text-size__3">з</span><span id="text-size__4">м</span><span id="text-size__5">е</span><span id="text-size__6">р</span>&nbsp;<span id="text-size__7">(</span><span id="text-size__8">к</span><span id="text-size__9">е</span><span id="text-size__10">г</span><span id="text-size__11">л</span><span id="text-size__12">ь</span><span id="text-size__13">,</span>&nbsp;<span id="text-size__14">f</span><span id="text-size__15">o</span><span id="text-size__16">n</span><span id="text-size__17">t</span><span id="text-size__18">-</span><span id="text-size__19">s</span><span id="text-size__20">i</span><span id="text-size__21">z</span><span id="text-size__22">e</span><span id="text-size__23">)</span></span>;
+      </li>
+      <li class="next">
+        <span id="text-about__line-height">межстрочный интервал (интерлиньяж для дизайнеров, <code>line-height</code> — у&nbsp;верстальщиков)</span>.
+      </li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <p data-height="510" data-theme-id="light" data-slug-hash="gapLgq" data-default-tab="result" data-user="davidkpiano" data-embed-version="2" data-pen-title="Baseline Grid Demonstration" class="codepen">See the Pen <a href="http://codepen.io/davidkpiano/pen/gapLgq/">Baseline Grid Demonstration</a> by David Khourshid (<a href="http://codepen.io/davidkpiano">@davidkpiano</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+  </section>  
+
+  <section class="slide">
+    <h2>Заголовок</h2>
+    Модульная шкала – увеличение шрифта строится на известном множителе:
+    <ul>
+      <li>«золотое сечение» — 1:1,618;</li>
+      <li>музыкальные интервалы: квартдецимы, септимы, терции и т. д.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Заголовок</h2>
+    Инструменты:
+    <ul>
+      <li><a href="http://www.modularscale.com/">modularscale.com</a></li>
+      <li><a href="http://type-scale.com/">type-scale.com</a></li>      
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Заголовок</h2>
+    <iframe src="http://www.modularscale.com/" width="100%" height="100%"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2>Заголовок</h2>
+    <iframe src="http://type-scale.com/" width="100%" height="100%"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2>Список</h2>
+    <ol class="next">
+      <li>нумерованный;</li>
+    </ol>
+    <ul class="next">
+      <li>маркированный;</li>
+    </ul>
+    <dl class="next">
+      <dt>определений</dt>
+      <dd>Особый тип списка, представляющий <b>структурированный</b> тип данных вида «значение-свойство».</dd>
+    </dl>
+  </section>
+
+  <section class="slide">
+    <h2>Текст</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link">ссылаться</a> на&nbsp;другие (<span class="icon">⇪</span> внешние) документы, выполнять какие-то
+    <button class="button"><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Текст</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored">ссылаться</a> на&nbsp;другие (<span class="icon">⇪</span> внешние) документы, выполнять какие-то
+    <button class="button"><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Ссылка</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline">ссылаться</a> на&nbsp;другие (<span class="icon">⇪</span> внешние) документы, выполнять какие-то
+    <button class="button"><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Ссылка</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline link_outline">ссылаться</a> на&nbsp;другие (<span class="icon">⇪</span> внешние) документы, выполнять какие-то
+    <button class="button"><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Ссылка</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline">ссылаться</a> на&nbsp;другие (<span class="icon">⇪</span> внешние) документы, выполнять какие-то
+    <button class="button button_basis"><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Кнопка</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline">ссылаться</a> на&nbsp;другие (<span class="icon">⇪</span> внешние) документы, выполнять какие-то
+    <button class="button button_basis button_styled"><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Кнопка</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline">ссылаться</a> на&nbsp;другие (<span class="icon icon_basis">⇪</span> внешние) документы, выполнять какие-то
+    <button class="button button_basis button_styled"><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Иконка</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline">ссылаться</a> на&nbsp;другие (<span class="icon icon_basis icon_styled">⇪</span>внешние) документы, выполнять какие-то
+    <button class="button button_basis button_styled"><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Иконка</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline">ссылаться</a> на&nbsp;другие (<span class="icon icon_basis icon_styled icon_circle">⇪</span>внешние) документы, выполнять какие-то
+    <button class="button button_basis button_styled"><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Иконка</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline">ссылаться</a> на&nbsp;другие (<span class="icon icon_basis icon_styled icon_circle">⇪<span class="icon icon_basis icon_styled icon_demo">⇪</span></span>внешние) документы, выполнять какие-то
+    <button class="button button_basis button_styled button_demo"><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Иконка</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline">ссылаться</a> на&nbsp;другие (<span class="icon icon_basis icon_styled icon_circle icon_symbol">⇪</span>внешние) документы, выполнять какие-то
+    <button class="button button_basis button_styled"><span class="icon icon_basis icon_styled icon_circle icon_symbol">⇪</span><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input input_basis"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Поле ввода</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline">ссылаться</a> на&nbsp;другие (<span class="icon icon_basis icon_styled icon_circle icon_symbol">⇪</span>внешние) документы, выполнять какие-то
+    <button class="button button_basis button_styled"><span class="icon icon_basis icon_styled icon_circle icon_symbol">⇪</span><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input input_basis input_styled"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Текстовая область</h2>
+    Давайте возьмём «сферический текст в вакууме» и наделим его основными интерфейсными свойствами: возможностью
+    <a href="#" class="link link_colored link_underline">ссылаться</a> на&nbsp;другие (<span class="icon icon_basis icon_styled icon_circle icon_symbol">⇪</span>внешние) документы, выполнять какие-то
+    <button class="button button_basis button_styled"><span class="icon icon_basis icon_styled icon_circle icon_symbol">⇪</span><span class="button__text">действия</span></button> и&nbsp;получать
+    <div class="input input_basis input_styled"><input class="input__control" value="данные" placeholder="текст" size="6"></div> от пользователя.
+  </section>
+
+  <section class="slide">
+    <h2>Раскладка блоков</h2>
+    <ul>
+      <li>Модульная сетка</li>
+      <li>«Гибкая раскладка»</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Модульная сетка</h2>
+  </section>
+
+  <section class="slide">
+    <h2>«Гибкая раскладка»</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Отступы и цвета</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Спасибо за внимание. Вопросы?</h2>
+    <b>Вместо послесловия:</b>
+    <ul>
+      <li>большое внимание типографике в вебе уделяет Зелл Лью в своём блоге: <a href="https://zellwk.com">zellwk.com</a>;</li>
+      <li>«Правило внешнего и внутреннего» в Советах Артёма Горбунова — <a href="http://artgorbunov.ru/bb/soviet/20140818/">http://artgorbunov.ru/bb/soviet/20140818/</a>;</li>
+      <li>инициалы отбиваются <i>неразрывными</i> пробелами: А.&nbsp;С.&nbsp;Пушкин, Р.&nbsp;Ю.&nbsp;Ганин;</li>
+      <li>во всей презентации не было ни одного изображения.</li>
+    </ul>
+  </section>
+
+  <footer class="badge">
+    <a href="https://github.com/shower/shower">Слайды на GitHub</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.min.js"></script>
+</body>
+</html>

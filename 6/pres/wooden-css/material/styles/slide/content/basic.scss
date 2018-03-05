@@ -1,0 +1,17 @@
+// ------------------------------------------------------------------
+// Basic
+// ------------------------------------------------------------------
+
+h2 {
+	margin-bottom:32px;
+	color:$black;
+	font-size: 48px;
+	font-weight: 300;
+	line-height: 1;
+	}
+p {
+	margin-bottom:1em;
+	&.note {
+		color:$medium;
+		}
+	}

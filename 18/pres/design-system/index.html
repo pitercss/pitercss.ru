@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>«Дизайн-система. Типографика»</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+  <link rel="stylesheet" href="./assets/style/custom.css">
+</head>
+<body class="shower list">
+  <header class="caption">
+    <h1>«Дизайн-система. Типографика»</h1>
+    <p>Роман Ганин, <a href="https://twitter.com/Realetive">@realetive</a></p>
+  </header>
+
+  <section class="slide" id="intro">
+    <div id="intro__title">
+      <span id="intro__button">Внимание на экран</span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h2>О себе</h2>
+    <ul>
+      <li class="next">MODX Ambassador в России, руководитель санкт-петербургского клуба разработчиков MODX;</li>
+      <li class="next">активный участник и докладчик сообществ:
+        <ul>
+          <li>SPB Frontend — <a href="https://vk.com/spb_frontend_meetup_130416" target="_blank">о типографике в вебе</a>,</li>
+          <li>Веб-стандартов — о теге `<head>` <a href="https://wsd.events/2016/10/01/" target="_blank">в Питере</a> и <a href="https://wsd.events/2016/11/26/" target="_blank">Киеве</a>,</head>
+          <li>PiterCSS — «<a href="https://youtu.be/wck4oJjXowM" target="_blank">приквел</a>» к данному докладу;</li>
+        </ul>
+      </li>
+      <li class="next">люблю типографику, интерфейсы и UI/UX;</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>О докладе</h2>
+    <ul>
+      <li class="next">вдохновлён презентацией Антона Виноградова «Архитектура дизайн-систем» (PiterCSS № 2):  <a href="https://youtu.be/j6v-B45fsDI" target="_blank">https://youtu.be/j6v-B45fsDI</a>;</li>
+      <li class="next">идея доклада родилась в процессе создания «с нуля» полноценной дизайн-системы;</li>
+      <li class="next">для дизайнеров, работающих с интерфейсами, и верстальщиков, знакомых с базовыми принципами вёрстки.</li>
+    </ul>
+    <figure class="next">
+      <blockquote>
+        <p>«Инлайновый контекст форматирования» — <a href="http://bit.ly/inline-context" target="_blank">http://bit.ly/inline-context</a></p>
+      </blockquote>
+      <figcaption>Максим Усачёв aka <a href="https://twitter.com/psyw" target="_blank">psywalker</a> и Илья Стрельцын aka <a href="http://twitter.com/SelenIT2" target="_blank">SelenIT</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="slide">
+    <h2>О дизайне</h2>
+    <ol>
+      <li class="next">эмоциональный — лендинги, слайдеры, флаеры, постеры…;</li>
+      <li class="next">информационный — <b>типографика</b>, <b>интерфейсы</b>.</li>
+    </ol>
+    <div class="range next">
+      <span class="range__label">Эмоциональность</span>
+      <span class="range__control"></span>
+      <span class="range__label">Информативность</span>
+    </div>
+    <p class="next">Отличительная особенность интерфейсов — высокая «вариативность», т. е. зависимость от их контента.</p>
+    <p class="next">Самый распространённый тип контента — текст.</p>
+  </section>
+
+  <section class="slide">
+    <h2>Об идеальном компоненте</h2>
+    <p class="next">Идеальный компонент подчиняется контенту (тексту):</p>
+    <ul class="next">
+      <li>на любом языке (интернационализация),</li>
+      <li class="next">с любым количеством (адаптивность),</li>
+      <li class="next">при максимальном количестве условий (доступность).</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Так ли важен текст?</h2>
+  </section>
+
+  <section class="slide">
+    <h2>Параметры текста</h2>
+    <ol id="text-about">
+      <li class="next">
+        <span id="text-about__color"><span id="text-color__1">ц</span><span id="text-color__2">в</span><span id="text-color__3">е</span><span id="text-color__4">т</span>&nbsp;<span id="text-color__5">(</span><span id="text-color__6">c</span><span id="text-color__7">o</span><span id="text-color__8">l</span><span id="text-color__9">o</span><span id="text-color__10">r</span><span id="text-color__11">)</span></span>;
+      </li>
+      <li class="next">
+        <span id="text-about__size"><span id="text-size__1">р</span><span id="text-size__2">а</span><span id="text-size__3">з</span><span id="text-size__4">м</span><span id="text-size__5">е</span><span id="text-size__6">р</span>&nbsp;<span id="text-size__7">(</span><span id="text-size__8">к</span><span id="text-size__9">е</span><span id="text-size__10">г</span><span id="text-size__11">л</span><span id="text-size__12">ь</span><span id="text-size__13">,</span>&nbsp;<span id="text-size__14">f</span><span id="text-size__15">o</span><span id="text-size__16">n</span><span id="text-size__17">t</span><span id="text-size__18">-</span><span id="text-size__19">s</span><span id="text-size__20">i</span><span id="text-size__21">z</span><span id="text-size__22">e</span><span id="text-size__23">)</span></span>;
+      </li>
+      <li class="next">
+        <span id="text-about__line-height">межстрочный интервал (интерлиньяж для дизайнеров, <code>line-height</code> — у&nbsp;верстальщиков)</span>.
+      </li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <p class="codepen" data-height="510" data-theme-id="light" data-slug-hash="PjoMgN" data-default-tab="result" data-user="Realetive" data-embed-version="2" data-pen-title="Вертикальный ритм"></p>
+    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+  </section>  
+
+  <section class="slide">
+    <h2>Параграф</h2>
+    <blockquote class="next">
+      <b>— Пантелеимон a.k.a. @pantlmn, <a href="https://habr.ru/p/339110/">В абзаце всё должно быть прекрасно</a></b>
+      <p>О том, что такое «прекрасно свёрстанный абзац», есть информация в разных справочниках, вкратце можно было бы просуммировать следующим списком:</p>
+    </blockquote>
+    <ol>
+      <li value="1" class="next">правильный шрифт;</li>
+      <li value="2" class="next">межбуквенные расстояния в каждой строке изменяются в разумных пределах;</li>
+      <li value="3" class="next">межсловные пробелы в каждой строке в разумных пределах;</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <ol>
+      <li value="4">межсловные пробелы в соседних строках не слишком сильно отличаются;</li>
+      <li value="5" class="next">разумный интерлиньяж;</li>
+      <li value="6" class="next">гармоничный абзацный отступ или буквица;</li>
+      <li value="7" class="next">аккуратный левый край (оптически), без одинаково начинающихся соседних строк (homeoarchy);</li>
+      <li value="8" class="next">аккуратный правый край (оптически), без частокола многих переносов кряду и без одинаково заканчивающихся соседних строк (homoioteleuton);</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <ol>
+      <li value="9">если набор «флагом» (align=left) или выключкой по центру (align=center), то слово в конце строки не должно «висеть в воздухе», оно должно опираться на буквы следующей строки;</li>
+      <li value="10" class="next">хорошая последняя строка: не слишком короткая (меньше 2 длин абзацных отступов) и не выглядящая недотянутой (до правого края остаётся меньше, чем абзацный отступ);</li>
+      <li value="11" class="next">без «коридоров» (rivers of white);</li>
+      <li value="12" class="next">без неблагозвучных переносов или незапланированных ассоциаций.</li>
+    </ol>
+  </section>
+
+  <section class="slide">
+    <h2>Заголовок</h2>
+    <p>Заголовки характеризуются теми же параметрами, что и основной текст, но бо́льшего размера, т. е. для получения нового компонента нам достаточно изменить всего один из основных параметров. Опционально мы может изменить жирность — это не нарушит вертикальный ритм.</p>
+    <blockquote class="next">
+      <p>💁: <code>«Главное — не размер»</code>, — скажут опытные верстальщицы.</p>
+      <p>🙇: <code>«А умение им пользоваться!»</code>, — поддержат их робкие верстальщики.</p>
+    </blockquote>
+  </section>
+
+  <section class="slide">
+    <h2>Хроматическая фантазия и фуга И. С. Баха</h2>
+    <p>Фантазия состоит из двух ясно различимых по характеру частей, отделенных друг от друга паузой. Первая часть, прелюдия, заканчивается на на 3-й четверти 49-го такта, т. е. на 195-й (48 × 4 + 3) четверти a<sub>1</sub> = 195. На вторую часть приходится 121 четверть (a<sub>2</sub> = a - a<sub>1</sub> = 316 - 195 = 121).</p>
+    <p class="next">Вычисляя отношение длин обеих частей, мы находим:</p>
+    <pre class="next">
+      <code> 121 ÷ 195 ≈ 0,6 </code>
+    </pre>    
+  </section>
+
+  <section class="slide">
+    <h2>Хроматическая фантазия и фуга И. С. Баха</h2>
+    <p>Т. е. она разделена на I и II части в золотой пропорции:</p>
+    <pre class="next"><code>
+      316   195
+      --- = ---, 195 + 121 = 316
+      195   121
+    </code></pre>
+    <p class="next">Но это только верхушка айсберга: <a href="http://www.wikiznanie.ru/wikipedia/index.php/Золотое_сечение_(в_музыке)">Золотое сечение в музыке</a></p>
+  </section>
+
+  <section class="slide">
+    <h2>Модульная шкала</h2>
+    <p>последовательность чисел, относящихся друг к другу определённым образом, т. е. увеличение шрифта строится на известном множителе:</p>
+    <ul>
+      <li class="next">«золотое сечение» — 1:1,618;</li>
+      <li class="next">последовательность Фибоначчи: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, …;</li>
+      <li class="next">музыкальные интервалы: квартдецимы, септимы, терции и т. д.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Квартде… что? Септи… куда?</h2>
+    <p class="next">Инструменты:</p>
+    <ul class="next">
+      <li><a href="http://www.modularscale.com/">modularscale.com</a>;</li>
+      <li class="next"><a href="http://type-scale.com/">type-scale.com</a>;</li>
+      <li class="next"><a href="http://archetypeapp.com/">archetypeapp.com</a>.</li>      
+    </ul>
+    <p  class="next">Ссылки по теме:</p>
+    <ul class="next">
+      <li><a href="http://marknelyubin.ru/modularscale/">Модульная шкала и осмысленная типографика</a>, Марк Нелюбин</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>modularscale.com</h2>
+    <iframe src="http://www.modularscale.com/" width="100%" height="100%"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2>type-scale</h2>
+    <iframe src="http://type-scale.com/" width="100%" height="100%"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2>archetypeapp.com</h2>
+    <iframe src="http://archetypeapp.com/" width="100%" height="100%"></iframe>
+  </section>
+
+  <section class="slide">
+    <h2>CSS-шлюзы</h2>
+    <p>Характерный исключительно для «экранного» мира приём плавного масштабирования текста (не только), основанный на ширине области просмотра, а не на точках медиа запросов.</p>
+  </section>
+
+  <section class="slide">
+    <img src="./pictures/css-locks.png" alt="CSS-шлюзы" class="cover">
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code>h1 {</code>
+      <code>  font-size: 1.5rem;</code>
+      <code class="mark">  /* Increment: (1.3333 - 1.2) × 24px = 3.2px */</code>
+      <code>  line-height: calc( 1.2em + 3.2px );</code>
+      <code>}</code>
+      <code>p {</code>
+      <code>  font-size: .9375rem;</code>
+      <code>  line-height: 1.5em;</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code>@media (min-width: <mark class="important">320px</mark>) {</code>
+      <code>  h1 {</code>
+      <code>    font-size: calc( 1.5rem + 2.5vw - 8px );</code>
+      <code class="mark">    /* from 120% + 3.2px to 120% + 0px */</code>
+      <code>    line-height: calc( 1.2em - .5vw + 4.8px ) }</code>
+      <code>  p {</code>
+      <code>    font-size: calc( .9375rem + .46875vw - 1.5px );</code>
+      <code class="mark">    /* from 150% + 0px to 150% + 4.5px */</code>
+      <code>    line-height: calc( 1.5em + .7031vw - 2.25px ); }</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code>@media (min-width: <mark class="important">960px</mark>) {</code>
+      <code>  h1 {</code>
+      <code>    font-size: calc(1.5rem + 16px);</code>
+      <code class="mark">    /* Base value, no increment needed. */</code>
+      <code>    line-height: 1.2em; }</code>
+      <code>  p {</code>
+      <code>    font-size: calc( .9375rem + 3px );</code>
+      <code class="mark">    /* Increment: (1.75 - 1.5) × 18px = 4.5px */</code>
+      <code>    line-height: calc( 1.5em + 4.5px ); }</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Капитель</h2>
+  </section>
+
+  <section class="slide">
+    <img class="cover" src="./pictures/mayakovskiy.jpg" alt="Влади́мир Влади́мирович Маяко́вский — русский! Советский! Поэт!">
+    <figcaption class="white">
+    Влади́мир Влади́мирович Маяко́вский — русский! Советский! Поэт!
+  </figcaption>
+  </section>
+
+  <section class="slide">
+    <h2>Список</h2>
+    <ol class="next">
+      <li>нумерованный;</li>
+    </ol>
+    <ul class="next">
+      <li>маркированный;</li>
+    </ul>
+    <dl class="next">
+      <dt>определений</dt>
+      <dd>Особый тип списка, представляющий <b>структурированный</b> тип данных вида «значение-свойство».</dd>
+    </dl>
+  </section>
+
+  <section class="slide">
+    <h2>Список</h2>
+    <p>Списки определений незаслуженно обходят стороной, хотя во многих случаях их использование более оправдано и семантично, чем, например, таблиц. А благодаря новой спецификации, <code>термин</code> и <code>определение</code> можно оборачивать в другие блоки (определений может быть несколько)…</p>
+  </section>
+
+  <section class="slide">
+    <pre>
+      <code>&lt;dl class="list list_type_description"&gt;</code>
+      <code>  &lt;div class="list__item"&gt;</code>
+      <code>    &lt;dt class="list__term"&gt;Название доклада&lt;/dt&gt;</code>
+      <code>    &lt;dd class="list__description"&gt;Дизайн-система. Типографика&lt;/dt&gt;</code>
+      <code>  &lt;/div&gt;</code>
+      <code>  &lt;div class="list__item"&gt;</code>
+      <code>    &lt;dt class="list__term"&gt;Докладчик&lt;/dt&gt;</code>
+      <code>    &lt;dd class="list__description"&gt;Роман Ганин&lt;/dd&gt;</code>
+      <code>  &lt;/div&gt;</code>
+      <code>&lt;/dl&gt;</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Список. API</h2>
+    <p>Универсальный компонент для коллекций, где может быть важен порядок элементов: меню, пагинация, галерея.</p>
+    <ul>
+      <li>сортировка (по возрастанию, убыванию и в случайном порядке);</li>
+      <li>ограничение (лимит);</li>
+      <li>«смещение» (начало).</li>
+    </ul>
+  </section>
+<!--
+  <section class="slide">
+    <h2>Раскладка блоков</h2>
+    <ul>
+      <li>Модульная сетка</li>
+      <li>«Гибкая раскладка»</li>
+    </ul>
+  </section>
+-->
+<!--
+  <section class="slide">
+    <h2>Модульная сетка</h2>
+    <div class="grid">
+      <div class="grid__cell grid__cell_5_12">Сетки</div>
+      <div class="grid__cell grid__cell_2_12">не</div>
+      <div class="grid__cell grid__cell_5_12">нужны</div>
+    </div>
+    <div class="grid">
+      <div class="grid__cell grid__cell_6_12">Шутка.</div>
+      <div class="grid__cell grid__cell_6_12">Нужны.</div>
+    </div>
+    <div class="grid">
+      <div class="grid__cell grid__cell_2_12">Но</div>
+      <div class="grid__cell grid__cell_2_12">не</div>
+      <div class="grid__cell grid__cell_8_12">всегда.</div>
+    </div>     
+  </section>
+-->
+<!--
+  <section class="slide">
+    <h2>«Гибкая раскладка»</h2>
+    <pre>
+      <code><span class="code__class">.layout</span> {</code>
+      <code>  <span class="code__key">display</span>: <span class="code__value">flex</span>;</code>
+      <code>  <span class="code__key">width</span>: <span class="code__value">100</span>%;</code>
+      <code>  <span class="code__key">justify-content</span>: <span class="code__value">space-between</span> }</code>
+      <code><span class="code__class">.layout__content</span> {</code>
+      <code>  <span class="code__key">flex</span>: <span class="code__value">1</span>;</code>
+      <code>  <span class="code__key">min-width</span>: <span class="code__value">0</span> }</code>
+      <code><span class="code__class">.layout__aside</span> {}</code>
+    </pre>
+  </section>
+-->
+  <section class="slide">
+    <h2>Спасибо за внимание. Вопросы?</h2>
+    <b>Вместо послесловия:</b>
+    <ul>
+      <li>большое внимание к веб-типографике в блоге Зелла Лью: <a href="https://zellwk.com">zellwk.com</a>;</li>
+      <li>«Правило внешнего и внутреннего» в Советах Артёма Горбунова — <a href="http://artgorbunov.ru/bb/soviet/20140818/">http://artgorbunov.ru/bb/soviet/20140818/</a>;</li>
+      <li>инициалы отбиваются <i>неразрывными</i> пробелами: В.&nbsp;В.&nbsp;Маяковский, Р.&nbsp;Ю.&nbsp;Ганин;</li>
+      <li>во всей презентации было только одно изображения — поэта;</li>
+      <li>остались вопросы — пишите в Твиттере: <a href="https://twitter.com/Realetive">@Realetive</a>.</li>
+    </ul>
+  </section>
+
+  <footer class="badge">
+    <a href="https://github.com/Realetive/lecture-ideal-component">Слайды на GitHub</a>
+  </footer>
+  <div class="progress"></div>
+  <script src="shower/shower.min.js"></script>
+</body>
+</html>

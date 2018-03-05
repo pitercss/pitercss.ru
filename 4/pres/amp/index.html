@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Google AMP — придаем ускорение мобильному вебу мощным пинком</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>Google AMP — придаем ускорение мобильному вебу мощным пинком</h1>
+		<p>Приходько Александр, Murano Software Inc.</p>
+	</header>
+	<section class="slide" id="cover">
+		<h2>Google AMP — придаем ускорение мобильному вебу мощным пинком</h2>
+		<p>Приходько Александр <a href="https://muranosoft.com">Murano Software Inc.</a></p>
+		<img src="pictures/cover.jpg" alt="" class="cover">
+
+		<style>
+			#cover h2 {
+				margin: 50px 0 0;
+				color: #FFF;
+				text-align: center;
+				font-size: 50px;
+				}
+			#cover p {
+				margin: 50px 0 0;
+				text-align: center;
+				color: #FFF;
+				font-style: italic;
+				font-size: 24px;
+				}
+				#cover p a {
+					color:#FFF;
+					}
+		</style>
+	</section>
+	<section class="slide">
+		<img src="pictures/cars-amp.png" alt="" class="cover h">
+	</section>
+	<section class="slide">
+		<h2>Accelerated Mobile Pages</h2>
+		<ol>
+			<li class="next">AMP HTML ⚡</li>
+			<li class="next">AMP <span style="text-decoration: line-through;">JS</span></li>
+			<li class="next"><span style="text-decoration: line-through;">AMP</span> CSS</li>
+			<li class="next">Google AMP Cache</li>
+			<li class="next">JSON+LD</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>AMP-страницы валидны только если они не содержат ничего "медленного"</h2>
+		<img src="pictures/validator.png" alt="" style="max-width: 100%;">
+	</section>
+	<section class="slide">
+		<h2>#1 Только асинхронные скрипты</h2>
+		<pre><code>
+	&lt;script <mark class="important">async</mark>
+		src="https://cdn.ampproject.org/v0.js"&gt;
+	&lt;/script&gt;
+		</code></pre>
+	</section>
+	<section class="slide">
+		<img src="pictures/page-loadline-js.png" alt="" style="max-width: 100%;">
+		<img src="pictures/page-loadline-js-async.png" alt="" style="max-width: 100%;" class="next">
+	</section>
+	<section class="slide">
+		<h2>#2 Всем ресурсам обязательно предустановлены размеры</h2>
+		<pre><code>
+	<span>&lt;amp-img <mark class="important">width="200" height="50"</mark> src="..."&gt;</span>
+	<span>&lt;amp-iframe <mark class="important">width=300 height=300</mark>
+		src="https://foo.com/iframe"&gt;&lt;/amp-iframe&gt;</span>
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h2>#3 Не позволять блокировать рендеринг</h2>
+		<div class="next rel-wrap">
+			<code>
+				&lt;amp-iframe width=300 ... src="..."&gt;&lt;/amp-iframe&gt;
+			</code>
+			<pre><code>&lt;script <mark class="important">async</mark> <mark>custom-element="amp-iframe"</mark> ...&gt;&lt;/script&gt;
+			</code></pre>
+			<div style="text-align: center; margin-top: -65px;">
+				<img src="pictures/amp-iframe.png" alt="" width="300">
+			</div>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>#4 Весь сторонний JS вынесен из процесса визуализации</h2>
+		<div style="position: relative;">
+			<div style="position: absolute; left: 30px; top: 0; bottom: 0; right: 50%;">
+				<ul>
+					<li>Скрипты не блокируют рендеринг</li>
+					<li>Пересчеты стилей только части DOM</li>
+				</ul>
+			</div>
+			<div style="position: absolute; left: 50%; top: -50px; right: 0;">
+				<img src="pictures/sandbox.png" alt="" height="385">
+			</div>
+		</div>
+		<div style="text-align: right;">
+		</div>
+	</section>
+	<section class="slide">
+		<h2 style="padding: 0 85px 0 110px;">#5 Весь CSS должен быть встроен и занимать не более 50Кб</h2>
+		<img src="pictures/css-50kb.jpg" alt="" class="cover w">
+	</section>
+	<section class="slide">
+		<h2>#6 Ни одного HTTP-запроса пока шрифт не начнет загружаться</h2>
+		<img src="pictures/font-crp.png" alt="" style="max-width: 100%;">
+	</section>
+	<section class="slide">
+		<h2>FOUC вынуждает на такие зверства:</h2>
+		<pre><code>
+&lt;style&gt;
+	<mark class="important">body {opacity: 0;}</mark>
+&lt;/style&gt;
+&lt;noscript&gt;&lt;style&gt;
+	body {opacity: 1;}
+&lt;/style&gt;&lt;/noscript&gt;
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h2>А что если JS не загрузится?</h2>
+		<pre class="next"><code>
+body {
+	<mark class="important">animation:</mark> amp-timeout 0s <mark class="important">5s</mark> 1 normal forwards;
+}
+@keyframes amp-timeout {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h2>#7 Минимизируем пересчет стилей</h2>
+		<pre><code>
+<span class="green-text">window.getComputedStyle(...);</span>
+<span class="red-text">foo.style.height = '100px';</span>
+<span class="green-text">foo.offsetHeight;</span>
+<span class="red-text">bar.style.height = '200px';</span>
+<span class="green-text">bar.offsetHeight;</span>
+		</code></pre>
+
+		<style>
+			.green-text { color: green; }
+			.red-text { color: red; }
+			.blue-text { color: blue; }
+		</style>
+	</section>
+	<section class="slide">
+		<pre><code>
+<span class="blue-text">// Пересчет стилей</span>
+<span class="green-text">window.getComputedStyle(...);</span>
+<span class="red-text">foo.style.height = '100px';</span>
+<span class="blue-text">// Пересчет стилей</span>
+<span class="green-text">foo.offsetHeight;</span>
+<span class="red-text">bar.style.height = '200px';</span>
+<span class="blue-text">// Пересчет стилей</span>
+<span class="green-text">bar.offsetHeight;</span>
+		</code></pre>
+	</section>
+	<section class="slide">
+		<pre><code>
+<span class="blue-text">// Пересчет стилей</span>
+<span class="green-text">window.getComputedStyle(...);</span>
+<span class="green-text">foo.offsetHeight;</span>
+<span class="green-text">bar.offsetHeight;</span>
+<span class="red-text">foo.style.height = '100px';</span>
+<span class="red-text">bar.style.height = '200px';</span>
+		</code></pre>
+	</section>
+	<section class="slide">
+		<h2 style="line-height: 1.5; text-align: center; margin-top: 50px;"><a href="https://github.com/wilsonpage/fastdom">fastdom</a>-подобное группирование доступа к DOM. В итоге, AMP вызывает только 2 пересчета стилей в процессе загрузки типичной старницы.</h2>
+	</section>
+	<section class="slide">
+		<h2>#8 Только GPU-оптимизируемая анимация</h2>
+		<div style="text-align: center;">
+			<img src="pictures/frame-full.jpg" alt="" style="width: 100%;">
+			<img src="pictures/frame-no-layout.jpg" alt="" class="next" style="width: 100%;">
+			<img src="pictures/frame-no-layout-paint.jpg" alt="" class="next" style="width: 100%;">
+		</div>
+	</section>
+	<section class="slide">
+		<img src="pictures/safe-properties.jpg" alt="" style="max-width: 100%;">
+	</section>
+	<section class="slide">
+		<h2>#9 Приоритизация загрузки ресурсов</h2>
+		<ol>
+			<li class="next">Оптимизация ресурсов находящихся в поле зрения</li>
+			<li class="next">prefetch для остальных ресурсов</li>
+			<li class="next">lazy-loading для остальных ресурсов</li>
+			<li class="next">Все это можно кроссбраузерно настраивать</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<img src="pictures/1st-layout.jpg" alt="" class="cover" style="height: 95%;">
+	</section>
+	<section class="slide">
+		<h2>#10 Лучше загружать страницу мгновенно!</h2>
+		<pre class="next"><code>
+&lt;link <mark class="important">rel="prerender"</mark> href="https://amp-url"&gt;
+		</code></pre>
+		<div class="next">
+			<h3>Недостатки браузерного пререндеринга:</h3>
+			<ul>
+				<li>Может излишне "есть" батарею потому что может запускать JS</li>
+				<li>Обычно загружает все ресурсы на странице</li>
+			</ul>
+		</div>
+	</section>
+	<section class="slide" id="amp-components">
+		<style>
+			#amp-components ul {
+				display: inline-block;
+				margin-right: 110px;
+			}
+			#amp-components ul:last-child {
+				margin-right: 0;
+			}
+		</style>
+
+		<ul>
+			<li>amp-access</li>
+			<li>amp-accordion</li>
+			<li>amp-ad</li>
+			<li>amp-analytics</li>
+			<li>amp-anim</li>
+			<li>amp-audio</li>
+			<li>amp-brightcove</li>
+			<li>amp-carousel</li>
+			<li>amp-dailymotion</li>
+			<li>amp-embed</li>
+		</ul>
+		<ul>
+			<li>amp-facebook</li>
+			<li>amp-fit-text</li>
+			<li>amp-font</li>
+			<li>amp-iframe</li>
+			<li>amp-img</li>
+			<li>amp-instagram</li>
+			<li>amp-lightbox</li>
+			<li>amp-list</li>
+			<li>amp-mustache</li>
+			<li>amp-pinterest</li>
+		</ul>
+		<ul>
+			<li>amp-pixel</li>
+			<li>amp-reach-player</li>
+			<li>amp-slides</li>
+			<li>amp-social-share</li>
+			<li>amp-twitter</li>
+			<li>amp-user-notification</li>
+			<li>amp-video</li>
+			<li>amp-vimeo</li>
+			<li>amp-vine</li>
+			<li>amp-youtube</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Что в итоге?</h2>
+		<ul>
+			<li class="next">Весь CSS встроен</li>
+			<li class="next">JS асинхронный</li>
+			<li class="next">Независимая загрузка шрифтов без FOUC</li>
+			<li class="next">Полный контроль над приоритетом ресурсов</li>
+			<li class="next">Мгновенная и эффективная загрузка</li>
+			<li class="next">Top stories в Google</li>
+			<li class="next">Это уже работает!</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<img src="pictures/amp-demo.gif" alt="" class="cover h">
+	</section>
+	<section class="slide" id="who-uses">
+		<style>
+			#who-uses ul {
+				display: inline-block;
+				margin-right: 110px;
+			}
+			#who-uses ul:last-child {
+				margin-right: 0;
+			}
+		</style>
+
+		<h2>Кто уже использует?</h2>
+		<ul>
+			<li>Mail.Ru</li>
+			<li>Meduza</li>
+			<li>Вести.Ru</li>
+			<li>Лента.ру</li>
+			<li>ТАСС</li>
+			<li>МК</li>
+			<li>НТВ</li>
+		</ul>
+		<ul>
+			<li>Forbes</li>
+			<li>The New York Times</li>
+			<li>The Verge</li>
+			<li>The Wall Street Journal</li>
+			<li>Washington Post</li>
+			<li>LinkedIn</li>
+			<li>Pinterest</li>
+		</ul>
+		<ul>
+			<li>Twitter</li>
+			<li>Drupal</li>
+			<li>Wordpress</li>
+			<li>Vimeo</li>
+			<li>Vine</li>
+			<li>YouTube</li>
+			<li>И еще 230+ компаний</li>
+		</ul>
+	</section>
+
+	<section class="slide" id="thank-you">
+		<h2 class="shout">
+			Спасибо за внимание!
+		</h2>
+		<p class="place b" style="text-align: center;">
+			<a href="https://www.ampproject.org">https://www.ampproject.org/</a>
+			<br>
+			<a href="https://github.com/ampproject/amphtml">https://github.com/ampproject/amphtml</a>
+		</p>
+
+		<style>
+			#thank-you h2 {
+				font-size:100px
+				}
+			#thank-you img {
+				width:0.72em;
+				height:0.72em;
+				}
+		</style>
+	</section>
+
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+</body>
+</html>
