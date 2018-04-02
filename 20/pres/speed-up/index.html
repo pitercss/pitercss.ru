@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Как я ускоряю свою работу</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+  <style>
+    .slide::after {
+      display: none;
+    }
+    .slide pre code:not(:only-child)[data-line-num]::before {
+      content: attr(data-line-num) ".";
+    }
+    .slide pre code:not(:only-child)[data-line-num-false]::before {
+      display: none;
+    }
+  </style>
+</head>
+<body class="shower list">
+
+  <header class="caption">
+    <h1>Как я ускоряю свою работу</h1>
+    <p>Николай Громов</p>
+  </header>
+
+  <section class="slide black" id="cover" style="display: flex; flex-direction: column; justify-content: flex-end; padding-left: 50px; padding-right: 50px;">
+    <h2>Как я ускоряю свою работу</h2>
+    <p style="margin-bottom: 10px;">Сеанс автоматической магии, делающей работу более быстрой, приятной и слегка опасной.<br> <a href="http://nicothin.pro/">Николай Громов</a>. Внутренняя Монголия. Вечность, лето.</p>
+    <figure>
+      <img class="cover" src="pictures/cover.jpg" alt="">
+    </figure>
+    <style>
+      #cover h2 {
+        margin:30px 0 0;
+        color:#FFF;
+        text-align:center;
+        font-size:70px;
+        }
+      #cover p {
+        margin:10px 0 0;
+        text-align:center;
+        color:#FFF;
+        font-style:italic;
+        font-size:20px;
+        }
+        #cover p a {
+          color:#FFF;
+          }
+    </style>
+  </section>
+
+  <section class="slide">
+    <h2>Задачи</h2>
+    <ul>
+      <li>Поделиться опытом и ошибками.</li>
+      <li>Вдохновить на изучение технологий.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>О какой работе речь?</h2>
+    <p>Вёрстка и модификация страниц.</p>
+    <ul>
+      <li>БЭМ. 50-150 блоков.</li>
+      <li>5-50 страниц.</li>
+    </ul>
+    <p>Результат: HTML, CSS, JS, изображения, шрифты.</p>
+  </section>
+
+  <section class="slide black">
+    <img class="cover" src="pictures/dino.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>Как вообще ускорить работу?</h2>
+    <ul>
+      <li>Знание типовых решений типовых задач.</li>
+      <li>Быстрый набор, <a href="https://emmet.io/">Emmet</a>, <a href="https://nicothin.github.io/sublime-text/sublime-text-3-hotkeys.html">горячие кнопки</a>.</li>
+      <li>Обработка разметки и стилей.</li>
+      <li>Автоматизация рутинных действий.</li>
+      <li>Знакомое предсказуемое окружение проекта. Стартовый репозиторий.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Мой стек</h2>
+    <ul>
+      <li>БЭМ, все технологии блока в директории блока.</li>
+      <li>Sass & PostCSS для стилей.</li>
+      <li>Pug для разметки.</li>
+      <li>Простая конкатенация для JS.</li>
+      <li>Спрайты (растровые, векторные).</li>
+      <li>Gulp, git, терминал.</li>
+    </ul>
+    <p>Требуется <a href="https://nodejs.org/en/">Node.js</a>.</p>
+  </section>
+
+  <section class="slide">
+    <h2>О чём не хочется думать во время работы</h2>
+    <ol>
+      <li>Добавление файлов блока в разметку, стили, JS.</li>
+      <li>Сборка/пересборка спрайтов.</li>
+      <li>Изменение разметки общих частей страницы.</li>
+      <li>Изменение разметки многократно использованных блоков.</li>
+      <li>Обновление страницы при изменении файлов.</li>
+      <li>Перенос файлов между устройствами для тестирования.</li>
+    </ol>
+  </section>
+
+
+  <section class="slide">
+    <h2>Как я работаю</h2>
+    <ol>
+      <li>Перехожу в директорию проекта: <code>cd /d/projects/SomeName</code>.</li>
+      <li>Стартую сервер разработки: <code>npm start</code> (алиас <code>s</code>).</li>
+      <li>Редактирую файлы, вижу изменения в браузере.</li>
+    </ol>
+    <p>Пока сервер работает, проект можно просматривать с любого устройства в&nbsp;рамках локальной сети.</p>
+  </section>
+
+  <section class="slide">
+    <h2><a href="https://github.com/nicothin/NTH-start-project">Стартовый репозиторий</a></h2>
+    <p><code><a href="https://github.com/nicothin/NTH-start-project/tree/master/src">src/</a></code> для исхоников, <code><a href="https://github.com/nicothin/NTH-start-project/tree/master/build">build/</a></code> для результата работы.</p>
+    <ul>
+      <li>Процессинг разметки и стилей.</li>
+      <li>Пересборка спрайтов.</li>
+      <li>Автообновление страницы по изменению.</li>
+      <li>Стартовый набор блоков.</li>
+      <li>Модульная сетка (примеси).</li>
+      <li>Быстрая публикация на GitHub Pages.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2><a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">Один конфиг</a>, чтобы править всеми</h2>
+    <ul>
+      <li>Какие блоки используются на проекте?</li>
+      <li>Какие дополнительные файлы брать?</li>
+      <li>Какие имена у директорий?</li>
+    </ul>
+    <p>Проблема: капризность формата.</p>
+  </section>
+
+  <section class="slide">
+    <h2>Блоки в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
+    <pre>
+      <code>"blocks": {</code>
+      <code>  "page": [],</code>
+      <code>  "typo": [],</code>
+      <code>  "sprite-png": [</code>
+      <code>    "__demo"</code>
+      <code>  ],</code>
+      <code>  "page-header": [],</code>
+      <code>}</code>
+    </pre>
+  </section>
+
+  <section class="slide black">
+    <h2 style="color: #fff; font-size: 72px;">Блоки</h2>
+    <img class="cover" src="pictures/block.jpg" style="width: 100%; max-height: none;" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>Блок</h2>
+    <pre>
+      <code><a href="https://github.com/nicothin/NTH-start-project/tree/master/src/blocks/burger">src/blocks/burger/</a></code>
+      <code>  burger.js</code>
+      <code>  burger.pug</code>
+      <code>  burger.scss</code>
+      <code>  readme.md</code>
+    </pre>
+    <p>Проблема: зависимости.</p>
+  </section>
+
+  <section class="slide">
+    <h2>Создавать это вручную?</h2>
+    <p>Нет. <code>node createBlock.js my-new-block</code></p>
+    <ul>
+      <li>Создает директорию блока, pug- и scss-файлы, директории картинок.</li>
+      <li>Пишет в созданные файлы заготовки их содержимого.</li>
+      <li>Добавляет созданный блок в projectConfig.json.</li>
+      <li>Наливает кофе.</li>
+    </ul>
+    <p><code>node createBlock.js my-new-block js</code> — то же, плюс js-файл.</p>
+  </section>
+
+  <section class="slide black">
+    <h2 style="color: #fff; font-size: 72px;">Разметка</h2>
+    <img class="cover" src="pictures/html.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2><a href="https://pugjs.org/">Pug</a>: меньше повторов</h2>
+    <ul>
+      <li><a href="https://pugjs.org/language/inheritance.html">Шаблоны</a> (идентичные части страниц написаны один раз).</li>
+      <li><a href="https://pugjs.org/language/mixins.html">Примеси</a> (разметка изрядной части БЭМ-блоков — примесь).</li>
+    </ul>
+    <p><a href="https://github.com/nicothin/NTH-start-project/blob/master/src/blocks/logo/logo.pug">Пример</a>.</p>
+  </section>
+
+  <section class="slide">
+    <h2>Не всем БЭМ-блокам нужны pug-примеси</h2>
+    <p>Для каких БЭМ-блоков я их не использую:</p>
+    <ul>
+      <li>Общая раскладка блоков на всех страницах (<code>page</code>).</li>
+      <li>Внутренняя раскладка в больших блоках страниц (<code>layout-text</code>).</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Что компилируется?</h2>
+    <p>При старте любой gulp-задачи сгенерируется <code>src/pug/mixins.pug</code>, в&nbsp;котором добавляются pug-файлы БЭМ-блоков.</p>
+    <p>Компилируются все pug-файлы, лежащие в <code>src/</code>.</p>
+    <p>Результат пишется в <code>build/</code>.</p>
+  </section>
+
+  <section class="slide">
+    <p><code>src/pug/mixins.pug</code></p>
+    <pre>
+      <code>include ../blocks/page-header/page-header.pug</code>
+      <code>include ../blocks/page-footer/page-footer.pug</code>
+      <code>include ../blocks/logo/logo.pug</code>
+      <code>include ../blocks/main-nav/main-nav.pug</code>
+      <code>include ../blocks/btn/btn.pug</code>
+      <code>include ../blocks/progress/progress.pug</code>
+      <code data-line-num-false>...</code>
+      <code data-line-num="99">include ../blocks/field-text/field-text.pug</code>
+    </pre>
+  </section>
+
+  <section class="slide black">
+    <h2 style="color: #000; margin: 264px 0 0 0px; font-size: 72px;">Стили</h2>
+    <img class="cover" src="pictures/scss.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>Стили ДО блоков в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
+    <pre>
+      <code>"addCssBefore": [</code>
+      <code>  "./src/scss/functions.scss",</code>
+      <code>  "./src/scss/variables.scss",</code>
+      <code>  "./src/scss/mixins.scss",</code>
+      <code>  "../../node_modules/nouislider/distribute/nouislider.css"</code>
+      <code>]</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Стили ПОСЛЕ блоков в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
+    <pre>
+      <code>"addCssAfter": [</code>
+      <code>  "./src/scss/print.scss"</code>
+      <code>]</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Файлы, компилируемые отдельно</h2>
+    <pre>
+      <code>"singleCompiled": [</code>
+      <code>  "./src/scss/blocks-library.scss"</code>
+      <code>]</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Что компилируется?</h2>
+    <p>При старте любой gulp-задачи сгенерируется <code>src/scss/style.scss</code>, в&nbsp;котором импортируются:</p>
+    <ol>
+      <li>Стилевые файлы до стилей блоков.</li>
+      <li>Стилевые файлы блоков.</li>
+      <li>Стилевые файлы после стилей блоков.</li>
+    </ol>
+    <p>Он и компилируется в <code>build/css/</code>.</p>
+  </section>
+
+  <section class="slide">
+    <p><code>src/scss/style.scss</code></p>
+    <pre>
+      <code>@import './src/scss/functions.scss';</code>
+      <code>@import './src/scss/variables.scss';</code>
+      <code>@import './src/scss/mixins.scss';</code>
+      <code>@import '../../node_modules/nouislider/distribute/...</code>
+      <code>@import './src/blocks/page/page.scss';</code>
+      <code>@import './src/blocks/typo/typo.scss';</code>
+      <code data-line-num-false>...</code>
+      <code data-line-num="99">@import './src/scss/print.scss';</code>
+    </pre>
+  </section>
+
+  <section class="slide black">
+    <h2 style="color: #fff; font-size: 72px;">Javascript</h2>
+    <img class="cover" src="pictures/js.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>JS перед блоками в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
+    <pre>
+      <code>"addJsBefore": [</code>
+      <code>  "./node_modules/jquery/dist/jquery.min.js",</code>
+      <code>  "./node_modules/jquery-migrate/dist/jquery-migrate.min.js",</code>
+      <code>  "./node_modules/svg4everybody/dist/svg4everybody.js",</code>
+      <code>  "./node_modules/ismobilejs/isMobile.min.js",</code>
+      <code>  "./node_modules/object-fit-images/dist/ofi.js"</code>
+      <code>]</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>JS после блоков в <a href="https://github.com/nicothin/NTH-start-project/blob/master/projectConfig.json">projectConfig.json</a></h2>
+    <pre>
+      <code>"addJsAfter": [</code>
+      <code>  "./src/js/global-script.js"</code>
+      <code>]</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Как обрабатывается?</h2>
+    <p>Сливается в один файл и записывается в <code>build/js/script.min.js</code>.</p>
+  </section>
+
+
+  <section class="slide black">
+    <h2 style="color: #fff; font-size: 72px;">Linting</h2>
+    <img class="cover" src="pictures/lint.jpg" style="width: 100%; max-height: none;" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>Единообразие кода = быстрое чтение</h2>
+    <ul>
+      <li>Быстрая модификация.</li>
+      <li>Лучше видно ошибки.</li>
+      <li>Нет холивара при совместной работе.</li>
+    </ul>
+    <p>Проверка по командам и по прекоммит-хуку.</p>
+  </section>
+
+  <section class="slide black">
+    <h2 style="color: #fff; font-size: 72px; text-align: center; transform: translateY(-50px);">Что в планах</h2>
+    <img class="cover" src="pictures/end.jpg" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>В планах</h2>
+    <ul>
+      <li>Разбор разметки для определения блоков и включения их в&nbsp;сборку.</li>
+      <li>Механизм разрешения зависимостей для JS, отдельные бандлы.</li>
+      <li>Добавления компонентов в библиотеку</li>
+      <li>Отказ от json для конфига.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h2>Вопросы?</h2>
+    <ul>
+      <li><a href="https://github.com/nicothin/NTH-start-project">github.com/nicothin/NTH-start-project</a> </li>
+      <li><a href="https://vk.com/n.gromov">vk.com/n.gromov</a> </li>
+      <li><a href="http://nicothin.ru/contact">nicothin.pro/contact</a> </li>
+    </ul>
+    <p>© Николай Громов.</p>
+  </section>
+
+  <div class="progress"></div>
+
+  <script src="shower/shower.min.js"></script>
+  <!-- Copyright © Nikolay Gromov. 2018. -->
+
+</body>
+</html>
