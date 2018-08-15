@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+	<style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Стандарт WAI-ARIA и использование ARIA-атрибутов</h1>
+		<p>Ольга Болотова</p>
+	</header>
+
+	<section class="slide preview" id="cover">
+		<h2>Стандарт WAI-ARIA </br>и использование </br>ARIA-атрибутов</h2>
+		<p href="http://github.com/olbol">Ольга Болотова</p>
+		<!-- <figure> -->
+			<img class="cover" src="pictures/bg_preview.jpg" role="presentation">
+			<!-- <figcaption class="copyright right white"> -->
+			<!-- </figcaption> -->
+		<!-- </figure> -->
+		<style>
+			.preview {
+				position: relative;
+			}
+
+			.preview h2 {
+				margin: 30px 0 0;
+				max-width: 680px;
+				line-height: 1.2;
+				color: #0095d5;
+				font-size: 60px;
+			}
+
+			.preview p {
+				position: absolute;
+				bottom: 50px;
+				margin: 10px 0 0;
+				max-width: 500px;
+				font-size: 38px;
+				color: #0095d5;
+				text-align: right;
+			}
+
+			/* #cover p a {
+				color: white;
+			} */
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Привет, я Оля</h2>
+		<ul>
+			<li>Frontend разработчик (фриланс)</li>
+			<li>Студентка магистратуры ИТМО</li>
+			<li>Наставник, методист, преподаватель в Loftschool</li>
+			<li>Организатор PiterPy Meetup</li>
+		</ul>
+		<!-- <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p> -->
+	</section>
+
+	<section class="slide ally">
+		<h2>Доступность</h2>
+		<h2>Accessibility</h2>
+		<h2>A11y</h2>
+		<h2>. . .</h2>
+		<img class="ally__img" src="pictures/a11y.png" role="presentation">
+
+		<style>
+			.ally {
+				position: relative;
+			}
+			
+			.ally__img {
+				position: absolute;
+				top: 100px;
+				right: 0;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout shrink">WAI-ARIA</h2>
+	</section>
+
+	<section class="slide">
+		<h2>WAI-ARIA</h2>
+		<figure>
+			<blockquote>
+				<p>WAI-ARIA (Web Accessibility Initiative – Accessible Rich Internet Applications) is a technical specification published by the World Wide Web Consortium (W3C) that specifies how to increase the accessibility of web pages, in particular, dynamic content, and user interface components developed with Ajax, HTML, JavaScript, and related technologies.</p>
+			</blockquote>
+			<figcaption>Wikipedia</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide groups">
+		<h2>Виды ARIA-атриубтов</h2>
+		<ol>
+			<li class='next groups__item'>Роли</li>
+			<li class='next groups__item'>Свойства</li>
+			<li class='next groups__item'>Состояния</li>
+		</ol>
+
+		<style>
+			.groups__item {
+				font-size: 36px;
+				font-weight: bold;
+			}
+		</style>
+	</section>
+
+	<section class="slide roles">
+		<h2>Атрибуты ролей</h2>
+		<p>Отвечают на вопросы: </br><b>Что это за элемент? Какое у него предназначение?</b></p>
+		<p class="next">
+			<code>&lt;nav&gt;Главное меню&lt;/nav&gt;</code>
+		</p>
+		<p class="next">
+			<code>&lt;div role="navigation"&gt;Главное меню&lt;/div&gt;</code>
+		</p>
+		<!-- <p class="next note"><b>Важно!</b>
+		</br> По возможности используйте родную семантику.
+		</br>Переопределять семантику тега нежелательно.
+		</p> -->
+		<style>
+		</style>
+	</section>
+
+	<section class="slide roles">
+		<h2>Атрибуты ролей</h2>
+		<p class="">
+			<code>&lt;header&gt;Хедер&lt;/header&gt;</code>
+		</p>
+		<p class="">
+			<code>&lt;div role="bunner"&gt;Хедер&lt;/div&gt;</code>
+		</p>
+		<p class="next">Семантически эквивалентное имя роли может не совпадать с именем тега.</b></p>
+		<style>
+		</style>
+	</section>
+
+	<section class="slide roles">
+		<h2>Атрибуты ролей</h2>
+		<p><b>Плохо:</b></p>
+		<p class="">
+			<code>&lt;nav role="navigation"&gt;Главное меню&lt;/nav&gt;</code>
+		</p>
+		<p>Не надо так!
+		</p>
+		<!-- <p class="next note"><b>Важно!</b>
+		</br> По возможности используйте родную семантику.
+		</br>Переопределять семантику тега нежелательно.
+	</br>У элемента может быть только одна роль.
+		</p> -->
+		<style>
+		</style>
+	</section>
+
+	<section class="slide roles">
+		<h2>Атрибуты ролей</h2>
+		<p>Был параграфом:</p>
+		<p class="">
+			<code>&lt;p&gt;Текст&lt;/p&gt;</code>
+		</p>
+		<p>Стал заголовком первого уровня:</p>
+		<p class="">
+			<code>&lt;p role="heading" aria-level="1"&gt;Текст&lt;/p&gt;</code>
+		</p>
+		<style>
+		</style>
+	</section>
+
+	<section class="slide roles">
+			<h2>Атрибуты ролей</h2>
+			<p class=" note"><b>Важно!</b>
+			</br> По возможности используйте родную семантику.
+			</br>Переопределять семантику тега нежелательно.
+		</br>У элемента может быть только одна роль.
+			</p>
+			<style>
+			</style>
+		</section>
+
+	<!-- <section class="slide roles">
+		<h2>Атрибуты ролей</h2>
+		<pre class="">
+			<code>&lt;div&gt;Список&lt;/div&gt;</code>
+				<code>    &lt;div&gt;Пункт 1&lt;/div&gt;</code>
+				<code>    &lt;div&gt;Пункт 2&lt;/div&gt;</code>	
+		</pre>
+		 <p class="next">
+		<pre class="">
+				<code>&lt;div role="menubar"&gt;Список&lt;/div&gt;</code>
+					<code>    &lt;div &gt;Пункт 1&lt;/div&gt;</code>
+					<code>    &lt;div&gt;Пункт 2&lt;/div&gt;</code>	
+			</pre>
+		</p>
+		<style>
+		</style>
+	</section> -->
+		<!-- <section class="slide properties">
+			<h2>Атрибуты свойств</h2>
+			<p>Отвечают на вопросы: </br><b>Что это за элемент? Какое у него предназначение?</b></p>
+			<p class="next">
+				<code>&lt;div role="navigation"&gt;Главное меню&lt;/div&gt;</code>
+			</p>
+			<p class="next">
+				<code>&lt;nav&gt;Главное меню&lt;/nav&gt;</code>
+			</p>
+			<p class="next note"><b>Важно!</b>
+			</br> По возможности используйте родную семантику.
+			</br>Переопределять семантику тега нежелательно.
+			</p>
+			<style>
+				.groups__item {
+					font-size: 36px;
+					font-weight: bold;
+				}
+			</style> -->
+		</section>
+
+		<section class="slide properties">
+				<h2>Атрибуты свойств</h2>
+				<p>Префикс <b>aria-*</b></p>
+				<img class="properties__img next" src="pictures/modal.jpg" role="presentation">
+				<style>
+					.properties__img {
+						height: 300px;
+					}
+				</style>
+			</section>
+
+
+		<section class="slide properties">
+			<h2>Атрибуты свойств</h2>
+			<p>
+				<code>&lt;button type="button"&gt;X&lt;/button&gt;</code>
+			</p>
+			<p class="next">
+				<code>&lt;button type="button"&gt;Закрыть модальное окно&lt;/button&gt;</code>
+			</p>
+			<p class="next">
+				<code>&lt;button type="button" aria-label="Закрыть модальное окно"&gt;X&lt;/button&gt;</code>
+			</p>
+		</section>
+
+			<section class="slide states">
+					<h2>Атрибуты состояний</h2>
+					<p>Префикс <b>aria-*</b></p>
+					<p class="">
+						<code>&lt;div hidden&gt;Контент&lt;/div&gt;</code>
+					</p>
+					<p class="">
+						<code>&lt;div aria-hidden=”true”&gt;Контент&lt;/div&gt;</code>
+					</p>
+					<p class="">
+						<code>&lt;div hidden aria-hidden=”true”&gt;Контент&lt;/div&gt;</code>
+					</p>
+					<style>
+					</style>
+				</section>
+
+				<section class="slide">
+						<img src="pictures/w3c.png" alt="">
+						<style>
+							.questions {
+								position: relative;
+							}
+				
+							.questions h2{
+								position: absolute;
+								right: 100px;
+								bottom: 130px;
+								display: inline-block;
+								margin: 30px 0 0;
+								color: #0095d5;
+								font-size: 60px;
+								background-color: #fff;
+							}
+							
+							.questions__img {
+								width: 100%;
+							}
+						</style>
+					</section>
+					<section class="slide">
+							<h2 class="shout shrink">И это все?</h2>
+						</section>
+
+						<section class="slide tree">
+								<img src="pictures/screen.png" alt="">
+								<style>
+									.tree {
+										position: relative;
+									}
+								.tree img {
+									position: absolute;
+									left: 0;
+									top: 50%;
+									transform: translateY(-50%);
+									width: 100%;
+								}
+								</style>
+								</section>
+
+	<section class="slide">
+		<h2>Выводы</h2>
+			<ul>
+				<li class='next'>Если вы можете использовать родную семантику HTML или встроенный атрибут без использования ARIA-атрибутов, чтобы сделать элемент доступным, то сделайте это.</li>
+				<li class='next'>Не меняйте родную семантику, если только в этом нет сильной необходимости.</li>
+				<li class='next'>Добавление ARIA-роли переопределяет нативные семантическую роль тега.</li>
+				
+			</ul>
+	
+			<style>
+				.groups__item {
+					font-size: 36px;
+					font-weight: bold;
+				}
+			</style>
+		</section>
+
+		<section class="slide">
+				<h2>Выводы</h2>
+					<ul start="1">
+		
+						<li class='next'>Эрия предоставляет возможности, которых еще нет в родном HTML.</li>
+						<li class='next'>У элемента может быть только одна роль.</li>
+					</ul>
+			
+					<style>
+						.groups__item {
+							font-size: 36px;
+							font-weight: bold;
+						}
+					</style>
+				</section>
+
+				
+
+	<section class="slide">
+			<h2>Напиши мне</h2>
+			<p><a href="mailto:olbolot@gmail.com">olbolot@gmail.com</a></p>
+			<p><a href="https://github.com/OlBol">https://github.com/OlBol</a></p>
+			<p><a href="https://vk.com/olbol">https://vk.com/olbol</a></p>
+			<p><a href=""></a></p>
+		</section>
+
+	<section class="slide questions">
+		<h2>Вопросы?</h2>
+		<img class="questions__img cover" src="pictures/questions.jpg" role="presentation">
+		<!-- <ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul> -->
+		<style>
+			.questions {
+				position: relative;
+			}
+
+			.questions h2{
+				position: absolute;
+				right: 100px;
+				bottom: 130px;
+				display: inline-block;
+				margin: 30px 0 0;
+				color: #0095d5;
+				font-size: 60px;
+				background-color: #fff;
+			}
+			
+			.questions__img {
+				width: 100%;
+			}
+		</style>
+	</section>
+
+	<footer class="badge">
+		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
+	</footer>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
