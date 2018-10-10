@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Shower Presentation Engine</h1>
+        <p>Yours Truly, Famous Inc.</p>
+    </header>
+
+    <section class="slide" id="cover">
+        <h1 class="shout">Twig для верстальщика и фронтендера</h1>
+        <style>
+            #cover .shout {
+                font-size: 80px;
+            }
+
+            img,
+            svg {
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 10px;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            .promo-img {
+                margin-left: 400px;
+                margin-top: -50px;
+            }
+
+            #promo-heading {
+                font-size: 100px;
+            }
+
+        </style>
+
+    </section>
+
+    <section class="slide">
+        <h2>Лиза Позднякова</h2>
+        <ul>
+            <li>Много лет наставничаю в <a href="https://htmlacademy.ru/">HTML Academy</a> <img src="pictures/html-academy.svg" alt="html academy" width="150"></li>
+            <li>Учу школьников основам веб-разработки в <a href="https://digital-banana.ru/">Digital Banana</a> <img src="pictures/digital-banana.jpg" alt="digital banana" width="60"></li>
+            <li>До недавнего времени работала в <a href="https://codecode.ru/">Кодельной</a> <svg xmlns="http://www.w3.org/2000/svg" fill="rgba(0,0,0)" width="38" height="25" viewBox="0 0 38 25"><path d="M27.452 12.474l10.526-6.517V.08l-18.99 12.394 18.99 12.394V18.99l-10.526-6.516M18.964.134L0 3.736l18.964 2.937L0 9.61l18.964 2.938L0 15.485l18.964 2.938L0 21.36l18.99 3.562L18.963.134"></path></svg></li>
+            <li>С сегоднящнего дня работаю в <a href="https://www.axiomsl.com/">Axiom Software Laboratories</a> <img src="pictures/axiomsl.png" alt="axiom sl" width="150"></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2 id="promo-heading">TWIG</h2>
+        <img src="pictures/twig-logo.png" alt="TWIG LOGO" width="400" class="promo-img">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/potincier.jpg" alt="Fabien Potencier" class="potencier">
+        <div class="ronacher">
+            <img src="pictures/ronacher.jpg" alt="Armin Ronacher">
+            <p>Armin Ronacher</p>
+        </div>
+        <style>
+            .potencier {
+                float: right;
+                width: 700px;
+            }
+
+            .ronacher {
+                float: left;
+                margin-top: -200px;
+            }
+
+            .ronacher img {
+                width: 300px;
+            }
+
+            .ronacher p {
+                display: inline-block;
+                vertical-align: bottom;
+                margin-bottom: -25px;
+                font-weight: bold;
+                font-size: 40px;
+            }
+
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Давайте использовать</h2>
+        <img src="pictures/why.jpg" alt="но зачем" class="why">
+        <style>
+            .why {
+                width: 500px;
+                float: right;
+            }
+
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Преимущества</h2>
+        <ul>
+            <li>удобно читать и править</li>
+            <li>один БЭМ-блок &mdash; один файл</li>
+            <li>вас полюбит бекендер</li>
+            <li>повышается скорость входа в проект</li>
+            <li>отличная cкорость сборки</li>
+            <li>возможность настройки синтаксиса</li>
+        </ul>
+    </section>
+
+    <!--
+    <section class="slide">
+        <h3>Используют в своих проектах</h3>
+        <ul>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </section>
+-->
+
+    <section class="slide">
+        <h2>Что он умеет:</h2>
+        <ul>
+            <li>модули</li>
+            <li>переменные</li>
+            <li>макросы</li>
+            <li>фильтры</li>
+            <li>функции</li>
+            <li>операторы</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Структура проекта</h2>
+        <img src="pictures/screen.png" alt="" style="border: 1px solid gray; ">
+    </section>
+
+    <section class="slide code">
+        <h3>Шаблон документа — layout.twig</h3>
+        <pre>
+            <code>&lt;head&gt;</code>
+            <code class="mark next">    &lt;title&gt;{{ title | default("Axiom") }}&lt;/title&gt;</code>
+            <code class="mark next">    {% block styles %}{% endblock %}</code>
+            <code>    &lt;link href="css/style.css" rel="stylesheet"&gt;</code>
+            <code>&lt;/head&gt;</code>
+            
+            <code class="mark next">&lt;body class="page {{ class }}"&gt;</code>
+            <code  class="mark next">    {% block body %}{% endblock %}</code>
+            <code>    &lt;script src="js/scripts.js"&gt;&lt;/script&gt;</code>
+            <code>    {% block scripts %}{% endblock %}</code>
+            <code>&lt;/body&gt;</code>
+        </pre>
+        <style>
+            .code h3 {
+                margin-top: -10px;
+                margin-bottom: 10px;
+            }
+
+            .code pre {
+                font-size: 20px;
+            }
+
+        </style>
+
+    </section>
+
+    <section class="slide code">
+        <h3>Шаблон конкретной страницы — index.twig</h3>
+        <pre>
+            <code  class="mark next">{% <mark>extends</mark> "core/layout.twig" %}</code>
+            <code  class="mark next">{% <mark>set</mark> title = "AxiomSL" %} </code>
+            <code  class="mark next">{% set class = "frontpage" %} </code>
+            <code  class="mark next">{% block body %} </code>
+            <code  class="mark next">    <mark>{% include 'blocks/card.twig' %}</mark> </code>            
+            <code>{% endblock %}</code>
+            <code>{% block scripts %}</code>
+            <code>    &lt;script&gt; &lt;!-- здесь какой-то скритпт --&gt; &lt;/script&gt;</code>
+            <code>{% endblock %}</code>
+        </pre>
+    </section>
+
+    <section class="slide code">
+        <h3>Шаблон блока — card.twig</h3>
+        <pre>
+            <code>&lt;article class="card card--{{ mod }}"&gt;</code>
+            <code>    &lt;img src="img/{{ image }}" alt="" class="card__image"&gt;</code>
+            <code>    &lt;p class="card__heading"&gt;{{ heading }}&lt;/p&gt;</code>
+            <code>&lt;/article&gt;</code>
+        </pre>
+        <p>Один БЭМ-блок — один файл </p>
+        <!--        <h2 class="shout shrink">You can even shout this way</h2>-->
+    </section>
+
+    <section class="slide code">
+        <h2>Переменные</h2>
+        <h3>Зачем?</h3>
+        <p>Чтобы не повторять многократно одно и то же </p>
+    </section>
+
+    <section class="slide code">
+        <h3>Способы работы с переменными</h3>
+        <ol>
+            <li>прямо в контент
+                <span>{{ "Привет #{name}! }} </span>
+            </li>
+            <li>with при вставке блока с include
+                <pre> {% include 'blocks/card.twig' <mark>with</mark> {heading: 'Pikachu'} %}</pre>
+            </li>
+            <li>через атрибут set, если используется extends
+                <pre>{% <mark>set</mark> class = "frontpage" %}</pre>
+            </li>
+            <li>вставка объекта на страницу</li>
+            <li>c помощью json-файла</li>
+        </ol>
+    </section>
+
+    <section class="slide code">
+        <h3>data.json</h3>
+        <p>в шаблоне {% set card_name = 'pikachu' %}</p>
+        <pre>
+            <code>{</code>
+            <code>    "cards": {</code>
+            <code>        mod: 'black', </code>
+            <code>        heading: 'Pikachu',</code>
+            <code>    }</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide code">
+        <h2>Фильтры</h2>
+        <h3>Зачем?</h3>
+        <p>Изменять переменные</p>
+
+        <pre><code>{{ 'chermander'|upper }}</code></pre>
+
+
+        <pre>
+       <code>{% filter <mark>upper</mark> %}</code>
+       <code>    Этот текст будет в верхнем регистре</code>
+       <code>{% endfilter %}</code>
+       </pre>
+    </section>
+
+    <section class="slide">
+        <h3>Типы фильтров</h3>
+        <ul>
+            <li>date - форматирование даты в нужном формате</li>
+            <li>trim - удаление пробелов в конце строки </li>
+            <li>round - округление в заданную сторону</li>
+            <li>и множество других</li>
+        </ul>
+
+        <a href="https://x-twig.ru/filters/">Полный список фильтров</a>
+    </section>
+
+    <section class="slide code">
+        <h2>Макросы</h2>
+        <h3>Зачем?</h3>
+        <p>Устанавливать значения для аргументов по умолчанию</p>
+
+
+        <pre>
+        <code>{% macro button(text = "Отправить", type = "button", color = "green") %}</code>
+        <code>    &lt;button type="{{ type }}" data-color={{ color }}&gt; {{ text }}&lt;/button&gt;</code>
+        <code>{% endmacro %}</code>
+        </pre>
+
+
+        <p>Можно использовать макроc внутри макроса</p>
+    </section>
+
+    <section class="slide code">
+        <h3>Вставка макроса</h3>
+
+       
+        <pre>
+         <code>{% import "button.twig" as <mark>buttons</mark> %} // задаем название шаблона  </code>
+         <code>{{ buttons.button }} </code>
+         <code>// обращаемся к шаблону и используем его название макроса </code>
+         <code>{{ buttons.button('Сражаться', 'submit', 'red') }}     </code>
+         <code> // изменяем дефолтные значения переменных</code>
+    </pre>
+
+    </section>
+
+    <section class="slide">
+        <h2>Функции</h2>
+        <h3>Зачем?</h3>
+        <p>Генерирования контента на уровне шаблона</p>
+
+        
+        <pre>
+        <code>{{ random(['pikachu', 'chermander', 'bulbasaur']) }}   </code>
+        <code>// вернет рандомного покемона </code>
+        </pre> 
+ 
+    </section>
+
+    <section class="slide">
+        <h3>Типы функций</h3>
+        <ul>
+            <li>random</li>
+            <li>range</li>
+            <li>date</li>
+            <li>attribute</li>
+            <li> и другие</li>
+        </ul>
+        <a href="https://x-twig.ru/functions/">Полный список функций</a>
+    </section>
+
+    <section class="slide">
+        <h2>Операторы</h2>
+        <h3>Зачем?</h3>
+        <p>Возможность выбора что рендериь в шаблоне</p>
+
+        <ul>
+            <li>математические </li>
+            <li>логические</li>
+            <li>тестовые операторы мравнения </li>
+            <li>прочие </li>
+        </ul>
+
+        <a href="https://x-twig.ru/operators/">Все операторы</a>
+    </section>
+
+    <section class="slide">
+        <h2>Экранирование</h2>
+        <p>&mdash; это замена в коде символов, отвечающих за синтаксис</p>
+
+        <ul>
+            <li>{{ '{{' }} для фигурных скобок</li>
+            <li>'It<mark>\</mark>\'s ok' для одинарных кавычек</li>
+            <li>{% autoescape%} {% endautoescape %} для куска кода</li>
+            <li>{{ user.username|escape }} универсальный способ через фильтр</li>
+        </ul>
+
+    </section>
+
+    <section class="slide">
+        <h2>Сборка</h2>
+
+        <ul>
+            <li><a href="https://www.npmjs.com/package/gulp-twig">Gulp</a></li>
+            <li><a href="https://www.npmjs.com/package/grunt-twig-render">Grunt</a></li>
+            <li><a href="https://www.npmjs.com/package/twig-html-loader">Webpack</a></li>
+        </ul>
+
+    </section>
+
+    <section class="slide code">
+        <h3>gulp таск</h3>
+
+        
+        <pre>
+        <code>gulp.task('twig', function () { </code>
+        <code>    gulp.src(paths.templates + '*.twig') </code>
+        <code>    .pipe(twig())  </code>
+        <code>    .pipe(gulp.dest(paths.html)) </code>
+        <code>    .pipe(reload({ </code>
+        <code>        stream: true </code>
+        <code>    })); </code>
+        <code>}); </code>
+        </pre>
+   
+
+    </section>
+
+    <section class="slide">
+        <h2>Плагины для ide</h2>
+
+        <ul>
+            <li><a href="https://plugins.jetbrains.com/plugin/7303-twig-support">JetBrains</a></li>
+            <li><a href="https://github.com/Anomareh/PHP-Twig.tmbundle">Sublime Text</a></li>
+            <li><a href="https://marketplace.visualstudio.com/items?itemName=whatwedo.twig">Vs code</a></li>
+            <li><a href="https://atom.io/packages/atom-twig">Atom</a></li>
+        </ul>
+
+        <a href="https://twig.symfony.com/doc/2.x/templates.html">Больше ide</a>
+
+    </section>
+
+    <section class="slide">
+        <h2>Ещё больше возможностей</h2>
+        <ul>
+            <li>тесты</li>
+            <li>режим песочницы</li>
+            <li>возможность создавать свои расширения</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2> Ссылки</h2>
+        <ul>
+            <li><a href="https://twig.symfony.com/doc/2.x/">Основная документация</a></li>
+            <li><a href="https://x-twig.ru">Неофицальный русский перевод</a></li>
+            <li><a href="https://github.com/ruden/twig-docs-ru/blob/master/doc/templates.rst">Краткая справка</a></li>
+            <li><a href="https://github.com/straykov/initium">Initium &mdash; шаблон для быстрого старта проекта с twig</a></li>
+            <li><a href="https://www.youtube.com/watch?v=rBCwulebs9U">Доклад про шаблонизаторы</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h1 class="shout"> Вопросы? </h1>
+    </section>
+    
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+</body>
+
+</html>
