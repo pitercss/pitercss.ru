@@ -44,10 +44,10 @@ DEBUG=* npx eleventy
 ```
 
 
-[travis-image]: https://img.shields.io/travis/pitercss/pitercss.ru.svg
+[travis-image]: https://img.shields.io/travis/pitercss/pitercss.ru.svg?style=flat-square
 [travis-url]: https://travis-ci.org/pitercss/pitercss.ru
 
-[issues-image]: https://img.shields.io/github/issues/pitercss/pitercss.ru.svg
+[issues-image]: https://img.shields.io/github/issues/pitercss/pitercss.ru.svg?style=flat-square
 [issues-url]: https://github.com/pitercss/pitercss.ru/issues
 
 [dev-dependency-image]: https://david-dm.org/pitercss/pitercss.ru/dev-status.svg?style=flat-square
