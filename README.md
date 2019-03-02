@@ -1,6 +1,4 @@
-# pitercss_meetup [![Build Status](https://img.shields.io/travis/pitercss/pitercss.ru.svg)](https://travis-ci.org/pitercss/pitercss.ru) [![GitHub Issues](https://img.shields.io/github/issues/pitercss/pitercss.ru.svg)](https://github.com/pitercss/pitercss.ru/issues)
-
-		
+# pitercss_meetup [![Build status][travis-image]][travis-url] [![Issues status][issues-image]][issues-url] [![devDependency status][dev-dependency-image]][dev-dependency-url]
   
 **pitercss_meetup**  -  это ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.
 
@@ -44,3 +42,13 @@ Or in debug mode:
 ```
 DEBUG=* npx eleventy
 ```
+
+
+[travis-image]: https://img.shields.io/travis/pitercss/pitercss.ru.svg
+[travis-url]: https://travis-ci.org/pitercss/pitercss.ru
+
+[issues-image]: https://img.shields.io/github/issues/pitercss/pitercss.ru.svg
+[issues-url]: https://github.com/pitercss/pitercss.ru/issues
+
+[dev-dependency-image]: https://david-dm.org/pitercss/pitercss.ru/dev-status.svg?style=flat-square
+[dev-dependency-url]: https://david-dm.org/pitercss/pitercss.ru#info=devDependencies
