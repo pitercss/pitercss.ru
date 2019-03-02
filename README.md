@@ -25,6 +25,7 @@ Install dependencies
 npm install
 ```
 
+Run build
 ```
 npx eleventy
 ```
