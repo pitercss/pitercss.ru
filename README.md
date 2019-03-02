@@ -1,6 +1,6 @@
 # pitercss_meetup
 
-[![Build Status](https://travis-ci.org/pitercss/pitercss.ru.svg?branch=master)](https://travis-ci.org/pitercssz/pitercss.ru)
+[![Build Status](https://travis-ci.org/pitercss/pitercss.ru.svg?branch=master)](https://travis-ci.org/pitercss/pitercss.ru)
 
 **pitercss_meetup**  -  это ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.
 
