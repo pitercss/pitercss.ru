@@ -4,7 +4,7 @@
 	<subtitle>Ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.</subtitle>
 	<link href="https://pitercss.ru/feed/feed.xml" rel="self"/>
 	<link href="https://pitercss.ru/"/>
-	<updated>2018-09-30T00:00:00+00:00</updated>
+	<updated>2019-05-03T00:00:00+00:00</updated>
 	<id>https://pitercss.ru/</id>
 	<author>
 		<name>pitercss_meetup</name>
@@ -12,54 +12,269 @@
 	</author>
 	
 	<entry>
-		<title>This is my first post.</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/firstpost/"/>
+		<title>pitercss_meetup 1</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-1/"/>
 		<updated>2018-05-01T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/firstpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;h2 id=&quot;section-header&quot;&gt;Section Header &lt;a class=&quot;direct-link&quot; href=&quot;#section-header&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
-&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;// this is a command&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;function myCommand() {&lt;/span&gt;&lt;br&gt;&lt;mark class=&quot;highlight-line highlight-line-active&quot;&gt;	let counter = 0;&lt;/mark&gt;&lt;br&gt;&lt;mark class=&quot;highlight-line highlight-line-active&quot;&gt;	counter++;&lt;/mark&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;}&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;// Test with a line break above this line.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;console.log(&#39;Test&#39;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-1/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 1&lt;/p&gt;
 </content>
 	</entry>
 	
 	<entry>
-		<title>This is my second post.</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/secondpost/"/>
-		<updated>2018-07-04T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/secondpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;h2 id=&quot;section-header&quot;&gt;Section Header &lt;a class=&quot;direct-link&quot; href=&quot;#section-header&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://pitercss.ru/pitercss.ru/posts/firstpost/&quot;&gt;First post&lt;/a&gt;&lt;br&gt;
-&lt;a href=&quot;https://pitercss.ru/pitercss.ru/posts/thirdpost/&quot;&gt;Third post&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+		<title>pitercss_meetup 10</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-10/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-10/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 10&lt;/p&gt;
 </content>
 	</entry>
 	
 	<entry>
-		<title>This is my third post.</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/thirdpost/"/>
-		<updated>2018-08-24T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/thirdpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// this is a command&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;myCommand&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;ins class=&quot;highlight-line highlight-line-add&quot;&gt;	&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; counter &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/ins&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;del class=&quot;highlight-line highlight-line-remove&quot;&gt;	counter&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/del&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Test with a line break above this line.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;highlight-line&quot;&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&#39;Test&#39;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;h2 id=&quot;section-header&quot;&gt;Section Header &lt;a class=&quot;direct-link&quot; href=&quot;#section-header&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+		<title>pitercss_meetup 11</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-11/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-11/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 11&lt;/p&gt;
 </content>
 	</entry>
 	
 	<entry>
-		<title>This is my fourth post.</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/fourthpost/"/>
-		<updated>2018-09-30T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/fourthpost/</id>
-		<content type="html">&lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.&lt;/p&gt;
-&lt;p&gt;Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.&lt;/p&gt;
-&lt;h2 id=&quot;section-header&quot;&gt;Section Header &lt;a class=&quot;direct-link&quot; href=&quot;#section-header&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.&lt;/p&gt;
+		<title>pitercss_meetup 12</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-12/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-12/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 12&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 13</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-13/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-13/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 13&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 14</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-14/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-14/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 14&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 15</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-15/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-15/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 15&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 16</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-16/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-16/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 16&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 17</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-17/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-17/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 17&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 18</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-18/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-18/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 18&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 19</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-19/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-19/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 19&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 2</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-2/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-2/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 2&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 20</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-20/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-20/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 20&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 21</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-21/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-21/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 21&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 22</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-22/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-22/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 22&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 23</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-23/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-23/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 23&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 24</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-24/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-24/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 24&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 25</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-25/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-25/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 25&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 26</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-26/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-26/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 26&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 3</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-3/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-3/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 3&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 4</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-4/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-4/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 4&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 5</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-5/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-5/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 5&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 6</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-6/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-6/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 6&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 7</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-7/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-7/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 7&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 8</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-8/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-8/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 8&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 9</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-9/"/>
+		<updated>2018-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-9/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 9&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 27</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-27/"/>
+		<updated>2019-05-01T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-27/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 27&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 28</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-28/"/>
+		<updated>2019-05-02T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-28/</id>
+		<content type="html">&lt;p&gt;This is a meetup about pitercss_meetup 28&lt;/p&gt;
+</content>
+	</entry>
+	
+	<entry>
+		<title>pitercss_meetup 29</title>
+		<link href="https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-29/"/>
+		<updated>2019-05-03T00:00:00+00:00</updated>
+		<id>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-29/</id>
+		<content type="html">&lt;h2 id=&quot;%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D1%82%D0%BE%D0%B2&quot;&gt;Дизайн для котов &lt;a class=&quot;direct-link&quot; href=&quot;#%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BE%D1%82%D0%BE%D0%B2&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;О дизайне для не дизайнеров: чеклист ограничений и правил, который поможет сделать дизайн немного лучше. Расскажу о некоторых базовых идеях дизайна, которые помогут вам, если так случилось, что связаться с дизайнером возможности нет, а дизайн нужен уже сейчас.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Любовь Гулько, фрилансер.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;%D0%B4%D0%BE%D0%BC-%D1%81%D0%B2%D0%B5%D1%82%D0%B0&quot;&gt;Дом света &lt;a class=&quot;direct-link&quot; href=&quot;#%D0%B4%D0%BE%D0%BC-%D1%81%D0%B2%D0%B5%D1%82%D0%B0&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Доступность, валидность, базовые принципы оптимизации — это чеклист, без которого нельзя запускать ни один сайт. Раньше приходилось собирать информацию по крупицам, использовать сложные решения для тестирования. А сейчас всё это собрано в одном инструменте Lighthouse, который встроен непосредственно в браузер! Как после этого вообще можно совершать ошибки? Мы либо не умеем использовать инструмент, либо не хотим его использовать. Этот доклад для первых.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Серёжа, Лига А.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4-%D1%83%D1%82%D0%BE%D1%87%D0%BD%D1%8F%D0%B5%D1%82%D1%81%D1%8F&quot;&gt;Доклад уточняется &lt;a class=&quot;direct-link&quot; href=&quot;#%D0%B4%D0%BE%D0%BA%D0%BB%D0%B0%D0%B4-%D1%83%D1%82%D0%BE%D1%87%D0%BD%D1%8F%D0%B5%D1%82%D1%81%D1%8F&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 </content>
 	</entry>
 </feed>
