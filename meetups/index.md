@@ -1,3 +1,0 @@
----
-title: pitercss_meetup
----

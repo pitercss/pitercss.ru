@@ -28,14 +28,9 @@ Run build
 npx eleventy
 ```
 
-Or build and host locally for local development
+Build automatically when a template changes and host locally
 ```
-npx eleventy --serve
-```
-
-Or build automatically when a template changes:
-```
-npx eleventy --watch
+npx eleventy --serve --watch
 ```
 
 Or in debug mode:
