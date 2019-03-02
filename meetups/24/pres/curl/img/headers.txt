@@ -1,0 +1,14 @@
+HTTP/1.1 301 Moved Permanently
+Server: Varnish
+Retry-After: 0
+Location: https://curl.haxx.se/
+Content-Length: 0
+Accept-Ranges: bytes
+Date: Tue, 11 Sep 2018 12:43:18 GMT
+Via: 1.1 varnish
+Connection: close
+X-Served-By: cache-ams4432-AMS
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1536669798.290453,VS0,VE0
+

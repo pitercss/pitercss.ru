@@ -1,0 +1,77 @@
+.strike {
+    text-decoration: line-through;
+}
+.large {
+    font-size: 30px;
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.no-number:after {
+    visibility: hidden;
+}
+.slide:after {
+    background-image: url(pictures/ribbon.svg);
+}
+.slide#cover:after {
+    visibility: hidden;
+}
+.slide h2 {
+    color: #2a3546;
+}
+
+
+#cover {
+    background: #2a3546 url(pictures/pattern_wrike.svg) no-repeat 245px 45px;
+    background-size: cover;
+    box-shadow: 0 0 0 40px #8bc53f inset;
+    color: #fff;
+}
+#cover h2 {
+    margin: 50px 0;
+    color: #fff;
+    font-size: 60px;
+    position: relative;
+    font-family: 'PT Sans', sans-serif;
+}
+#cover p {
+    line-height: 1.2em;
+}
+#cover .wrike {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+#cover .slide-corner {
+    border-left: 35px solid transparent;
+    border-right: 35px solid #8bc53f;
+    border-top: 35px solid transparent;
+    border-bottom: 35px solid #8bc53f;
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+}
+
+
+.retina-table {
+    table-layout: fixed !important;
+    border-collapse: collapse !important;
+    border-spacing: 1px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+.retina-table td {
+    border: 1px solid #666 !important;
+    padding: 0 !important;
+    background: none !important;
+    font-size: 0 !important;
+}

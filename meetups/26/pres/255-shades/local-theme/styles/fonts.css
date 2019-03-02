@@ -1,0 +1,8 @@
+/* Bitter Bold */
+
+@font-face {
+	font-family: Bitter;
+	font-weight: bold;
+	font-display: swap;
+	src: url('../fonts/Bitter-Bold.woff2') format('woff2');
+}

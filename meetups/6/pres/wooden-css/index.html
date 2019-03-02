@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+	<title>Деревянный CSS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="material/styles/screen-16x10.css" />
+	<link rel="stylesheet" href="fonts/open-sans.css" />
+	<link rel="stylesheet" href="asserts/highlight.css" />
+</head>
+<body class="shower list">
+
+<header class="caption">
+	<h1>Деревянный CSS</h1>
+	<p>Андрей Волынкин @ PiterCSS №6, <time datetime="2016-10-11">11 октября 2016</time>.</p>
+</header>
+
+<section class="slide" id="cover">
+	<h2>Деревянный CSS</h2>
+	<p class="description">Методология описания страниц</p>
+	<img class="logo" src="images/m18.svg" alt="M18" />
+	<p class="event">PiterCSS №6 / 2016</p>
+	<style>
+		#cover
+		{
+			padding: 230px 0 0;
+			
+			color: white;
+			background: url("images/cover.jpg") center center no-repeat #e9454e;
+			background-size: cover;
+		}
+		#cover::after
+		{
+			display: none;
+		}
+		#cover h2
+		{
+			margin-bottom: 0.3em;
+			
+			font-size: 80px;
+			font-weight: 300;
+			letter-spacing: 0.1em;
+			text-align: center;
+			text-transform: uppercase;
+			
+			color: inherit;
+		}
+		#cover p.description
+		{
+			font-size: 24px;
+			line-height: 1;
+			letter-spacing: 0.1em;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		#cover p.event
+		{
+			position: absolute;
+			right: 50px;
+			bottom: 40px;
+			
+			margin: 0;
+			
+			line-height: 1;
+		}
+		#cover img.logo
+		{
+			position: absolute;
+			top: 50px;
+			left: 60px;
+			
+			width: 85px;
+			height: 51px;
+		}
+	</style>
+</section>
+
+<section class="slide" id="about">
+	<h2>Кто я?</h2>
+	<img class="photo" src="images/photo.jpg" alt="" />
+	<p>Студия M18 — ведущий разработчик (7 лет)</p>
+	<p>ИТМО — преподаватель на кафедре ГТ (4 года)</p>
+	<p>В вебе ~ 10 лет</p>
+	<style>
+		#about img.photo
+		{
+			float: left;
+			
+			height: 200px;
+			margin: 0 20px 20px 0;
+		}
+	</style>
+</section>
+
+<section class="slide" id="bicycle">
+	<h2> Ещё одна методология?!</h2>
+	<img src="images/bicycle.png" alt="Велосипед из дерева" />
+	<p>← Ага, и ещё деревянная…</p>
+	<style>
+		#bicycle img
+		{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			
+			width: 600px;
+		}
+		#bicycle p
+		{
+			float: right;
+			
+			width: 200px;
+			margin-top: 100px;
+			
+			text-indent: -1.3em;
+		}
+	</style>
+</section>
+
+<section class="slide" id="why">
+	<h2>Проблемы?</h2>
+	<ul>
+		<li>Размещение элементов на странице</li>
+		<li>Разграничение стилей оформления</li>
+		<li>Работа в команде</li>
+		<li>Навигация</li>
+	</ul>
+</section>
+
+<section class="slide" id="beginning">
+	<h2>Начало</h2>
+	<pre class="double"><code class="css">/* Header (begin) */
+	
+	div.b-header
+	{
+		width: 100%;
+		height: 280px;
+		
+		background: url('./i/bg_header.jpg') …;
+	}
+	
+	div.b-header div.content
+	{
+		position: relative;
+		
+		width: 950px;
+		height: 165px;
+		margin: auto;
+		padding: 123px 25px 0;
+		
+		background: url('./i/bg_line_top.jpg') …;
+	}
+	
+		div.b-header div.content div.phone
+		{
+			font-size: 22px;
+			
+			position: absolute;
+			top: 24px;
+			right: 25px;
+			
+			color: #e9ebec;
+		}
+	
+	/* Menu (begin) */
+		
+		div.b-header div.content ul.menu
+		{
+</code></pre>
+	<style>
+		#beginning pre > code
+		{
+			font-size: 14px;
+			line-height: 1.4;
+		}
+	</style>
+</section>
+
+<section class="slide" id="first-compiler">
+	<h2>Система сборки</h2>
+	<pre><code class="nohighlight">.../my_widget/
+	lists.less
+	_wrapper.less
+</code></pre>
+	<pre><code class="css">/* _wrapper.less */
+div.my-widget
+{
+	/*@@@*/
+}
+/* lists.less */
+> ul
+{
+	…
+</code></pre>
+	<pre><code class="css">div.my-widget
+{
+	> ul
+	{
+		…
+	}
+}
+</code></pre>
+	<style>
+		#first-compiler pre code
+		{
+			font-size: 20px;
+		}
+		#first-compiler pre
+		{
+			position: relative;
+			
+			float: left;
+			
+			width: 30%;
+			margin: 0 4% 0 0;
+		}
+		#first-compiler pre:last-of-type
+		{
+			margin-right: 0;
+		}
+		#first-compiler pre::after
+		{
+			position: absolute;
+			top: 0;
+			right: -10px;
+			
+			width: 1px;
+			height: 400px;
+			
+			content: "";
+			
+			opacity: 0.5;
+			background: currentColor;
+		}
+		#first-compiler pre:last-of-type::after
+		{
+			display: none;
+		}
+	</style>
+</section>
+
+<section class="slide" id="dir-tree">
+	<h2>Структура HTML → Директории</h2>
+	<pre><code class="html">&lt;html>
+	&lt;head>&lt;/head>
+	&lt;body>
+		&lt;header>
+			&lt;img class="logo" />
+</code></pre>
+	<pre><code class="nohighlight">html/
+	body/
+		header/
+			img.logo.less
+</code></pre>
+	<style>
+		#dir-tree pre code
+		{
+			font-size: 20px;
+		}
+		#dir-tree pre
+		{
+			position: relative;
+			
+			float: left;
+			
+			width: 45%;
+			margin: 40px 5% 0 0;
+		}
+		#dir-tree pre::after
+		{
+			position: absolute;
+			top: 0;
+			right: -30px;
+			
+			width: 1px;
+			height: 200px;
+			
+			content: "";
+			
+			opacity: 0.5;
+			background: currentColor;
+		}
+		#dir-tree pre:last-of-type::after
+		{
+			display: none;
+		}
+	</style>
+</section>
+
+<section class="slide" id="how">
+	<h2>Решения</h2>
+	<ul>
+		<li>Универсально, чистый HTML</li>
+		<li>Разграничение селекторами</li>
+		<li>Отдельные файлы</li>
+		<li>Знаешь HTML — знаешь CSS</li>
+	</ul>
+</section>
+
+<section class="slide" id="nest-css">
+	<h2>Что в итоге?</h2>
+	<p class="title">Nest CSS</p>
+	<p>
+		<a href="https://github.com/m18ru/nest-css/">github.com/m18ru/nest-css</a>
+	</p>
+	<style>
+		#nest-css p.title
+		{
+			margin-top: 80px;
+			
+			font-size: 90px;
+			font-weight: 300;
+			line-height: 1;
+			text-align: center;
+		}
+		#nest-css p
+		{
+			text-align: center;
+		}
+	</style>
+</section>
+
+<section class="slide" id="what">
+	<h2>Правила</h2>
+	<ul>
+		<li>Небольшой элемент = файл, большой = директория</li>
+		<li>Имена — селектор</li>
+		<li>Соединяем через «<code>></code>», для «<code> </code>» — префикс «<code>!</code>» (<code>!a.css</code>)</li>
+		<li>Префикс «<code>_</code>» — директории для группировки, файлы — не включаются</li>
+	</ul>
+</section>
+
+<section class="slide" id="trees">
+	<h2>Деревья…</h2>
+	<pre><code class="nohighlight">src/
+	_global/
+		_constants.pcss
+	_text/
+		a.pcss
+	.some-container/
+		div.widget.pcss
+	html/
+		body/
+			main/
+				_headings/
+					h1.pcss
+					h2.pcss
+					h3,h4.pcss
+				!table.pcss
+				p.pcss
+			&.pcss
+</code></pre>
+	<pre><code class="css">a {}
+.some-container > div.widget {}
+html > body {}
+html > body > main table {}
+html > body > main > p {}
+html > body > main > h1 {}
+html > body > main > h2 {}
+html > body > main > h3, html > body > main > h4 {}
+</code></pre>
+	<style>
+		#trees pre code
+		{
+			font-size: 14px;
+		}
+		#trees pre code.nohighlight
+		{
+			line-height: 1.3;
+		}
+		#trees pre
+		{
+			position: relative;
+			
+			float: left;
+			
+			width: 45%;
+			margin: 40px 5% 0 0;
+		}
+		#trees pre::after
+		{
+			position: absolute;
+			top: 0;
+			right: -30px;
+			
+			width: 1px;
+			height: 400px;
+			
+			content: "";
+			
+			opacity: 0.5;
+			background: currentColor;
+		}
+		#trees pre:last-of-type::after
+		{
+			display: none;
+		}
+	</style>
+</section>
+
+<section class="slide" id="closest">
+	<h2>Вспомогательный псевдо-класс</h2>
+	<pre><code class="css">html > body > main > <mark>p:closest(body with .index, html with .js)</mark>
+{
+	...
+}
+</code></pre>
+	<pre><code class="css">html.js > body.index > main > p
+{
+	...
+}
+</code></pre>
+	<style>
+		#closest pre code
+		{
+			font-size: 20px;
+		}
+	</style>
+</section>
+
+<section class="slide" id="contacts">
+	<h2>Спасибо!</h2>
+	<p class="name">Андрей Волынкин</p>
+	<p class="facebook">
+		<a href="https://www.facebook.com/avol.me">facebook.com/avol.me</a>
+	</p>
+	<p class="git">
+		<a href="https://github.com/m18ru/nest-css/">github.com/m18ru/nest-css</a>
+	</p>
+	<p class="m18">
+		<a href="http://m18.ru/">M18.ru</a><br />
+		<a href="https://www.facebook.com/m18ru">facebook.com/m18ru</a>
+	</p>
+	<style>
+		#contacts::after
+		{
+			display: none;
+		}
+		#contacts h2
+		{
+			font-size: 70px;
+			text-align: center;
+		}
+		#contacts p.name
+		{
+			margin: 80px 0 20px;
+			
+			font-size: 50px;
+			font-weight: 300;
+			line-height: 1;
+			letter-spacing: 0.1em;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		#contacts p.facebook
+		{
+			font-weight: 300;
+			line-height: 1;
+			letter-spacing: 0.1em;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		#contacts p.git
+		{
+			font-size: 16px;
+			line-height: 1;
+			letter-spacing: 0.1em;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		#contacts p.m18
+		{
+			position: absolute;
+			right: 50px;
+			bottom: 40px;
+			
+			width: 200px;
+			
+			font-size: 16px;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+	</style>
+</section>
+
+<div class="progress"></div>
+<script src="shower/shower.min.js"></script>
+<script src="asserts/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

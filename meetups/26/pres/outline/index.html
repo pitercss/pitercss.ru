@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<title>Что не так с document outline?</title>
+	
+	<link rel="stylesheet" href="shower/shower-material/styles/styles.css" />
+	<link rel="stylesheet" href="vendor/highlight-light.css" />
+	<style>
+		.shower
+		{
+			--slide-ratio: calc(16 / 9);
+			--color-key: #e44d26;
+			
+			--font-size-big: 32px;
+			--font-size-small: 20px;
+		}
+		
+		.slide.increased-font
+		{
+			font-size: var(--font-size-big);
+		}
+		
+		.slide.decreased-font
+		{
+			font-size: var(--font-size-small);
+		}
+		
+		.region
+		{
+			overflow: hidden;
+			
+			width: 1px;
+			height: 1px;
+		}
+		
+		.slide
+		{
+			overflow: hidden;
+		}
+		
+		.slide .footer
+		{
+			font-size: 20px;
+			
+			color: black;
+		}
+		
+		.slide::after
+		{
+			left: calc(100% - 112px + 0.5em);
+			
+			font-size: 24px;
+			text-align: left;
+		}
+		
+		.slide i
+		{
+			color: var(--color-light);
+		}
+		
+		div.in-row
+		{
+			display: flex;
+		}
+		
+		div.in-row > *
+		{
+			flex: 1;
+		}
+		
+		.visually-hidden
+		{
+			position: absolute;
+			
+			overflow: hidden;
+			clip: rect(0px, 0px, 0px, 0px);
+			
+			width: 1px;
+			height: 1px;
+		}
+		
+		small.copyright
+		{
+			position: absolute;
+			bottom: 20px;
+			left: 30px;
+			
+			font-size: 12px;
+			
+			opacity: 0.4;
+			color: white;
+		}
+		
+		.slide img.fill-cover
+		{
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			
+			width: 100%;
+			height: 100%;
+			
+			object-fit: cover;
+		}
+	</style>
+</head>
+<body class="shower list">
+	
+	<header class="caption">
+		<h1>Что не так с document outline?</h1>
+		<p>Андрей Волынкин @ PiterCSS_meetup №26, <time datetime="2018-11-20">20 ноября 2018</time>.</p>
+	</header>
+	
+	<section class="slide clear" id="cover">
+		<h2>Что не так с document outline?</h2>
+		<p class="author">Андрей Волынкин</p>
+		<p class="event">PiterCSS_meetup №26 / 2018</p>
+		<footer class="footer">
+			<p>С момента его появления, вокруг document outline существует непонимание, и даже нежелание его понять. Зато процветает идея его выкинуть и заменить чем-то другим. Но нужно ли это делать, или может стоит в нём разобраться, и начать его внедрять и улучшать?</p>
+		</footer>
+		<style>
+			#cover
+			{
+				padding: 230px 0 0;
+				
+				color: white;
+				background:
+					linear-gradient(to top, rgba(228, 76, 38, 0.5), rgba(228, 76, 38, 0.5)),
+					url("images/HTML5_logo.svg") center center no-repeat #e44d26;
+				background-size: cover;
+			}
+			
+			#cover h2
+			{
+				font-size: 60px;
+				text-align: center;
+				
+				color: inherit;
+			}
+			
+			#cover p
+			{
+				font-size: 16px;
+			}
+			
+			#cover p.author,
+			#cover p.event
+			{
+				position: absolute;
+				bottom: 40px;
+			}
+			
+			#cover p.author
+			{
+				left: 60px;
+			}
+			
+			#cover p.event
+			{
+				right: 60px;
+			}
+		</style>
+	</section>
+	
+	<section class="slide" id="about">
+		<h2>Кто я?</h2>
+		<div class="in-row">
+			<div class="photo">
+				<img src="images/avol-photo.jpg" alt="" />
+				<span class="name">Андрей Волынкин</span>
+			</div>
+			<ul class="info">	
+				<li>Разработчик интерфейсов в Яндекс<br />
+					Команда Яндекс.Трекера</li>
+				<li>Преподаю в Университете ИТМО</li>
+				<li>Люблю семантику</li>
+			</ul>
+		</div>
+		<style>
+			#about div.photo > img
+			{
+				display: block;
+				
+				width: 200px;
+				margin: 1em 0 0.5em;
+				
+				border-radius: 50%;
+			}
+			
+			#about ul.info
+			{
+				margin: 1.3em 0 0;
+			}
+		</style>
+	</section>
+	
+	<section class="slide black" id="disclamer">
+		<h2 class="blink">Disclamer</h2>
+		<p class="marquee"><span>HTML5 Outline не реализован в браузерах и инструментах доступности!</span></p>
+		<footer class="footer">
+			<p>Я призываю не к тому, чтобы не взирая на это, использовать его правила по отношению к заголовкам, а к тому, чтобы использовать описанные в нём секционные теги в соответствии с их назначением!</p>
+		</footer>
+		<style>
+			#disclamer h2
+			{
+				font-size: 80px;
+				text-align: center;
+				
+				color: white;
+			}
+			
+			#disclamer > p
+			{
+				font-size: 60px;
+				font-weight: 100;
+				
+				color: white;
+			}
+			
+			#disclamer .blink
+			{
+				animation-duration: 1s;
+				animation-name: blink;
+				animation-iteration-count: infinite;
+				animation-timing-function: steps(2, start);
+			}
+			
+			@keyframes blink
+			{
+				80%
+				{
+					visibility: hidden;
+				}
+			}
+			
+			#disclamer .marquee
+			{
+				overflow: hidden;
+				box-sizing: border-box;
+				white-space: nowrap;
+			}
+			
+			#disclamer .marquee > span
+			{
+				display: inline-block;
+				padding-left: 100%;
+				animation: marquee 15s linear infinite;
+			}
+			
+			@keyframes marquee
+			{
+				0%
+				{
+					transform: translate(0, 0);
+				}
+				100%
+				{
+					transform: translate(-100%, 0);
+				}
+			}
+		</style>
+	</section>
+	
+	<section class="slide increased-font" id="why">
+		<h2>Зачем это всё?</h2>
+		<ul>
+			<li>Используйте заголовки</li>
+			<li>Используйте семантические теги</li>
+			<li>Распространяйте знания</li>
+		</ul>
+		<footer class="footer">
+			<p>Старайтесь всегда внимательно относиться к семантике. Если вы приходите в проект, и видите, что там семантика не соблюдается — стремитесь это изменить. Так, например, придя в Яндекс, в своей команде я призвал следить за семантикой, и даже проводить ревью семантики в сложных случаях. Понятно, что у больших проектов уже присутствует огромное количество кода, возможности к массовому изменению которого затруднены, но написать правильный тег, вместо дефолтного div — очень простое изменение, особенно если его осуществлять по месту внесения текущих правок. Так семантика в проекте будет постепенно становиться лучше.</p>
+		</footer>
+	</section>
+	
+	<section class="slide increased-font" id="outline">
+		<h2>Document outline</h2>
+		<ul>
+			<li>Улучшения в структурировании</li>
+			<li>Возможности компоновки</li>
+			<li>Непонята и не принята</li>
+		</ul>
+		<footer class="footer">
+			<p>Многострадальная часть стандарта HTML5, которая имела не самую удачную формулировку изначально, несколько непонятных моментов, но при этом была достаточно хорошо продумана и вполне реализуемая в своей основе.</p>
+		</footer>
+	</section>
+	
+	<section class="slide increased-font" id="problems">
+		<h2>Камни преткновения?</h2>
+		<ul>
+			<li>Много <code>&lt;h1&gt;</code>?!</li>
+			<li>Хотим просто <code>&lt;h&gt;</code>!</li>
+			<li>Браузеры не сделали</li>
+			<li>Уже неправильно используется</li>
+		</ul>
+	</section>
+	
+	<section class="slide" id="standard">
+		<h2>Стандарт HTML5</h2>
+		<ul class="standards">
+			<li class="w3c">
+				<img src="images/W3C_logo.svg" alt="Логотип W3C" />
+				<abbr title="World Wide Web Consortium">W3C</abbr>
+				HTML 5
+			</li>
+			<li class="whatwg">
+				<img src="images/WHATWG_logo.svg" alt="Логотип WHATWG" />
+				<abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>
+				HTML Living Standard
+			</li>
+		</ul>
+		<p>Новые элементы — их надо использовать правильно.</p>
+		<footer class="footer">
+			<p>Рекомендован к использованию в 2014, но начал активно использоваться сильно раньше.</p>
+			<p>Хотя идея с заголовками и не была реализована и текущая версия стандарта предупреждает о том, что следует правильно расставлять уровни заголовков самостоятельно, если вы используете теги, введённые и описанные в этом стандарте, вы должны их использовать в соответствии с этим описанием. Да, я говорю о секционных тегах.</p>
+		</footer>
+		<style>
+			#standard ul.standards
+			{
+				display: flex;
+				
+				margin: 0 0 2em;
+				
+				list-style: none;
+			}
+			
+			#standard ul.standards > li::before
+			{
+				display: none;
+			}
+			
+			#standard ul.standards > li
+			{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				
+				flex: 1;
+			}
+			
+			#standard ul.standards > li > img
+			{
+				width: auto;
+				height: 100px;
+				margin: 0 0 0.5em;
+			}
+			
+			#standard ul.standards > li > abbr:not(:hover)
+			{
+				text-decoration: none;
+			}
+		</style>
+	</section>
+	
+	<section class="slide increased-font" id="alternatives">
+		<h2>Альтернативы</h2>
+		<ul>
+			<li><a href="https://github.com/w3c/html/issues/774">Элемент <code>&lt;h&gt;</code></a></li>
+			<li><a href="https://github.com/bkardell/outline">Document Outline Project</a></li>
+			<li><a href="https://github.com/whatwg/html/pull/3499">Heading-focused outlines</a></li>
+		</ul>
+		<footer class="footer">
+			<p>Стандарт активно хотят выкинуть — например с введением универсального завголовка <code>&lt;h&gt;</code>. Свежий вариант — это попытка пересмотреть стандарт в варианте «heading-focused outlines». В альтернативах, вроде тэга <code>&lt;h&gt;</code>, хватает своих непродуманных и сомнительных моментов.</p>
+		</footer>
+	</section>
+	
+	<section class="slide" id="jakearchibald">
+		<h2>Jake Archibald</h2>
+		<article>
+			<a href="https://jakearchibald.com/2017/do-we-need-a-new-heading-element/">
+				<h3>Do we need a new heading element? We don't know</h3>
+				<time datetime="2017-02-20">
+					Posted 20 February 2017
+				</time>
+				<img src="images/jakearchibald.jpg" alt="Jake Archibald" />
+			</a>
+		</article>
+		<footer class="footer">
+			<p>Эти вопросы отлично разобрал в своей статье Джейк Арчибальд.</p>
+			<p>Document outline довольно сильно менял концепцию, давая нам больше возможностей по структурированию.</p>
+		</footer>
+		<style>
+			#jakearchibald article
+			{
+				margin-top: 70px;
+			}
+			
+			#jakearchibald article > a
+			{
+				display: grid;
+				grid-template-areas:
+					"title photo"
+					"time photo";
+				
+				background: none;
+			}
+			
+			#jakearchibald article h3
+			{
+				grid-area: title;
+				padding: 10px 36px 17px 62px;
+				margin: 0 30px 0 0;
+				
+				font-family: "PT Serif", georgia, serif;
+				font-size: 40px;
+				font-weight: normal;
+				line-height: 1.1;
+				
+				color: #FFF;
+				background: #FF8400;
+				
+				border-radius: 32px 0 0 32px;
+			}
+			
+			#jakearchibald article time
+			{
+				grid-area: time;
+				padding: 6px 10px 5px 32px;
+				margin: 0 30px 0 33px;
+				
+				font-size: 12px;
+				
+				color: #000;
+				background: #FFE454;
+			}
+			
+			#jakearchibald article img
+			{
+				grid-area: photo;
+				height: 160px;
+			}
+		</style>
+	</section>
+	
+	<section class="slide clear black" id="cover-responsibility">
+		<h2 class="visually-hidden">С большой силой приходит и большая ответственность</h2>
+		<img class="fill-cover" src="images/spiderman-responsibility.jpg" alt="Сцена из фильма Spider-Man, где Дядя Бен говорит про ответственность" />
+		<small class="copyright">© 2002 Sony Pictures, Spider-Man</small>
+		<footer class="footer">
+			<p>А с большой силой приходит и большая ответственность.</p>
+			<p>Давайте вкратце рассмотрим этот стандарт.</p>
+		</footer>
+	</section>
+	
+	<section class="slide" id="headings">
+		<h2>Заголовки правильно</h2>
+		<p class="demo">
+			<strong>1</strong>, <strong>2</strong>, <strong>3</strong>, <strong>4</strong>, <strong>5</strong>, <strong>6</strong>
+		</p>
+		<footer class="footer">
+			<p>До введения аутлайнов, фронтендеру достаточно было уметь считать до 6 (но многие и с этим не справляются).</p>
+		</footer>
+		<style>
+			#headings p.demo
+			{
+				margin: 0;
+				
+				font-size: 600%;
+				white-space: nowrap;
+				
+				color: lightgray;
+			}
+			
+			#headings p.demo strong
+			{
+				color: black;
+			}
+		</style>
+	</section>
+	
+	<section class="slide increased-font" id="hr-element">
+		<h2>Разделитель <code>&lt;hr /&gt;</code></h2>
+		<ul>
+			<li>Разделитель уровня параграфов</li>
+			<li>Смена темы или линии повествования</li>
+			<li>Не влияет на структуру документа</li>
+		</ul>
+		<footer class="footer">
+			<p>Есть ещё такой тэг, который существуют давно, но рассматривают его часто только с точки зрения визуального отображения, хотя на самом деле он относится к структурированию вашего контента заголовками.</p>
+			<p>Он по-сути частично эквивалентен трём звёздочкам, которые бывает используются в текстах.</p>
+		</footer>
+	</section>
+	
+	<section class="slide clear black" id="cover-cool-html5">
+		<h2 class="visually-hidden">HTML 5 привнёс крутые возможности</h2>
+		<img class="fill-cover" src="images/spiderman-cool.jpg" alt="Сцена из фильма Spider-Man 3, где Питер Паркер с симбиотом идёт по улице и на него оглядываются девушки" />
+		<small class="copyright">© 2007 Sony Pictures, Spider-Man 3</small>
+		<footer class="footer">
+			<p>Вроде было всё так просто, и тут появляется весь такой крутой HTML5, со своей обалденной семантикой.</p>
+		</footer>
+	</section>
+	
+	<section class="slide increased-font" id="concept">
+		<h2>Изменение концепции</h2>
+		<ul>
+			<li><strong>Основа структуры</strong> <em>(Sectioning root)</em></li>
+			<li><strong>Содержимое структуры</strong> <em>(Sectioning content)</em></li>
+		</ul>
+		<footer class="footer">
+			<p>
+				Основа — имеют свою структуру, не участвующую в родительской структуре.<br />
+				Содержимое — область, имеющая явный или неявный заголовок, участвует в структуре документа.
+			</p>
+		</footer>
+	</section>
+	
+	<section class="slide" id="sectioning-root">
+		<h2>Основа структуры</h2>
+		<p>
+			<code>&lt;body&gt;</code><br>
+			<code>&lt;details&gt;</code> <code>&lt;dialog&gt;</code> <code>&lt;blockquote&gt;</code> <code>&lt;figure&gt;</code><br>
+			<code>&lt;fieldset&gt;</code> <code>&lt;td&gt;</code>
+		</p>
+		<footer class="footer">
+			<p>
+				Видно, что для основы выбраны элементы, содержимое которых воспринимается самостоятельно и может содержать сложную вёрстку со своими заголовками.<br>
+				Вопросы могут вызвать только fieldset и td.<br>
+				Но, я совершенно не представляю, как эту историю можно заполифиллить.
+			</p>
+		</footer>
+	</section>
+	
+	<section class="slide" id="sectioning-content">
+		<h2>Содержимое структуры</h2>
+		<ul>
+			<li><code>&lt;section&gt;</code> — часть документа (глава, раздел).</li>
+			<li><code>&lt;article&gt;</code> — самостоятельная часть документа (анонс публикации — есть время/автор).</li>
+			<li><code>&lt;aside&gt;</code> — необязательная самостоятельная часть документа (примечания).</li>
+			<li><code>&lt;nav&gt;</code> — блок навигации (меню, хлебные крошки).</li>
+		</ul>
+		<footer class="footer">
+			<p>
+				Часто считается сложным различать элементы для разметки разделов, поэтому я их тут подписал.<br>
+				article я обычно отличаю как секцию, у которой есть свой автор или своё время публикации.<br>
+				Не используйте <code>&lt;section&gt;</code> без заголовка, используйте <code>&lt;div&gt;</code>!
+			</p>
+		</footer>
+	</section>
+	
+	<section class="slide decreased-font" id="landmarks">
+		<h2>Ориентиры</h2>
+		<pre><code class="language-html">&lt;body&gt;
+&lt;header&gt;
+	&lt;h1&gt;Document&lt;/h1&gt;
+	&lt;p&gt;Document content&lt;/p&gt;
+	&lt;h2&gt;Section 1&lt;/h2&gt;
+	&lt;p&gt;Section 1 content&lt;/p&gt;
+	&lt;h2&gt;Section 2&lt;/p&gt;
+&lt;/header&gt;
+&lt;p&gt;Section 2 content&lt;/p&gt;</code></pre>
+		<footer class="footer">
+			<p>
+				Ориентиры ни как не сказываются на структуре заголовков.<br>
+				И да — <code>&lt;header&gt;</code> это не заголовок, а вводная часть раздела.
+			</p>
+		</footer>
+	</section>
+	
+	<section class="slide clear black" id="cover-go-away">
+		<h2 class="visually-hidden">Как-то всё сложно выглядит</h2>
+		<img class="fill-cover" src="images/spiderman-go-away.jpg" alt="Сцена из фильма Spider-Man 3, где Питер Паркер пытается освободиться от симбиота" />
+		<small class="copyright">© 2007 Sony Pictures, Spider-Man 3</small>
+		<footer class="footer">
+			<p>Глядя на всё это, может возникнуть мысль — «ой, что-то сложно, ну его в баню». Но давайте посмотрим, что это нам должно дать.</p>
+		</footer>
+	</section>
+	
+	<section class="slide increased-font" id="lock-headings-1">
+		<h2>Секция изолирует заголовки <i>(1 / 2)</i></h2>
+		<ul>
+			<li>Первый заголовок забирает</li>
+			<li>Остальные — не больше уровня секции</li>
+		</ul>
+		<footer class="footer">
+			<p>Секция гарантирует, что заголовок не выйдет за её приделы. Это немного похоже на то, как работает <code>z-index</code> в CSS.</p>
+		</footer>
+	</section>
+	
+	
+	<section class="slide" id="lock-headings-2">
+		<h2>Секция изолирует заголовки <i>(2 / 2)</i></h2>
+		<div class="in-row">
+			<pre><code class="language-html">&lt;h1&gt;H1&lt;/h1&gt;
+&lt;section&gt;
+	&lt;h6&gt;H6&lt;/h6&gt;
+	&lt;h3&gt;H3&lt;/h3&gt;
+	&lt;h5&gt;H5&lt;/h5&gt;
+	&lt;h2&gt;H2&lt;/h2&gt;
+	&lt;h3&gt;H3&lt;/h3&gt;
+&lt;/section&gt;</code></pre>
+			<ul>
+				<li>H1 <i>— уровень 1</i>
+					<ul>
+						<li>H6 <i>— уровень 2</i></li>
+						<li>H3 <i>— уровень 2</i>
+							<ul>
+								<li>H5 <i>— уровень 3</i></li>
+							</ul>
+						</li>
+						<li>H2 <i>— уровень 2</i>
+							<ul>
+								<li>H3 <i>— уровень 3</i></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<p><em>В браузерах не работает :(</em></p>
+		<footer class="footer">
+			<p>Таким образом это не делает неважным номера заголовков, это позволяет «сдвинуть» уровень внутренних заголовков. Но этот сдвиг, к сожалению, не реализован в браузерах.</p>
+		</footer>
+		<style>
+			#lock-headings-2 pre
+			{
+				font-size: var(--font-size-small);
+			}
+		</style>
+	</section>
+	
+	<section class="slide clear black" id="cover-cry">
+		<h2 class="visually-hidden">Не работает в браузерах</h2>
+		<img class="fill-cover" src="images/spiderman-cry.jpg" alt="Сцена из фильма Spider-Man, где Питер Паркер оплакивает дядю Бена" />
+		<small class="copyright">© 2002 Sony Pictures, Spider-Man</small>
+		<footer class="footer">
+			<p>Но этот сдвиг, к сожалению, не реализован в браузерах. Что очень грустно.</p>
+		</footer>
+	</section>
+	
+	<section class="slide" id="no-h1-in-section">
+		<h2>Важно!</h2>
+		<p>Не помещайте <code>&lt;h1&gt;</code> в секцию!</p>
+		<footer class="footer">
+			<p>Хоть сдвиг и не работает, но подобное размещение противоречит идее секционных тэгов — используйте div или другой подходящий тэг для таких обёрток.</p>
+		</footer>
+		<style>
+			#no-h1-in-section > p
+			{
+				margin-top: 2em;
+				
+				font-size: 200%;
+				text-align: center;
+			}
+		</style>
+	</section>
+	
+	<section class="slide" id="include-markup-1">
+		<h2>Вставка плоской разметки <i>(1 / 2)</i></h2>
+		<div class="in-row">
+			<pre class="md-markup"><code class="language-md"># Заголовок
+## Рездел 1
+## Рездел 2</code></pre>
+			<pre><code class="language-html">&lt;h1&gt;Документ&lt;/h1&gt;
+&lt;article&gt;
+	
+	
+	
+&lt;/article&gt;</code></pre>
+		</div>
+		<footer class="footer">
+			<p>Пример, подобного применения секций — вставка документа в существующую структуру. Напоминаю, в настоящий момент это не работает, и нужно вручную обеспечить правильный уровень заголовков.</p>
+		</footer>
+		<style>
+			#include-markup-1 .md-markup
+			{
+				position: relative;
+				
+				margin-top: 3.5em;
+			}
+			#include-markup-1 .md-markup::after
+			{
+				position: absolute;
+				top: -25px;
+				right: 50px;
+				
+				font-size: 400%;
+				
+				content: "⇒";
+				
+				color: red;
+			}
+		</style>
+	</section>
+	<section class="slide" id="include-markup-2">
+		<h2>Вставка плоской разметки <i>(2 / 2)</i></h2>
+		<pre><code class="language-html">&lt;h1&gt;Документ&lt;/h1&gt;
+&lt;article&gt;
+	&lt;h1 aria-level=&quot;2&quot;&gt;Заголовок&lt;/h1&gt;
+	&lt;h2 aria-level=&quot;3&quot;&gt;Рездел 1&lt;/h2&gt;
+	&lt;h2 aria-level=&quot;3&quot;&gt;Рездел 2&lt;/h2&gt;
+&lt;/article&gt;</code></pre>
+		<footer class="footer">
+			<p>
+				Как пример того, как это можно починить сейчас — проставить атрибут <code>aria-level</code>.<br>
+				Этот атрибут допускает больше 6 уровней, что позволяет довольно полноценно через него реализовывать вложенность на секциях.
+			</p>
+		</footer>
+	</section>
+	
+	<section class="slide clear black" id="cover-dancing">
+		<h2 class="visually-hidden">Обходное решение</h2>
+		<img class="fill-cover" src="images/spiderman-dancing.jpg" alt="Сцена из фильма Spider-Man 3, где Питер Паркер переоделся в костюм и танцует, выйдя из магазина" />
+		<small class="copyright">© 2007 Sony Pictures, Spider-Man 3</small>
+		<footer class="footer">
+			<p>Здорово, мы сумели хоть что-то похожее получить. Правда я не знаю скриптов, которые бы так расставили `aria-level` автоматически. </p>
+		</footer>
+	</section>
+	
+	<section class="slide increased-font" id="implicit-section-1">
+		<h2>Неявная секция <i>(1 / 2)</i></h2>
+		<ul>
+			<li>Секции — неявный заголовок</li>
+			<li>Заголовки — неявная секция</li>
+		</ul>
+		<footer class="footer">
+			<p>
+				Есть ещё важный момент — любой заголовок открывает неявную секцию. Она закрывается на следующем заголовке того же уровня, или <em>на явной секции</em>.<br>
+				В общем — секция содержит неявный заголовок, заголовок создаёт неявную секцию. А вместе — всё явно.
+			</p>
+		</footer>
+	</section>
+	
+	<section class="slide decreased-font" id="implicit-section-2">
+		<h2>Неявная секция <i>(2 / 2)</i></h2>
+		<pre><code class="language-html">&lt;h1&gt;Документ&lt;/h1&gt;
+&lt;h2&gt;Раздел 1&lt;/h2&gt;
+	&lt;blockquote&gt;
+		&lt;h3&gt;Цитата&lt;/h3&gt;
+	&lt;/blockquote&gt;
+	&lt;p&gt;Текст в разделе 1&lt;/p&gt;
+&lt;h2&gt;Раздел 2&lt;/h2&gt;
+&lt;section&gt;
+	&lt;h3&gt;Раздел 3&lt;/h3&gt;
+&lt;/section&gt;
+<mark>&lt;p&gt;Текст в документе&lt;/p&gt;</mark></code></pre>
+		<footer class="footer">
+			<p>Какой из этого стоит сделать вывод? Не смешивайте в своей разметке заголовки и секции на одном уровне.</p>
+		</footer>
+		<style>
+			#implicit-section-2 code
+			{
+				line-height: 1.6;
+			}
+		</style>
+	</section>
+	
+	<section class="slide increased-font" id="sections-and-headings-1">
+		<h2>Секции и заголовки <i>(1 / 2)</i></h2>
+		<ul>
+			<li>Плоские заголовки внутри секций — да</li>
+			<li>Секции внутри плоского уровня заголовков — нет</li>
+		</ul>
+	</section>
+	
+	<section class="slide" id="sections-and-headings-2">
+		<h2>Секции и заголовки <i>(2 / 2)</i></h2>
+		<div class="in-row">
+			<div class="wrong">
+				<p>✘ Нет:</p>
+				<pre><code class="language-html">&lt;h1&gt;Документ&lt;/h1&gt;
+&lt;h2&gt;Раздел 1&lt;/h2&gt;
+&lt;section&gt;
+	&lt;h3&gt;Раздел 1.1&lt;/h3&gt;
+&lt;/section&gt;</code></pre>
+			</div>
+			<div class="right">
+				<p>✓ Да:</p>
+				<pre><code class="language-html">&lt;h1&gt;Документ&lt;/h1&gt;
+&lt;section&gt;
+	&lt;h2&gt;Раздел 1&lt;/h2&gt;
+	&lt;h3&gt;Раздел 1.1&lt;/h3&gt;
+&lt;/section&gt;</code></pre>
+			</div>
+		</div>
+		<style>
+			#sections-and-headings-2 div.wrong > p
+			{
+				color: red;
+			}
+			
+			#sections-and-headings-2 div.right > p
+			{
+				color: green;
+			}
+		</style>
+	</section>
+	
+	<section class="slide clear black" id="cover-mirror">
+		<h2 class="visually-hidden">Хорошие и плохие стороны</h2>
+		<img class="fill-cover" src="images/spiderman-mirror.jpg" alt="Постер к фильму Spider-Man 3, где Питер Паркер в костюме симбиота смотрит в своё отражение в окне и видит себя в обычном костюме" />
+		<small class="copyright">© 2007 Sony Pictures, Spider-Man 3</small>
+		<footer class="footer">
+			<p>Давайте рассмотрим хорошие и плохие моменты в аутлайне. </p>
+		</footer>
+	</section>
+	
+	<section class="slide increased-font" id="bad-parts">
+		<h2>Плохие моменты</h2>
+		<ul>
+			<li>Плохая совместимость множественного <code>&lt;h1&gt;</code></li>
+			<li>Проблемы Sectioning root</li>
+			<li><code>&lt;h1&gt;</code> обязательно первый заголовок</li>
+		</ul>
+		<footer class="footer">
+			<p>
+				Вариант с несколькими <code>&lt;h1&gt;</code> не совместим со старым стантартом, что для веба кажется недопустимым.<br>
+				С основой разделов не очень понятно, как это должно видеться — это что-то вроде iframe, или ещё как-то.<br>
+				Часто до основного заголовка документа нужно разместить в разметки заголовки нижних уровней — сейчас outline создаёт здесь кусок документа без главного заголовка. Неплохо бы, чтобы <code>&lt;h1&gt;</code>, не завёрнутый в секцию, в любом месте долкумента воспринимался как его главный заголовок.
+			</p>
+		</footer>
+	</section>
+	
+	<section class="slide increased-font" id="good-parts">
+		<h2>Хорошие моменты</h2>
+		<ul>
+			<li>Секционные элементы</li>
+			<li>Вставка фрагментов</li>
+			<li>Универсальные компоненты <i>(?)</i></li>
+		</ul>
+		<footer class="footer">
+			<p>
+				Весь смысл существования секционных элементов — это работа в контексте outline. Как просто «нескучный div» они не нужны.<br>
+				История со вставкой фрагментов со своими уровнями заголовков выглядит удобно.<br>
+				Аналогично могу работать и универсальные компоненты, хотя кажется, что надёжнее уровень заголовка всё-же явно определять.
+			</p>
+		</footer>
+	</section>
+	
+	<section class="slide clear black" id="cover-conclusion">
+		<h2 class="visually-hidden">Заключение</h2>
+		<img class="fill-cover" src="images/spiderman-conclusion.jpg" alt="Постер к фильму Spider-Man 3, где Питер Паркер взирает на город в закате" />
+		<small class="copyright">© 2002 Sony Pictures, Spider-Man</small>
+		<footer class="footer">
+			<p>В заключение, давайте рассмотрим несколько советов. </p>
+		</footer>
+	</section>
+	
+	<section class="slide decreased-font" id="tips">
+		<h2>Советы</h2>
+		<ul>
+			<li>Ставьте заголовки по порядку</li>
+			<li><code>&lt;section&gt;</code> всегда с заголовком</li>
+			<li><code>&lt;article&gt;</code> — если есть дата/автор</li>
+			<li>Ставьте правильный уровень в секциях</li>
+			<li>Только один <code>&lt;h1&gt;</code></li>
+			<li><code>&lt;h1&gt;</code> — никогда в секциях</li>
+			<li>Плоские заголовки — внутри секций</li>
+			<li><code>&lt;h2&gt;</code> — как фолбэк</li>
+		</ul>
+	</section>
+	
+	<section class="slide" id="h2-fallback">
+		<h2>Фолбэк уровня заголовка?</h2>
+		<ul>
+			<li>Заголовок в документе</li>
+			<li>Не понятен уровень — не вложен</li>
+			<li>Значит <code>&lt;h2&gt;</code></li>
+		</ul>
+		<p>Пример: по умолчанию <code>aria-level=&quot;2&quot;</code> для <code>role=&quot;heading&quot;</code>.</p>
+		<footer class="footer">
+			<p>
+				Мы знаем, что заголовок находится в документе — значит он не <code>&lt;h1&gt;</code>.<br>
+				Мы не можем определить его уровень, значит не знаем куда он вложен — значит это подзаголовок в самом документе — используем <code>&lt;h2&gt;</code>.<br>
+				Похожим образом ведёт себя <code>role=&quot;heading&quot;</code> — если не указывать <code>aria-level</code>, то уровень заголовка будет 2.
+			</p>
+		</footer>
+	</section>
+	
+	<section class="slide" id="links">
+		<h2>Ссылки</h2>
+		<ul>
+			<li><a href="https://www.w3.org/TR/html5/sections.html#sections">HTML 5.2 W3C Recommendation</a></li>
+			<li><a href="https://html.spec.whatwg.org/multipage/sections.html#headings-and-sections">HTML Living Standard (WHATWG)</a></li>
+			<li><a href="http://validator.w3.org/nu/">Nu Html Checker</a></li>
+			<li><a href="https://jakearchibald.com/2017/do-we-need-a-new-heading-element/">Do we need a new heading element? We don't know</a></li>
+			<li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/heading_role">ARIA: heading role</a></li>
+			<li><a href="https://www.w3.org/TR/WCAG20-TECHS/ARIA12.html">Using <code>role=heading</code> to identify headings</a></li>
+			<li><a href="https://www.w3.org/TR/html52/grouping-content.html#the-hr-element">The <code>hr</code> element</a></li>
+			<li><a href="https://github.com/w3c/html/issues/774">Add <code>&lt;h&gt;</code> element</a></li>
+			<li><a href="https://github.com/bkardell/outline">Document Outline Project</a></li>
+			<li><a href="https://github.com/whatwg/html/pull/3499">Add heading-focused outlines and :heading</a></li>
+		</ul>
+		<style>
+			#links
+			{
+				font-size: 16px;
+			}
+			
+			#links::before
+			{
+				position: absolute;
+				top: 0;
+				right: 0;
+				
+				width: 300px;
+				height: 100%;
+				
+				content: "";
+				
+				background: url("images/spiderman-web.png") right top no-repeat;
+				background-size: 300px auto;
+				
+				opacity: 0.3;
+			}
+		</style>
+	</section>
+	
+	<section class="slide clear" id="contacts">
+		<h2>Спасибо!</h2>
+		<p class="name">Андрей Волынкин</p>
+		<address>
+			<p class="site">
+				<a href="https://avol.me/">avol.me</a>
+			</p>
+			<p class="facebook">
+				<a href="https://www.facebook.com/avol.me">facebook.com/avol.me</a>
+			</p>
+		</address>
+		<img class="fill-cover" src="images/spiderman-hero.jpg" alt="" />
+		<style>
+			#contacts h2
+			{
+				margin-top: 2em;
+				
+				font-size: 70px;
+				text-align: center;
+			}
+			
+			#contacts p.name,
+			#contacts address
+			{
+				position: absolute;
+				bottom: 40px;
+				
+				font-size: 16px;
+			}
+			
+			#contacts p.name
+			{
+				left: 60px;
+			}
+			
+			#contacts address
+			{
+				right: 60px;
+				
+				
+				font-style: normal;
+				text-align: right;
+			}
+			
+			#contacts address > p:not(:last-child)
+			{
+				margin-bottom: 0.1em;
+			}
+			
+			#contacts img.fill-cover
+			{
+				opacity: 0.2;
+			}
+			
+			#contacts small.copyright
+			{
+				top: 20px;
+				right: 30px;
+				bottom: auto;
+				left: auto;
+			}
+		</style>
+	</section>
+	
+	<div class="progress"></div>
+	
+	<script src="shower/shower.min.js"></script>
+	<script src="vendor/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	
+	<!-- Copyright © 2018 Андрей Волынкин -->
+	
+</body>
+</html>
