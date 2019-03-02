@@ -1,6 +1,11 @@
-# pitercss_meetup
-
-[![Build Status](https://travis-ci.org/11ty/eleventy-base-blog.svg?branch=master)](https://travis-ci.org/11ty/eleventy-base-blog)
+---
+layout: layouts/post.njk
+title: О нас
+tags:
+  - nav
+navtitle: О нас
+templateClass: tmpl-post
+---
 
 **pitercss_meetup**  -  это ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.
 
@@ -17,29 +22,3 @@
 Видео с митапов можно посмотреть [на нашем канале на Ютубе](https://www.youtube.com/pitercss_meetup). Как только мы выкладываем запись встречи — сообщаем об этом по всем каналам.
 
 Ловите анонсы, становитесь докладчиками и до встречи на митапах!
-
-##  Run
-
-Install dependencies
-```
-npm install
-```
-
-```
-npx eleventy
-```
-
-Or build and host locally for local development
-```
-npx eleventy --serve
-```
-
-Or build automatically when a template changes:
-```
-npx eleventy --watch
-```
-
-Or in debug mode:
-```
-DEBUG=* npx eleventy
-```

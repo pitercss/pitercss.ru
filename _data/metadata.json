@@ -1,0 +1,16 @@
+{
+  "title": "pitercss_meetup",
+  "url": "https://pitercss.ru/",
+  "description": "Ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.",
+  "feed": {
+    "subtitle": "Ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "url": "https://pitercss.ru/feed/feed.xml",
+    "id": "https://pitercss.ru/"
+  },
+  "author": {
+    "name": "pitercss_meetup",
+    "email": "meetup@pitercss.com"
+  }
+}

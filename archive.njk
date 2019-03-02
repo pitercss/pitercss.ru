@@ -1,0 +1,12 @@
+---
+layout: layouts/home.njk
+tags:
+  - nav
+navtitle: Архив
+permalink: /posts/
+---
+
+<h1>Архив</h1>
+
+{% set postslist = collections.posts %}
+{% include "postslist.njk" %}

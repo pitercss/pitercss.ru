@@ -1,0 +1,13 @@
+---
+layout: layouts/home.njk
+tags:
+  - nav
+navtitle: Главная
+---
+
+<h1>Последние 3 митапа:</h1>
+
+{% set postslist = collections.posts | head(-3) %}
+{% include "postslist.njk" %}
+
+<p>Все митапы можно найти на странице <a href="{{ '/posts/' | url }}">архива</a>.</p>
