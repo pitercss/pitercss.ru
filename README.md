@@ -1,7 +1,7 @@
-# pitercss_meetup
+# pitercss_meetup [![Build Status](https://img.shields.io/travis/pitercss/pitercss.ru.svg)](https://travis-ci.org/pitercss/pitercss.ru) [![GitHub Issues](https://img.shields.io/github/issues/pitercss/pitercss.ru.svg)](https://github.com/pitercss/pitercss.ru/issues)
 
-[![Build Status](https://travis-ci.org/pitercss/pitercss.ru.svg?branch=master)](https://travis-ci.org/pitercss/pitercss.ru)
-
+		
+  
 **pitercss_meetup**  -  это ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.
 
 Сначала мы ищем, к кому прийти в гости. У вас есть площадка на 100 человек? Зовите нас! 😄 Затем открываем регистрацию трижды - каждый раз в момент анонса нового доклада. Обычно желающих прийти много, билеты могут быть разобраны минут за 15-20 после открытия регистрации. 😱
