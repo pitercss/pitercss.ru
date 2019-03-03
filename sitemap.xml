@@ -153,12 +153,17 @@
   </url>
   
   <url>
-    <loc>https://pitercss.ru/pitercss.ru/</loc>
+    <loc>https://pitercss.ru/pitercss.ru/archive/</loc>
     <lastmod>2019-03-03</lastmod>
   </url>
   
   <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/</loc>
+    <loc>https://pitercss.ru/pitercss.ru/contacts/</loc>
+    <lastmod>2019-03-03</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pitercss.ru/pitercss.ru/</loc>
     <lastmod>2019-03-03</lastmod>
   </url>
   
