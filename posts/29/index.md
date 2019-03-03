@@ -61,4 +61,4 @@ _Серёжа, Лига А._
 
 ## Партнёр
 
-![pitercss_meetup 29 yandex](/img/{{title}}/partner.png)
+![pitercss_meetup 29 yandex]({{ '/' | url }}/img/{{ title }}/partner.png)
