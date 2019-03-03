@@ -5,9 +5,7 @@ tags:
 navtitle: Главная
 ---
 
-<h1>Последние 3 митапа:</h1>
-
-{% set postslist = collections.posts | head(-3) %}
-{% include "postslist.njk" %}
-
-<p>Все митапы можно найти на странице <a href="{{ '/posts/' | url }}">архива</a>.</p>
+<section class="posts">
+  {% set postslist = collections.posts %}
+  {% include "postslist.njk" %}
+</section>

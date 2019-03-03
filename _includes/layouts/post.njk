@@ -2,8 +2,13 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<h1>{{ title }}</h1>
+
+<h1>{{ title }} {{ location | safe }}</h1>
+
+{%- if image -%}
+  <img src="{{ image }}" alt="{{ post.data.title }}">
+{%- endif -%}
+
 
 {{ content | safe }}
-
 <p><a href="{{ '/' | url }}">← Главная</a></p>
