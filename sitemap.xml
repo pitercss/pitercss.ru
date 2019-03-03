@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
@@ -147,12 +148,12 @@
   </url>
   
   <url>
-    <loc>https://pitercss.ru/pitercss.ru/about/</loc>
+    <loc>https://pitercss.ru/pitercss.ru/about.html</loc>
     <lastmod>2019-03-03</lastmod>
   </url>
   
   <url>
-    <loc>https://pitercss.ru/pitercss.ru/posts/</loc>
+    <loc>https://pitercss.ru/pitercss.ru/meetups/</loc>
     <lastmod>2019-03-03</lastmod>
   </url>
   
