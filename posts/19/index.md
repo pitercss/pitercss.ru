@@ -2,7 +2,6 @@
 title: 19
 date: 2018-02-27
 location: T-Systems
-image: /img/19/intro.png
 tags:
   - тег
   - еще тег

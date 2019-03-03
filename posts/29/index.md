@@ -2,7 +2,6 @@
 title: 29
 date: 2019-02-27
 location: Яндекс
-image: /img/29/intro.png
 tags:
   - тег
   - еще тег
