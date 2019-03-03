@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>pitercss_meetup</title>
@@ -13,233 +14,233 @@
 	
 	<entry>
 		<title>1</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/1/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/1/"/>
 		<updated>2016-01-01T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/1/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/1/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>2</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/2/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/2/"/>
 		<updated>2016-01-01T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/2/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/2/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>3</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/3/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/3/"/>
 		<updated>2016-01-01T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/3/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/3/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>4</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/4/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/4/"/>
 		<updated>2016-01-01T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/4/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/4/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>5</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/5/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/5/"/>
 		<updated>2016-01-01T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/5/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/5/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>6</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/6/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/6/"/>
 		<updated>2016-01-01T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/6/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/6/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>7</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/7/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/7/"/>
 		<updated>2016-11-16T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/7/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/7/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>8</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/8/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/8/"/>
 		<updated>2016-12-21T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/8/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/8/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>9</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/9/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/9/"/>
 		<updated>2017-01-24T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/9/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/9/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>10</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/10/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/10/"/>
 		<updated>2017-02-21T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/10/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/10/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>11</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/11/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/11/"/>
 		<updated>2017-03-21T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/11/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/11/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>12</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/12/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/12/"/>
 		<updated>2017-04-25T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/12/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/12/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>13</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/13/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/13/"/>
 		<updated>2017-05-17T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/13/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/13/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>14</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/14/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/14/"/>
 		<updated>2017-09-26T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/14/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/14/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>15</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/15/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/15/"/>
 		<updated>2017-10-23T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/15/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/15/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>16</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/16/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/16/"/>
 		<updated>2017-11-28T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/16/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/16/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>17</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/17/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/17/"/>
 		<updated>2017-12-20T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/17/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/17/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>18</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/18/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/18/"/>
 		<updated>2018-01-24T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/18/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/18/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>19</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/19/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/19/"/>
 		<updated>2018-02-27T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/19/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/19/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>20</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/20/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/20/"/>
 		<updated>2018-03-27T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/20/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/20/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>21</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/21/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/21/"/>
 		<updated>2018-04-26T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/21/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/21/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>22</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/22/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/22/"/>
 		<updated>2018-05-16T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/22/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/22/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>23</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/23/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/23/"/>
 		<updated>2018-08-13T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/23/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/23/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>24</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/24/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/24/"/>
 		<updated>2018-09-11T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/24/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/24/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>25</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/25/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/25/"/>
 		<updated>2018-10-10T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/25/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/25/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>26</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/26/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/26/"/>
 		<updated>2018-11-20T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/26/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/26/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>27</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/27/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/27/"/>
 		<updated>2018-12-25T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/27/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/27/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>28</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/28/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/28/"/>
 		<updated>2019-01-28T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/28/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/28/</id>
 		<content type="html"></content>
 	</entry>
 	
 	<entry>
 		<title>29</title>
-		<link href="https://pitercss.ru/pitercss.ru/posts/29/"/>
+		<link href="https://pitercss.ru/pitercss.ru/meetups/29/"/>
 		<updated>2019-02-27T00:00:00+00:00</updated>
-		<id>https://pitercss.ru/pitercss.ru/posts/29/</id>
+		<id>https://pitercss.ru/pitercss.ru/meetups/29/</id>
 		<content type="html">&lt;h2 id=&quot;%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5&quot;&gt;Расписание &lt;a class=&quot;direct-link&quot; href=&quot;#%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;18:30&lt;/code&gt; Вход&lt;br&gt;
 &lt;code&gt;19:00&lt;/code&gt; Открытие&lt;br&gt;
