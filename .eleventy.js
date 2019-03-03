@@ -22,7 +22,7 @@ module.exports = function(eleventyConfig) {
 
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter("head", (array, n) => {
-    if( n < 0 ) {
+    if (n < 0) {
       return array.slice(n);
     }
 
@@ -54,7 +54,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
-      ready: function(err, browserSync) {
+      ready: function (err, browserSync) {
         const content_404 = fs.readFileSync('_site/404.html');
 
         browserSync.addMiddleware("*", (req, res) => {
