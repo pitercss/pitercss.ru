@@ -3,7 +3,7 @@
   <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
     <article class="post-preview">
       <a href="{{ post.url | url }}" class="post-preview__image">
-        <img src="{{ '/img/' + post.data.title + '/intro.png' | url }}" alt="pitercss_meetup {{ post.data.title }}">
+        <img src="/img/{{ post.data.title }}/intro.png" alt="pitercss_meetup {{ post.data.title }}">
       </a>
       <h1 class="post-preview__heading"><a href="{{ post.url | url }}">{% if post.data.title %}pitercss_meetup {{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h1>
       <footer class="post-preview__footer">
