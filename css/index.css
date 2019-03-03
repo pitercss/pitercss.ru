@@ -1,31 +1,40 @@
 :root {
-  --red: #C5004A;
-  --darkred: #7F0036;
+  --red: #c5004a;
+  --darkred: #7f0036;
   --lightgray: #e0e0e0;
-  --gray: #C0C0C0;
+  --gray: #c0c0c0;
   --darkgray: #333;
-  --navy: #17050F;
-  --blue: #082840;
+  --navy: #17050f;
+  --blue: rgba(0, 148, 218, 1);
   --white: #fff;
 }
 
-* {
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
   box-sizing: border-box;
 }
 
 html,
 body {
-  padding: 0;
-  margin: 0;
   font-family: sans-serif;
+
+  margin: 0;
+  padding: 0;
+
   color: var(--darkgray);
   background-color: var(--white);
 }
 
 body {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+
+  min-height: 100vh;
 }
 
 img {
@@ -33,49 +42,54 @@ img {
   height: auto;
 }
 
-.posts .postlist {
-  /* Grid Fallback */
-  display: flex;
-  flex-wrap: wrap;
+/* Global */
+img[src=''] {
+  font-family: sans-serif;
 
-  /* Supports Grid */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  grid-auto-rows: minmax(150px, auto);
-  grid-gap: 1rem;
-}
+  position: relative;
 
-.posts .postlist-item {
-  /* Flex Fallback */
-  margin-left: 5px;
-  margin-right: 5px;
-  flex: 1 1 200px;
-}
-
-@supports (display: grid) {
-  .posts .postlist-item {
-    margin: 0;
-  }
-}
-
-.posts .postlist-link {
   display: block;
+
+  height: 100%;
+}
+
+img[src='']::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+
   width: 100%;
-  padding: 0.5rem 0;
+  height: 100%;
+  min-height: 100%;
+
+  content: '';
+
+  background: var(--blue);
 }
 
-.posts .postlist-item img {
+img[src='']::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
   display: block;
-}
 
-.posts .postlist-item::before {
-  display: none;
+  width: 100%;
+
+  content: 'Битая картинка ' attr(alt);
+  transform: translateY(-50%);
+  text-align: center;
+
+  color: var(--white);
 }
 
 iframe {
-  border: 0;
   width: 100%;
   height: 400px;
+
+  border: 0;
 }
 
 p:first-child {
@@ -86,44 +100,54 @@ p:last-child {
   margin-bottom: 0;
 }
 
-a[href] {
-  color: var(--blue);
+a[href]:hover {
+  text-decoration: none;
 }
 
+a[href],
 a[href]:visited {
-  color: var(--navy);
+  color: var(--darkgray);
 }
 
 code {
-  background: rgba(0, 0, 0, .05);
-  padding: 3px 4px;
   margin: 0 2px;
+  padding: 3px 4px;
+
+  background: rgba(0, 0, 0, .05);
 }
 
+/* Header */
 .header {
   display: flex;
-  align-items: center;
+
   border-bottom: 1px dashed var(--lightgray);
+
+  align-items: center;
 }
 
-.header:after {
-  content: "";
+.header::after {
   display: table;
   clear: both;
+
+  content: '';
 }
 
 .header__logo {
-  display: block;
-  width: 3rem;
   font-size: 0;
   line-height: 0;
+
+  display: block;
+
+  width: 3rem;
 }
 
 .header__navigation {
-  padding: 0;
-  list-style: none;
-  margin: 0 0 0 1em;
   display: flex;
+
+  margin: 0 0 0 1em;
+  padding: 0;
+
+  list-style: none;
 }
 
 .header__navigation-item {
@@ -138,81 +162,150 @@ code {
   text-decoration: underline;
 }
 
+/* Main */
 .main {
   padding: 1rem;
-  flex-grow: 1;
-}
 
-.main--tmpl-post {
-  max-width: 50%;
+  flex-grow: 1;
 }
 
 /* Posts list */
 .postlist {
-  list-style: none;
   padding: 0;
+
+  list-style: none;
 }
 
 .postlist-item {
   counter-increment: start-from -1;
 }
 
-.postlist-item img {
+.postlist-image {
   display: none;
 }
 
 .postlist-item:before {
-  display: inline-block;
-  pointer-events: none;
-  content: "" counter(start-from, decimal-leading-zero) ". ";
   line-height: 100%;
+
+  display: inline-block;
+
+  content: '' counter(start-from, decimal-leading-zero) '. ';
   text-align: right;
+  pointer-events: none;
 }
 
 .postlist-date,
 .postlist-item:before {
-  font-size: 0.8125em; /* 13px /16 */
+  font-size: .8125em; /* 13px /16 */
+
   color: var(--darkgray);
 }
 
 .postlist-date {
-  word-spacing: -0.5px;
+  word-spacing: -.5px;
 }
 
 .postlist-item-active .postlist-link {
   font-weight: bold;
 }
 
-.tmpl-home .postlist-link {
-  font-size: 1.1875em; /* 19px /16 */
-  font-weight: 700;
+.posts .postlist {
+  /* Grid Fallback */
+  display: flex;
+  /* Supports Grid */
+  display: grid;
+
+  margin: 0;
+
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-auto-rows: minmax(150px, auto);
+  grid-gap: 1rem;
+}
+
+.posts .postlist-item {
+  margin-right: 5px;
+  /* Flex Fallback */
+  margin-left: 5px;
+
+  flex: 1 1 200px;
+}
+
+.posts .postlist-item-preview {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  align-items: flex-start;
+}
+
+.posts .postlist-image {
+  display: block;
+
+  width: 100%;
+
+  background: var(--blue);
+
+  flex-grow: 1;
+}
+
+.postlist-image img {
+  width: 100%;
+}
+
+@supports (display: grid) {
+  .posts .postlist-item {
+    margin: 0;
+  }
+}
+
+.posts .postlist-link {
+  display: block;
+
+  width: 100%;
+  padding: .5rem 0;
+}
+
+.posts .postlist-item img {
+  display: block;
+}
+
+.posts .postlist-item::before {
+  display: none;
 }
 
 /* Tags */
 .tag {
+  font-size: .625em; /* 10px /16 */
+
   display: inline-block;
-  vertical-align: text-top;
-  text-transform: uppercase;
-  font-size: 0.625em; /* 10px /16 */
+
+  margin-left: .8em; /* 8px /10 */
   padding: 2px 4px;
-  margin-left: 0.8em; /* 8px /10 */
-  background-color: var(--red);
-  color: var(--white);
-  border-radius: 0.25em; /* 3px /12 */
+
+  vertical-align: text-top;
   text-decoration: none;
+  text-transform: uppercase;
+
+  color: var(--white);
+  border-radius: .25em; /* 3px /12 */
+  background-color: var(--red);
 }
 
 a[href].tag,
 a[href].tag:visited {
-  color: #fff;
+  color: var(--white);
 }
 
 /* Direct Links / Markdown Headers */
 .direct-link {
   font-family: sans-serif;
-  text-decoration: none;
   font-style: normal;
+
   margin-left: .1em;
+
+  text-decoration: none;
 }
 
 a[href].direct-link,
@@ -224,10 +317,12 @@ a[href].direct-link:focus,
 a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
-  color: #aaa;
+  color: var(--darkgray);
 }
 
+/* Footer*/
 .footer {
-  border-top: 1px dashed var(--lightgray);
   padding: 1rem;
+
+  border-top: 1px dashed var(--lightgray);
 }
