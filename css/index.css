@@ -28,6 +28,43 @@ body {
   flex-direction: column;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.posts .postlist {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.posts .postlist-item {
+  width: calc(100% / 3);
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.posts .postlist-link {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.posts .postlist-item img {
+  display: block;
+}
+
+.posts .postlist-item::before {
+  display: none;
+}
+
+iframe {
+  border: 0;
+  width: 100%;
+  height: 400px;
+}
+
 p:first-child {
   margin-top: 0;
 }
@@ -42,6 +79,12 @@ a[href] {
 
 a[href]:visited {
   color: var(--navy);
+}
+
+code {
+  background: rgba(0, 0, 0, .05);
+  padding: 3px 4px;
+  margin: 0 2px;
 }
 
 .header {
@@ -87,6 +130,10 @@ a[href]:visited {
   flex-grow: 1;
 }
 
+.main--tmpl-post {
+  max-width: 50%;
+}
+
 /* Posts list */
 .postlist {
   list-style: none;
@@ -95,6 +142,10 @@ a[href]:visited {
 
 .postlist-item {
   counter-increment: start-from -1;
+}
+
+.postlist-item img {
+  display: none;
 }
 
 .postlist-item:before {
@@ -113,11 +164,6 @@ a[href]:visited {
 
 .postlist-date {
   word-spacing: -0.5px;
-}
-
-.postlist-link {
-  display: inline-block;
-  padding: 0.25em 0.1875em; /* 4px 3px /16 */
 }
 
 .postlist-item-active .postlist-link {

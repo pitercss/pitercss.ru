@@ -132,28 +132,33 @@
   </url>
   
   <url>
+    <loc>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-29/</loc>
+    <lastmod>2019-02-27</lastmod>
+  </url>
+  
+  <url>
     <loc>https://pitercss.ru/pitercss.ru/about/</loc>
-    <lastmod>2019-03-02</lastmod>
+    <lastmod>2019-03-03</lastmod>
   </url>
   
   <url>
     <loc>https://pitercss.ru/pitercss.ru/posts/</loc>
-    <lastmod>2019-03-02</lastmod>
+    <lastmod>2019-03-03</lastmod>
   </url>
   
   <url>
     <loc>https://pitercss.ru/pitercss.ru/</loc>
-    <lastmod>2019-03-02</lastmod>
+    <lastmod>2019-03-03</lastmod>
   </url>
   
   <url>
     <loc>https://pitercss.ru/pitercss.ru/tags/</loc>
-    <lastmod>2019-03-02</lastmod>
+    <lastmod>2019-03-03</lastmod>
   </url>
   
   <url>
     <loc>https://pitercss.ru/pitercss.ru/tags/another-tag/</loc>
-    <lastmod>2019-03-02</lastmod>
+    <lastmod>2019-03-03</lastmod>
   </url>
   
   <url>
@@ -164,10 +169,5 @@
   <url>
     <loc>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-28/</loc>
     <lastmod>2019-05-02</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/posts/pitercss_meetup-29/</loc>
-    <lastmod>2019-05-03</lastmod>
   </url>
 </urlset>
