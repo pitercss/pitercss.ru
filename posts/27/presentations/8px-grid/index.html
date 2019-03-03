@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <style>
+        @font-face {
+          font-family: "Helvetica";
+          src: url("helvetica-bold.woff") format("woff");
+          font-weight: bold;
+        }
+
+        @font-face {
+          font-family: "Helvetica";
+          src: url("helvetica-medium.woff") format("woff");
+          font-weight: normal;
+        }
+
+        @font-face {
+          font-family: "Helvetica";
+          src: url("helvetica-medium-italic.woff") format("woff");
+          font-weight: normal;
+          font-style: italic;
+        }
+
+        .shower {
+          --slide-ratio: calc(16 / 9);
+        }
+
+        .slide::after {
+          display: none;
+        }
+
+        *,
+        *::before,
+        *::after {
+          font-family: "Helvetica", sans-serif !important;
+        }
+
+        .large {
+          font-size: 48px;
+        }
+
+        pre code {
+          font-family: monospace !important;
+        }
+
+        pre code::before {
+          display: none;
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Восьмипиксельная сетка</h1>
+        <p>Милослав Волосков</p>
+    </header>
+
+    <!-- cover -->
+    <section class="slide clear" id="cover">
+      <img class="cover" src="pictures/cover.jpg" alt="">
+    </section>
+
+    <!-- about -->
+    <section class="slide">
+      <ol class="large cover">
+        <li>Я архитектор ПО</li>
+        <li class="next">Я делаю фронтенд</li>
+        <li class="next"><em>Я не дизайнер</em></li>
+      </ol>
+    </section>
+
+    <!-- Good minimalism example -->
+    <section class="slide">
+      <img class="cover" src="pictures/good_minimalism_2.png" alt="">
+    </section>
+
+    <!-- Another good minimalism example -->
+    <section class="slide">
+      <img class="cover" src="pictures/good_minimalism_1.png" alt="">
+    </section>
+
+    <!-- import great design -->
+    <section class="slide">
+      <code class="cover large">import&nbsp;great_design;</code>
+    </section>
+
+    <!-- Bad form -->
+    <section class="slide">
+      <img class="cover" src="pictures/bad_form.png" alt="">
+    </section>
+
+    <!-- Good form -->
+    <section class="slide">
+      <img class="cover" src="pictures/good_form.png" alt="">
+    </section>
+
+    <!-- Bad form vs good form -->
+    <section class="slide">
+      <img class="cover" src="pictures/forms.png" alt="">
+    </section>
+
+    <!-- About vertical rhythm -->
+    <section class="slide">
+      <img class="cover" src="pictures/vertical_rhytm.png" alt="">
+    </section>
+
+    <!-- import vertical rhythm -->
+    <section class="slide">
+      <code class="cover large">import&nbsp;vertical_rhythm;</code>
+    </section>
+
+    <section class="slide">
+      <h2 class="shout shrink">Восьми&shy;пиксельная сетка!</h2>
+    </section>
+
+    <section class="slide">
+      <img src="pictures/angery.png" alt="" style="opacity: .4">
+      <h2 class="shout">Восьми&shy;пиксельная сетка!</h2>
+    </section>
+
+    <!-- Website built with 8px-grid -->
+    <section class="slide">
+      <img class="cover" src="pictures/with_grid.png" alt="">
+    </section>
+
+    <!-- Screen resolutions -->
+    <section class="slide">
+      <img class="cover" src="pictures/screens.png" alt="">
+    </section>
+
+    <!-- Rems -->
+    <section class="slide">
+        <pre class="cover large">            <code>:root {</code>
+            <code>    font-size: 16px;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="cover large">            <code>1 point = .5rem</code>
+        </pre>
+    </section>
+
+    <!-- .5rem -->
+    <section class="slide">
+        <pre class="cover large">            <code>.button {</code>
+            <code>    padding: .5rem 1rem;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <!-- import grid point -->
+    <section class="slide">
+      <code class="cover large">import&nbsp;grid_points;</code>
+    </section>
+
+    <!-- sass function -->
+    <section class="slide">
+        <pre class="cover large">            <code>@function grid_points ($count) {</code>
+            <code>    @return 8px * $count;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Как вставлять текст?</h2>
+      <img width="600" src="pictures/text.png" alt="">
+    </section>
+
+    <section class="slide">
+        <pre class="cover large">            <code>:root {</code>
+            <code>    line-height: 1.5;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+      <h2>Как вставлять картинки?</h2>
+      <img width="600" src="pictures/pics.png" alt="">
+    </section>
+
+    <section class="slide">
+        <pre class="cover large">            <code>img {</code>
+            <code>    max-width: 100%;</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <!-- measuring in photoshop -->
+    <section class="slide">
+      <img class="cover" src="pictures/measuring.jpg" alt="">
+    </section>
+
+    <!-- Designer marks up grid to help developer -->
+    <section class="slide">
+      <h2>1. Измерять теперь проще</h2>
+      <img width="600" src="pictures/grid_mockup.jpg" alt="">
+    </section>
+
+    <!-- pixel perfect -->
+    <section class="slide">
+      <h2>2. Пиксель перфект по умолчанию</h2>
+      <div class="columns two">
+        <img src="pictures/diff2.png" alt="">
+        <img src="pictures/diff.png" alt="">
+      </div>
+    </section>
+
+    <!-- pixel fitting -->
+    <section class="slide">
+      <h2>3. Всегда четкая графика</h2>
+      <img src="pictures/pixel-fitting.png" style="margin-top: -30px" alt="">
+    </section>
+
+    <!-- scaling the whole website -->
+    <section class="slide" style="background: black">
+      <img class="cover" src="pictures/future.jpg" alt="">
+    </section>
+
+    <!-- declarativeness -->
+    <section class="slide">
+      <h2 class="cover" style="text-align: center; line-height: 1.5">
+        <em>Восьмипиксельная сетка более декларативна.</em>
+      </h2>
+    </section>
+
+    <!-- silver bullet? -->
+    <section class="slide">
+      <img class="cover" src="pictures/silver_bullet.jpg" alt="">
+    </section>
+
+    <!-- no -->
+    <section class="slide">
+      <span class="cover" style="font-size: 100px">Нет.</span>
+    </section>
+
+    <!-- cover again -->
+    <section class="slide">
+      <img class="cover" src="pictures/cover.jpg" alt="">
+    </section>
+
+    <!-- great non-grid website -->
+    <section class="slide">
+      <img class="cover" src="pictures/web_art_1.png" alt="">
+    </section>
+
+    <!-- another great non-grid website -->
+    <section class="slide">
+      <img class="cover" src="pictures/web_art_2.png" alt="">
+    </section>
+
+    <!-- Aalto quote -->
+    <section class="slide">
+        <figure class="cover">
+            <blockquote>
+              <p>Разбивая задачу на отдельные проблемы, мы разбиваем возможности делать искусство.</p>
+            </blockquote>
+            <figcaption>Алвар Аалто</figcaption>
+        </figure>
+    </section>
+
+    <!-- Two types of grid -->
+    <section class="slide">
+      <img class="cover" src="pictures/hard.png" alt="">
+    </section>
+
+    <section class="slide">
+      <img class="cover" src="pictures/soft.png" alt="">
+    </section>
+
+    <!-- Resets -->
+    <section class="slide">
+      <h2><code>import grid;</code></h2>
+      <div class="columns two">
+        <section>
+          <h3><a href="https://github.com/uyouthe/reseight">Reseight</a></h3>
+          <ul>
+            <li class="next">Это нормалайз</li>
+            <li class="next">Убирает все отступы</li>
+            <li class="next">Вы делаете сетку сами</li>
+          </ul>
+        </section>
+        <section>
+          <h3><a href="https://github.com/uyouthe/eightilize">Eightilize</a></h3>
+          <ul>
+            <li class="next">Это нормалайз</li>
+            <li class="next">Дает базовые отступы</li>
+            <li class="next">Вы делаете сетку сами</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section class="slide">
+      <h2>Ссылки</h2>
+      <ul class="large">
+        <li><a href="https://miloslav.website">miloslav.website</a></li>
+        <li><a href="https://spec.fm/specifics/8-pt-grid">Оригинальная статья</a></li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <img class="cover" src="pictures/end.jpg" alt="">
+    </section>
+<!--
+    <section class="slide">
+      <29 class="cover" src="pictures/cover.jpg" alt="">
+    </section>
+
+    <section class="slide">
+        <h2>Shower key features</h2>
+        <ol>
+            <li>Built on HTML, CSS and JavaScript</li>
+            <li>Works in all modern browsers</li>
+            <li>Themes are separated from engine</li>
+            <li>Fully keyboard accessible</li>
+            <li>Printable to PDF</li>
+        </ol>
+        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Plain text on your slides</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Two columns if you like</h2>
+        <div class="columns two">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>All kind of lists</h2>
+        <ol>
+            <li>Simple lists are marked with bullets</li>
+            <li>Ordered lists begin with a number</li>
+            <li>You can even nest lists one inside another
+                <ul>
+                    <li>Or mix their types</li>
+                    <li>But do not go too far</li>
+                    <li>Otherwise audience will be bored</li>
+                </ul>
+            </li>
+            <li>Look, seven rows exactly!</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Serious citations</h2>
+        <figure>
+            <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+            </blockquote>
+            <figcaption>Marcus Tullius Cicero</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Code samples</h2>
+        <pre>
+            <code>&lt;!DOCTYPE html&gt;</code>
+            <code class="mark">&lt;html lang="en"&gt;</code>
+            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
+            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
+            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
+            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
+            <code><mark>&lt;/head&gt;</mark></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Even tables</h2>
+        <table>
+        <tr>
+            <th scope="col">Locavore</th>
+            <th>Umami</th>
+            <th>Helvetica</th>
+            <th>Vegan</th>
+        </tr>
+        <tr>
+            <th scope="row">Fingerstache</th>
+            <td>Kale</td>
+            <td>Chips</td>
+            <td>Keytar</td>
+        </tr>
+        <tr>
+            <th scope="row">Sriracha</th>
+            <td>Gluten-free</td>
+            <td>Ennui</td>
+            <td>Keffiyeh</td>
+        </tr>
+        <tr>
+            <th scope="row">Thundercats</th>
+            <td>Jean</td>
+            <td>Shorts</td>
+            <td>Biodiesel</td>
+        </tr>
+        <tr>
+            <th scope="row">Terry</th>
+            <td>Richardson</td>
+            <td>Swag</td>
+            <td>Blog</td>
+        </tr>
+        </table>
+        <p>It’s good to have information organized.</p>
+    </section>
+
+    <section class="slide" id="picture">
+        <h2>Pictures</h2>
+        <figure>
+            <29 class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
+            <figcaption class="copyright right white">
+                <a href="http://fiftyfootshadows.net/">© John Carey</a>
+            </figcaption>
+        </figure>
+        <style>
+            #picture h2 {
+                color: white;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">You can even shout this way</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Inner navigation</h2>
+        <ol>
+            <li>Lets you reveal list items one by one</li>
+            <li class="next">To keep some key points</li>
+            <li class="next">In secret from audience</li>
+            <li class="next">But it will work only once</li>
+            <li class="next">Nobody wants to see the same joke twice</li>
+        </ol>
+    </section>
+
+    <section class="slide" id="see-more">
+        <h2 class="shout">
+            <29 src="pictures/logo.svg" alt="Shower logo">
+            <a href="https://github.com/shower/shower">See more on GitHub</a>
+        </h2>
+        <style>
+            #see-more h2 {
+                font-size: 100px
+            }
+
+            #see-more 29 {
+                width: 0.72em;
+                height: 0.72em;
+            }
+        </style>
+    </section> -->
+
+    <footer class="badge">
+        <a href="https://github.com/uyouthe/gridtalk">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Математика в вебе</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<!-- <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&amp;subset=cyrillic" rel="stylesheet"> -->
+	<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:300|Source+Sans+Pro:400,300,300italic,400italic,600,600italic"> -->
+	<style>
+		/* .MathJax {
+			font-size: 7em;
+		} */
+		.slide::after {
+			position: absolute;
+			bottom: -25px;
+			top: initial;
+			right: 20px;
+			padding-top: 15px;
+			width: 50px;
+			height: 100px;
+			background: url(http://127.0.0.1:8080/images/ribbon.svg) no-repeat;
+			color: #fff;
+			counter-increment: slide;
+			content: counter(slide);
+			text-align: center;
+			color: #585a5e;
+		}
+		.slide.pic::after {
+			display: none;
+		}
+		.progress{
+			left: -20px;
+    		bottom: 0;
+			z-index: 1;
+			display: none;
+			width: 0;
+			height: 0;
+			-webkit-box-sizing: content-box;
+			box-sizing: content-box;
+			border: 10px solid #000000;
+			border-right-color: transparent;
+			-webkit-transition: width .2s linear;
+			transition: width .2s linear;
+			clip: rect(10px,1044px,20px,20px);
+		}
+		.slide.pic .cover {
+			height: 100%;
+			width: 100%;
+		}
+		.slide {
+			padding-top: 70px;
+			/* font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; */
+			/* font-family: 'PT Sans Caption', sans-serif; */
+			/* -webkit-font-smoothing: antialiased; */
+		}
+		.slide h2 {
+			/* font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; */
+			/* font-family: 'PT Sans Caption', sans-serif; */
+			/* -webkit-font-smoothing: antialiased; */
+		}
+		.slide.formulas {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			padding-top: 0px;
+		}
+		.codepen {
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+	</style>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  CommonHTML: {
+			scale: 200
+		  }
+		});
+	</script>
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Математика в вебе</h1>
+		<p>Маша Просвирнина</p>
+	</header>
+
+	<section class="slide first" id="cover">
+		<h2 id="ff">Математика в вебе</h2>
+		<figure>
+			<img class="cover" src="pictures/nasa.jpg" alt="Hands on the orange typewriter in a park">
+			<figcaption class="white">
+			</figcaption>
+		</figure>
+		<style>
+			/* .first {
+				display: flex;
+				padding-top: 0px;
+				justify-content: center;
+				align-items: center;
+			} */
+			.first.slide .cover{
+				max-width: inherit;
+    			max-height: inherit;
+			}
+			.first#cover h2{
+				margin-top: 190px;
+			}
+			#cover h2 {
+				margin:0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				width: 100%;
+				height: 100%;
+				}
+				#cover #ff {
+					font-size:90px;
+				}
+			#cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#cover p a {
+					color:#FFF;
+					}
+		</style>
+	</section>
+
+	<!-- <section class="slide">
+			<h2 class="shout"></h2>
+	</section> -->
+
+	<section class="slide">
+			<figure>
+				<img class="cover" src="pictures/symbols.png" alt="Orange typewriter on a wooden table close-up">
+				<figcaption class="white">
+				</figcaption>
+			</figure>
+	</section>
+
+	<section class="slide pic">
+		<figure>
+			<img class="cover" src="pictures/tesla.jpg" alt="Orange typewriter on a wooden table close-up">
+			<figcaption class="white">
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide pic">
+		<figure>
+			<img class="cover" src="pictures/falcon2.jpg" alt="Orange typewriter on a wooden table close-up">
+			<figcaption class="white">
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="slide formulas">
+		$$v_1 = \sqrt{G {M \over R_0 + h}}$$
+	</section>
+
+	<section class="slide">
+			<video onclick="this.play()" class="cover height">
+					<source src="pictures/m-hmm.webm" type="video/webm">
+					<source src="pictures/m-hmm.mp4" type="video/mp4">
+			</video>
+			<!-- <figure>
+				<29 class="cover" src="pictures/duplex.png" alt="Orange typewriter on a wooden table close-up">
+				<figcaption class="white">
+				</figcaption>
+			</figure> -->
+	</section>
+
+	<section class="slide formulas">
+			$$P(Y = 1|x) ={1 \over 1 + e^{-(w^Tx + b)}}$$
+	</section>
+
+	<section class="slide pic">
+			<video onclick="this.play()" class="cover height">
+					<source src="pictures/robots.webm" type="video/webm">
+					<source src="pictures/robots.mp4" type="video/mp4">
+			</video>
+			<!-- <figure>
+				<29 class="cover" src="pictures/boston4.jpg" alt="Orange typewriter on a wooden table close-up">
+				<figcaption class="white">
+				</figcaption>
+			</figure> -->
+	</section>
+
+	<!-- <section class="slide pic">
+			<figure>
+				<29 class="cover" src="pictures/boston.jpg" alt="Orange typewriter on a wooden table close-up">
+				<figcaption class="white">
+				</figcaption>
+			</figure>
+	</section> -->
+
+	<!-- <section class="slide pic">
+			<figure>
+				<29 class="cover" src="pictures/boston5.jpg" alt="Orange typewriter on a wooden table close-up">
+				<figcaption class="white">
+				</figcaption>
+			</figure>
+	</section> -->
+
+	<section class="slide formulas">
+			$$M_{ij} =
+			\begin{cases} h^t_j I^C_i h_i, & \mbox{if } i \in v(j)
+			\\ h^T_jI^c_j, & \mbox{if } j \in v(i)
+			\\ 0, & \mbox{otherwise}
+			\end{cases}$$
+	</section>
+
+	<section class="slide formulas">
+			$$ A = \begin{bmatrix}
+				w_0 A_0\\
+				w_1 A_1\\
+				\vdots\\
+				w_n A_n\\
+				\end{bmatrix},
+				b = \begin{bmatrix}
+				w_0 b_0\\
+				w_1 b_1\\
+				\vdots\\
+				w_n b_n\\
+				\end{bmatrix}$$
+	</section>
+
+	<section class="slide">
+			<figure>
+				<img class="cover" src="pictures/google.png" alt="Orange typewriter on a wooden table close-up">
+				<figcaption class="white">
+				</figcaption>
+			</figure>
+	</section>
+
+	<section class="slide">
+			<h2>Сложности</h2>
+			<ol>
+				<li>Специальные символы.</li>
+				<li>Двумерность и нестандартная компоновка.</li>
+				<li>Доступность.</li>
+			</ol>
+	</section>
+
+	<section class="slide">
+			<h2 class="shout">MathML</h2>
+	</section>
+
+	<section class="slide formulas">
+			$${a \over b} = c$$
+	</section>
+
+	<section class="slide">
+			<h2>MathML code</h2>
+			<article class="content">
+				<pre>
+					<code>&lt;math&gt;</code>
+					<code>	&lt;mrow&gt;</code>
+					<code>		&lt;mfrac&gt;</code>
+					<code>			&lt;mrow&gt;</code>
+					<code>				&lt;mi&gt; a &lt;/mi&gt;</code>
+					<code>			&lt;/mrow&gt;</code>
+					<code>			&lt;mrow&gt;</code>
+					<code>				&lt;mi&gt; b &lt;/mi&gt;</code>
+					<code>			&lt;/mrow&gt;</code>
+					<code>		&lt;/mfrac&gt;</code>
+					<code>		&lt;mo&gt; = &lt;/mo&gt;</code>
+					<code>		&lt;mi&gt; c &lt;/mi&gt;</code>
+					<code>	&lt;/mrow&gt;</code>
+					<code>&lt;/math&gt;</code>
+				</pre>
+			<style>
+				.content {
+					display: flex;
+					flex-direction: row;
+				}
+				pre {
+					font-size: 16px;
+				}
+			</style>
+	</section>
+
+	<section class="slide">
+			<figure>
+				<img class="cover" src="pictures/mathml.png" alt="">
+				<figcaption class="white">
+				</figcaption>
+			</figure>
+	</section>
+
+	<section class="slide pic">
+			<figure>
+				<img class="cover" src="pictures/perekati.jpg" alt="">
+				<figcaption class="white">
+				</figcaption>
+			</figure>
+	</section>
+
+	<section class="slide">
+			<article class="content">
+					&lt;mstyle&gt;, &lt;mspace&gt;, &lt;mpadded&gt;, &lt;mphantom&gt;, &lt;menclose&gt;, &lt;mfenced&gt;, &lt;mtable&gt;, &lt;mstack&gt;
+			</article>
+	</section>
+
+	<section class="slide">
+			<h2 class="shout">LaTeX</h2>
+	</section>
+
+	<section class="slide">
+			<h2>MathML vs LaTeX</h2>
+			<article class="content">
+				<pre>
+					<code>&lt;math&gt;</code>
+					<code>	&lt;mrow&gt;</code>
+					<code>		&lt;mfrac&gt;</code>
+					<code>			&lt;mrow&gt;</code>
+					<code>				&lt;mi&gt; a &lt;/mi&gt;</code>
+					<code>			&lt;/mrow&gt;</code>
+					<code>			&lt;mrow&gt;</code>
+					<code>				&lt;mi&gt; b &lt;/mi&gt;</code>
+					<code>			&lt;/mrow&gt;</code>
+					<code>		&lt;/mfrac&gt;</code>
+					<code>		&lt;mo&gt; = &lt;/mo&gt;</code>
+					<code>		&lt;mi&gt; c &lt;/mi&gt;</code>
+					<code>	&lt;/mrow&gt;</code>
+					<code>&lt;/math&gt;</code>
+				</pre>
+			<article class="formula"><span>&#36;</span>&#36;{a \over b} = c&#36;&#36;</article>
+			</article>
+			<style>
+				.content {
+					display: flex;
+					flex-direction: row;
+				}
+				.formula {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					margin-top: -120px;
+					margin-right: -50px;
+				}
+				pre {
+					font-size: 16px;
+				}
+			</style>
+	</section>
+
+	<section class="slide">
+			<h2 class="shout">Mathematica, Matlab</h2>
+	</section>
+
+	<section class="slide">
+			<h2>MathML vs Mathematica</h2>
+			<article class="content">
+				<pre>
+					<code>&lt;math&gt;</code>
+					<code>	&lt;mrow&gt;</code>
+					<code>		&lt;mfrac&gt;</code>
+					<code>			&lt;mrow&gt;</code>
+					<code>				&lt;mi&gt; a &lt;/mi&gt;</code>
+					<code>			&lt;/mrow&gt;</code>
+					<code>			&lt;mrow&gt;</code>
+					<code>				&lt;mi&gt; b &lt;/mi&gt;</code>
+					<code>			&lt;/mrow&gt;</code>
+					<code>		&lt;/mfrac&gt;</code>
+					<code>		&lt;mo&gt; = &lt;/mo&gt;</code>
+					<code>		&lt;mi&gt; c &lt;/mi&gt;</code>
+					<code>	&lt;/mrow&gt;</code>
+					<code>&lt;/math&gt;</code>
+				</pre>
+			<article class="formula">a/b = c</article>
+			</article>
+			<style>
+				.content {
+					display: flex;
+					flex-direction: row;
+				}
+				.formula {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					margin-top: -120px;
+					margin-right: -50px;
+				}
+				pre {
+					font-size: 16px;
+				}
+			</style>
+	</section>
+
+	<section class="slide">
+			<h2>Способы</h2>
+			<ul>
+				<li>native MathML support</li>
+				<li class="next">SVG</li>
+				<li class="next">HTML-with-CSS</li>
+			</ul>
+	</section>
+
+	<section class="slide">
+			<h2 class="shout">MathJax</h2>
+	</section>
+
+	<section class="slide">
+			<h2>Wikipedia</h2>
+			$$\int_{a}^{b} f(x) dx$$
+			<article class="content wiki">
+				<pre>
+					<code>&lt;img src="https://wikimedia.org/api/..."</code>
+					<code>	class="mwe-math-fallback-image-inline"</code>
+					<code>	aria-hidden="true" style="vertical-align: -3.838ex; width:9.544ex; height:9.176ex;"</code>
+					<code><mark>	alt="{\displaystyle \int \limits _{a}^{b}f(x)dx}"</mark></code>
+					<code>/&gt;</code>
+				</pre>
+			</article>
+			<style>
+				.wiki code{
+					font-size: 17px;
+					margin-top: 15px;
+				}
+			</style>
+	</section>
+
+	<section class="slide">
+			<h2>WolframAlpha</h2>
+			$$\int_{0}^{\pi} sin(x) dx = 2$$
+			<article class="content wiki">
+				<pre>
+						<code>&lt;img</code>
+						<code><mark>	alt="integral_0^π sin(x) dx = 2"</mark></code>
+						<code>	img-on-load="doPodLoad(results, pod)" onerror="this.style.color = 'black'" </code>
+						<code>	onload="this.style.opacity='1'" class="ng-isolate-scope" </code>
+						<code>	src="http://www4f.wolframalpha.com/Calculate/..." </code>
+						<code>/&gt;</code>
+				</pre>
+			</article>
+			<style>
+				.wiki code{
+					font-size: 17px;
+					margin-top: 15px;
+				}
+			</style>
+	</section>
+
+
+	<section class="slide">
+			<video onclick="this.play()">
+					<source src="pictures/zapis.mov" type="video/mp4">
+			</video>
+	</section>
+
+	<section class="slide formulas">
+			$$M_{ij} =
+			\begin{cases} h^t_j I^C_i h_i, & \mbox{if } i \in v(j)
+			\\ h^T_jI^c_j, & \mbox{if } j \in v(i)
+			\\ 0, & \mbox{otherwise}
+			\end{cases}$$
+	</section>
+
+	<section class="slide formulas">
+			$$P(Y = 1|x) ={1 \over 1 + e^{-(w^Tx + b)}}$$
+	</section>
+
+	<section class="slide">
+			<iframe class="place codepen" src="https://codepen.io/daniwiris/embed/JOqvpB/?height=640&theme-id=light&embed-version=2"></iframe>
+	</section>
+
+	<section class="slide">
+			<iframe class="place codepen" src="https://codepen.io/pkra/embed/gvvagd/?height=640&theme-id=light&embed-version=2"></iframe>
+	</section>
+
+	<section class="slide pic">
+			<figure>
+				<img class="cover" src="pictures/nyashi.png" alt="">
+				<figcaption class="white">
+				</figcaption>
+			</figure>
+	</section>
+
+	<section class="slide">
+			<h2 class="shout">Что делать?</h2>
+	</section>
+
+	<section class="slide pic">
+			<figure>
+				<img class="cover" src="pictures/mars.jpg" alt="">
+				<figcaption class="white">
+				</figcaption>
+			</figure>
+		</section>
+
+	<section class="slide">
+			<h2>Ссылки</h2>
+			<ol>
+				<li><a href="https://github.com/w3c/mathonwebpages/">W3C Math-On-Web-Pages Community Group</a></li>
+				<li><a href="https://www.peterkrautzberger.org/0186/">MathML is a failed web standard</a></li>
+				<li><a href="https://www.w3.org/Math/planet/">W3C Planet MathML</a></li>
+				<li><a href="https://www.americanscientist.org/article/writing-math-on-the-web">Writing Math on the Web</a></li>
+			</ol>
+	</section>
+
+	<section class="slide" id="see-more">
+			<h2 class="shout link">
+				<a href="https://github.com/shower/shower">@prosvirnina12</a>
+			</h2>
+			<style>
+				h2.link a{
+					color: #000;
+				}
+				#see-more h2 {
+					font-size:100px
+					}
+			</style>
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+</script>
+</body>
+</html>
