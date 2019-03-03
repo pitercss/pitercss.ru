@@ -1,9 +1,10 @@
 ---
-title: pitercss_meetup 7
-description: This is a meetup
-date: 2018-05-01
+title: 7
+date: 2016-11-16
+location: Wargaming
+image: /img/7/intro.png
 tags:
-  - another-tag
+  - тег
+  - еще тег
 layout: layouts/post.njk
 ---
- This is a meetup about {{title}}

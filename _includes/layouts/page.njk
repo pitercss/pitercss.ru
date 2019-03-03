@@ -1,9 +1,11 @@
 ---
-layout: layouts/home.njk
-permalink: 404.html
-excludeFromSitemap: true
+layout: layouts/base.njk
+templateClass: tmpl-page
 ---
-# Тут ничего нет
+
+<h1>{{ title }}</h1>
+
+{{ content | safe }}
 
 <section class="breadcrumbs">
   <p><a href="{{ '/' | url }}">← Главная</a></p>

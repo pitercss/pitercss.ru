@@ -1,9 +1,10 @@
 ---
-title: pitercss_meetup 21
-description: This is a meetup
-date: 2018-05-01
+title: 21
+date: 2018-04-26
+location: JetBrains
+image: /img/21/intro.png
 tags:
-  - another-tag
+  - тег
+  - еще тег
 layout: layouts/post.njk
 ---
- This is a meetup about {{title}}

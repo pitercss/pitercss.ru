@@ -1,9 +1,10 @@
 ---
-title: pitercss_meetup 16
-description: This is a meetup
-date: 2018-05-01
+title: 16
+date: 2017-11-28
+location: DINS
+image: /img/16/intro.png
 tags:
-  - another-tag
+  - тег
+  - еще тег
 layout: layouts/post.njk
 ---
- This is a meetup about {{title}}

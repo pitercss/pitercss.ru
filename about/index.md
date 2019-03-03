@@ -1,10 +1,10 @@
 ---
-layout: layouts/post.njk
+layout: layouts/page.njk
 title: О нас
 tags:
   - nav
 navtitle: О нас
-templateClass: tmpl-post
+templateClass: tmpl-page
 ---
 
 **pitercss_meetup**  -  это ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.

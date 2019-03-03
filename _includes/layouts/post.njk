@@ -9,6 +9,8 @@ templateClass: tmpl-post
   <img src="{{ image }}" alt="{{ post.data.title }}">
 {%- endif -%}
 
-
 {{ content | safe }}
-<p><a href="{{ '/' | url }}">← Главная</a></p>
+
+<section class="breadcrumbs">
+  <p><a href="{{ '/' | url }}">← Главная</a></p>
+</section>
