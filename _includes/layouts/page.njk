@@ -5,6 +5,10 @@ templateClass: tmpl-page
 
 <h1>{{ title }}</h1>
 
+{%- if image -%}
+  <img src="{{ image }}" alt="{{ title }}">
+{%- endif -%}
+
 {{ content | safe }}
 
 <section class="breadcrumbs">

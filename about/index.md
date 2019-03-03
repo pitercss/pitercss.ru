@@ -1,6 +1,7 @@
 ---
 layout: layouts/page.njk
 title: О нас
+image: /img/about.jpg
 tags:
   - nav
 navtitle: О нас
