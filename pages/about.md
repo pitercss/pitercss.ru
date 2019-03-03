@@ -1,4 +1,5 @@
 ---
+permalink: about.html
 layout: layouts/page.njk
 title: О нас
 image: /img/about.jpg
@@ -6,6 +7,7 @@ tags:
   - nav
 navtitle: О нас
 templateClass: tmpl-page
+
 ---
 
 **pitercss_meetup**  -  это ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.

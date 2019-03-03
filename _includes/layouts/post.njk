@@ -6,7 +6,7 @@ templateClass: tmpl-post
 <h1>pitercss_meetup {{ title }} {{ location | safe }}</h1>
 
 {%- if image -%}
-  <img src="{{ image }}" alt="{{ post.data.title }}">
+  <img src="{{ image | url }}" alt="{{ post.data.title }}">
 {%- endif -%}
 
 {{ content | safe }}

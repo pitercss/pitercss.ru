@@ -1,4 +1,5 @@
 ---
+permalink: /tags/{{ tag }}/
 pagination:
   data: collections
   size: 1
@@ -11,8 +12,8 @@ pagination:
 layout: layouts/home.njk
 renderData:
   title: Tagged “{{ tag }}”
-permalink: /tags/{{ tag }}/
 ---
+
 <h1>Поиск по тегу: "{{ tag }}"</h1>
 
 {% set postslist = collections[ tag ] %}

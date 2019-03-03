@@ -40,14 +40,16 @@ body {
 /* Global */
 
 img {
-  max-width: 100%;
-  height: auto;
-  color: var(--white);
   font-family: sans-serif;
 
   position: relative;
 
   display: block;
+
+  max-width: 100%;
+  height: auto;
+
+  color: var(--white);
 }
 
 
@@ -167,6 +169,20 @@ code {
   flex-grow: 1;
 }
 
+@media (min-width: 768px) {
+  .main--tmpl-page,
+  .main--tmpl-post {
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main--tmpl-page,
+  .main--tmpl-post {
+    max-width: 50%;
+  }
+}
+
 /* Posts list */
 .postlist {
   padding: 0;
@@ -201,6 +217,7 @@ code {
 
 .posts .postlist {
   display: flex;
+
   flex-wrap: wrap;
 }
 
@@ -218,7 +235,9 @@ code {
 @supports (display: grid) {
   .posts .postlist {
     display: grid;
+
     margin: 0;
+
     flex-wrap: wrap;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     grid-auto-rows: minmax(150px, auto);
@@ -251,9 +270,11 @@ code {
 
 .posts .post-preview__image {
   display: flex;
+
+  width: 100%;
+
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
 
 .post-preview__heading {
@@ -261,7 +282,7 @@ code {
 }
 
 .post-preview__footer {
-  padding: 0.5rem 0;
+  padding: .5rem 0;
 }
 
 /* Tags */
