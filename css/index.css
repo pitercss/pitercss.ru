@@ -37,24 +37,21 @@ body {
   min-height: 100vh;
 }
 
+/* Global */
+
 img {
   max-width: 100%;
   height: auto;
   color: var(--white);
-}
-
-/* Global */
-img[src=''] {
   font-family: sans-serif;
 
   position: relative;
 
   display: block;
-
-  height: 100%;
 }
 
-img[src='']::before {
+
+img::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -70,7 +67,7 @@ img[src='']::before {
   background: var(--blue);
 }
 
-img[src='']::after {
+img::after {
   position: absolute;
   top: 50%;
   left: 0;
@@ -253,7 +250,9 @@ code {
 }
 
 .posts .post-preview__image {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
