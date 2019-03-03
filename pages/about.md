@@ -1,5 +1,5 @@
 ---
-permalink: about/index.html
+permalink: /about/
 layout: layouts/page.njk
 title: О нас
 image: /img/about.jpg

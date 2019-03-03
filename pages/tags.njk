@@ -9,12 +9,12 @@ pagination:
     - nav
     - post
     - posts
-layout: layouts/home.njk
+layout: layouts/archive.njk
 renderData:
-  title: Tagged “{{ tag }}”
+  title: Поиск по тегу “{{ tag }}”
 ---
 
-<h1>Поиск по тегу: "{{ tag }}"</h1>
+<h1>Поиск по тегу "{{ tag }}"</h1>
 
 {% set postslist = collections[ tag ] %}
 {% include "postslist.njk" %}

@@ -1,11 +1,13 @@
 ---
-permalink: /tags/index.html
-layout: layouts/home.njk
+permalink: /tags/
+layout: layouts/archive.njk
 ---
 
-<h1>Теги:</h1>
+<h1>Теги</h1>
 
-{% for tag in collections.tagList %}
-  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-  <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-{% endfor %}
+<section class="tags">
+  {% for tag in collections.tagList %}
+    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+    <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+  {% endfor %}
+</section>
