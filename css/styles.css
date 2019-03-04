@@ -170,17 +170,17 @@ code {
 }
 
 @media (min-width: 768px) {
-  .main--tmpl-page,
-  .main--tmpl-archive,
-  .main--tmpl-post {
+  .main--page,
+  .main--archive,
+  .main--post {
     max-width: 75%;
   }
 }
 
 @media (min-width: 1024px) {
-  .main--tmpl-page,
-  .main--tmpl-archive,
-  .main--tmpl-post {
+  .main--page,
+  .main--archive,
+  .main--post {
     max-width: 50%;
   }
 }
@@ -273,16 +273,16 @@ code {
   font-size: 16px;
 }
 
-.main--tmpl-archive .postlist {
+.main--archive .postlist {
   display: block;
 }
 
-.main--tmpl-archive .postlist-item {
+.main--archive .postlist-item {
   counter-increment: start-from -1;
   margin-bottom: 10px;
 }
 
-.main--tmpl-archive .postlist-item:before {
+.main--archive .postlist-item:before {
   line-height: 100%;
 
   display: inline-block;
@@ -292,34 +292,34 @@ code {
   pointer-events: none;
 }
 
-.main--tmpl-archive .post-preview {
+.main--archive .post-preview {
   display: inline-block;
   vertical-align: top;
 }
 
-.main--tmpl-archive .postlist-date,
-.main--tmpl-archive .postlist-item:before {
+.main--archive .postlist-date,
+.main--archive .postlist-item:before {
   font-size: .8125em; /* 13px /16 */
 
   color: var(--darkgray);
 }
 
-.main--tmpl-archive .postlist-date {
+.main--archive .postlist-date {
   word-spacing: -.5px;
 }
 
-.main--tmpl-archive .post-preview__image {
+.main--archive .post-preview__image {
   display: none;
 }
 
-.main--tmpl-archive .post-preview__heading,
-.main--tmpl-archive .post-preview__heading a {
+.main--archive .post-preview__heading,
+.main--archive .post-preview__heading a {
   margin: 0;
   font-size: 16px;
   line-height: 1;
 }
 
-.main--tmpl-archive .post-preview__date {
+.main--archive .post-preview__date {
   font-size: 12px;
   display: block;
   margin: 5px 0;
