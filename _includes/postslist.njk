@@ -1,7 +1,7 @@
 <ol reversed class="postlist" style="counter-reset: start-from {{ postslist.length + 1 }}">
 {% for post in postslist | reverse %}
   <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="{{ post.url | url }}" class="post-preview__image">
         <img src="{{ '/' | url }}img/{{ post.data.title }}/intro.png" alt="pitercss_meetup {{ post.data.title }}">
       </a>
