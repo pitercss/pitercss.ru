@@ -185,6 +185,15 @@ code {
   }
 }
 
+/* People */
+.people {
+
+}
+
+.people__title {
+  margin: 0;
+}
+
 /* Posts list */
 .postlist {
   padding: 0;
@@ -310,13 +319,13 @@ code {
   line-height: 1;
 }
 
-.main--tmpl-archive .post-preview__date{
+.main--tmpl-archive .post-preview__date {
   font-size: 12px;
   display: block;
   margin: 5px 0;
 }
 
-  /* Tags */
+/* Tags */
 .tags {
   margin-bottom: 20px;
 }
@@ -367,7 +376,12 @@ a[href].direct-link:focus:visited,
   color: var(--darkgray);
 }
 
-/* Footer*/
+/* Breadcrumbs */
+.breadcrumbs {
+  margin-top: 1em;
+}
+
+/* Footer */
 .footer {
   padding: 1rem;
 

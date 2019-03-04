@@ -1,179 +1,199 @@
 
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/1/</loc>
-    <lastmod>2016-01-01</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/2/</loc>
-    <lastmod>2016-01-01</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/3/</loc>
-    <lastmod>2016-01-01</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/4/</loc>
-    <lastmod>2016-01-01</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/5/</loc>
-    <lastmod>2016-01-01</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/6/</loc>
-    <lastmod>2016-01-01</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/7/</loc>
-    <lastmod>2016-11-16</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/8/</loc>
-    <lastmod>2016-12-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/9/</loc>
-    <lastmod>2017-01-24</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/10/</loc>
-    <lastmod>2017-02-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/11/</loc>
-    <lastmod>2017-03-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/12/</loc>
-    <lastmod>2017-04-25</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/13/</loc>
-    <lastmod>2017-05-17</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/14/</loc>
-    <lastmod>2017-09-26</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/15/</loc>
-    <lastmod>2017-10-23</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/16/</loc>
-    <lastmod>2017-11-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/17/</loc>
-    <lastmod>2017-12-20</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/18/</loc>
-    <lastmod>2018-01-24</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/19/</loc>
-    <lastmod>2018-02-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/20/</loc>
-    <lastmod>2018-03-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/21/</loc>
-    <lastmod>2018-04-26</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/22/</loc>
-    <lastmod>2018-05-16</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/23/</loc>
-    <lastmod>2018-08-13</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/24/</loc>
-    <lastmod>2018-09-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/25/</loc>
-    <lastmod>2018-10-10</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/26/</loc>
-    <lastmod>2018-11-20</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/27/</loc>
-    <lastmod>2018-12-25</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/28/</loc>
-    <lastmod>2019-01-28</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/meetups/29/</loc>
-    <lastmod>2019-02-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/about/</loc>
-    <lastmod>2019-03-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/archive/</loc>
-    <lastmod>2019-03-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/contacts/</loc>
-    <lastmod>2019-03-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/</loc>
-    <lastmod>2019-03-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/tags/</loc>
-    <lastmod>2019-03-03</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://pitercss.ru/pitercss.ru/tags/%D1%82%D0%B5%D0%B3/</loc>
-    <lastmod>2019-03-03</lastmod>
-  </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/1/</loc>
+        <lastmod>2016-01-01</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/2/</loc>
+        <lastmod>2016-01-01</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/3/</loc>
+        <lastmod>2016-01-01</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/4/</loc>
+        <lastmod>2016-01-01</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/5/</loc>
+        <lastmod>2016-01-01</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/6/</loc>
+        <lastmod>2016-01-01</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/7/</loc>
+        <lastmod>2016-11-16</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/8/</loc>
+        <lastmod>2016-12-21</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/9/</loc>
+        <lastmod>2017-01-24</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/10/</loc>
+        <lastmod>2017-02-21</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/11/</loc>
+        <lastmod>2017-03-21</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/12/</loc>
+        <lastmod>2017-04-25</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/13/</loc>
+        <lastmod>2017-05-17</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/14/</loc>
+        <lastmod>2017-09-26</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/15/</loc>
+        <lastmod>2017-10-23</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/16/</loc>
+        <lastmod>2017-11-28</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/17/</loc>
+        <lastmod>2017-12-20</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/18/</loc>
+        <lastmod>2018-01-24</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/19/</loc>
+        <lastmod>2018-02-27</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/20/</loc>
+        <lastmod>2018-03-27</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/21/</loc>
+        <lastmod>2018-04-26</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/22/</loc>
+        <lastmod>2018-05-16</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/23/</loc>
+        <lastmod>2018-08-13</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/24/</loc>
+        <lastmod>2018-09-11</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/25/</loc>
+        <lastmod>2018-10-10</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/26/</loc>
+        <lastmod>2018-11-20</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/27/</loc>
+        <lastmod>2018-12-25</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/28/</loc>
+        <lastmod>2019-01-28</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/meetups/29/</loc>
+        <lastmod>2019-02-27</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/about/</loc>
+        <lastmod>2019-03-04</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/archive/</loc>
+        <lastmod>2019-03-04</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/contacts/</loc>
+        <lastmod>2019-03-04</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/</loc>
+        <lastmod>2019-03-04</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/organizers/</loc>
+        <lastmod>2019-03-04</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/speakers/</loc>
+        <lastmod>2019-03-04</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/tags/</loc>
+        <lastmod>2019-03-04</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/tags/speakers/</loc>
+        <lastmod>2019-03-04</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/people/lyubov-gulko/</loc>
+        <lastmod>2019-03-04</lastmod>
+      </url>
+      
+      <url>
+        <loc>https://pitercss.ru/pitercss.ru/people/vadim-makeev/</loc>
+        <lastmod>2019-03-04</lastmod>
+      </url>
 </urlset>
