@@ -1,11 +1,9 @@
 ---
 permalink: /tags/
-title: Все теги
 layout: layouts/page.njk
-className: archive
+templateClass: archive
+pageTitle: Все теги
 ---
-
-<h1>{{ title }}</h1>
 
 <section class="tags">
   {% for tag in collections.tagList %}

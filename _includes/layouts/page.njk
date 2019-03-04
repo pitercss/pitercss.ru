@@ -1,12 +1,20 @@
 ---
 layout: layouts/base.njk
-templateClass: tmpl-page
+templateClass: page
 ---
 
-<h1>{{ pageTitle }}</h1>
+{%- if pageTitle -%}
+  <h1>{{ pageTitle }}</h1>
+{%- endif -%}
 
 {%- if image -%}
   <img src="{{ image | url }}" alt="{{ title }}">
 {%- endif -%}
 
 {{ content | safe }}
+
+{%- if page.url != "/" -%}
+  <section class="breadcrumbs">
+    <p><a href="{{ '/' | url }}">← Главная</a></p>
+  </section>
+{%- endif -%}

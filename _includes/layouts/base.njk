@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ navtitle or  title or renderData.title }} | {{ metadata.title }}</title>
+    <title>{{ navtitle or  title or renderData.title or pageTitle}} | {{ metadata.title }}</title>
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
     <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
@@ -22,7 +22,7 @@
       </ul>
     </header>
 
-    <main class="main {% if className %}main--{{ className }}{% endif %}">
+    <main class="main {% if templateClass %}main--{{ templateClass }}{% endif %}">
       {{ content | safe }}
     </main>
 

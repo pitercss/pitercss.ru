@@ -1,12 +1,12 @@
 ---
 permalink: /tags/{{ tag | safe}}/
+layout: layouts/page.njk
+templateClass: archive
 pagination:
   data: collections
   size: 1
   alias: tag
   filter: [all, nav, post, posts]
-layout: layouts/page.njk
-className: archive
 renderData:
   title: Поиск по тегу “{{ tag }}”
 ---
@@ -16,4 +16,4 @@ renderData:
 {% set postslist = collections[ tag ] %}
 {% include "postslist.njk" %}
 
-<p>Посмотреть <a href="{{ '/tags/' | url }}">все теги</a>.</p>
+<p>Посмотреть <a href="{{ '/tags/' | url }}">все теги →</a></p>

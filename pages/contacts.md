@@ -4,7 +4,6 @@ layout: layouts/page.njk
 pageTitle: Контакты
 tags: [nav]
 navtitle: Контакты
-templateClass: tmpl-page
 ---
 
 * Почта [meetup@pitercss.com](mailto:meetup@pitercss.com) 
