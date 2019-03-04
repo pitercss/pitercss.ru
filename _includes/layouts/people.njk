@@ -14,5 +14,5 @@ templateClass: people
 
 
 <section class="breadcrumbs">
-  <p><a href="/{{ role | url }}">← Все {% if role != "speakers" %}организаторы {% else %}спикеры{% endif %}</a></p>
+  <p><a href="{{ '/' | url }}{{ role }}">← Все {% if role != "speakers" %}организаторы {% else %}спикеры{% endif %}</a></p>
 </section>
