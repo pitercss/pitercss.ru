@@ -264,6 +264,11 @@ a[href]:visited {
     display: none;
   }
 
+  .header__burger:checked ~ .header__navigation {
+    display: flex;
+    position: relative;
+  }
+
   .header__navigation {
     border-bottom: 1px dashed var(--lightgray);
     top: inherit;
