@@ -1,10 +1,9 @@
 ---
 permalink: /about/
 layout: layouts/page.njk
-title: О нас
+pageTitle: О нас
 image: /img/about.jpg
-tags:
-  - nav
+tags: [nav]
 navtitle: О нас
 templateClass: tmpl-page
 ---

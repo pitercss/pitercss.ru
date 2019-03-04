@@ -1,9 +1,8 @@
 ---
 permalink: /contacts/
 layout: layouts/page.njk
-title: Контакты
-tags:
-  - nav
+pageTitle: Контакты
+tags: [nav]
 navtitle: Контакты
 templateClass: tmpl-page
 ---

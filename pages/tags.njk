@@ -4,11 +4,7 @@ pagination:
   data: collections
   size: 1
   alias: tag
-  filter:
-    - all
-    - nav
-    - post
-    - posts
+  filter: [all, nav, post, posts]
 layout: layouts/archive.njk
 renderData:
   title: Поиск по тегу “{{ tag }}”

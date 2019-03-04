@@ -1,0 +1,22 @@
+---
+permalink: /speakers/
+layout: layouts/page.njk
+pageTitle: Докладчики
+tags: nav
+navtitle: Докладчики
+---
+
+<section class="team">
+  {%- for speaker in collections.speakers -%}
+    <article class="team__item">
+      <h1 class="team__title">
+        {%- if speaker.image -%}
+          <a href="{{ speaker.url | url }}">
+            <img src="{{ speaker.image | url }}" alt="{{ speaker.data.title }}">
+          </a>
+        {%- endif -%}
+        <a href="{{ speaker.url | url }}">{{ speaker.data.title }}</a>
+      </h1>
+    </article>
+  {%- endfor -%}
+</section>

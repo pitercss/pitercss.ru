@@ -1,0 +1,22 @@
+---
+permalink: /organizers/
+layout: layouts/page.njk
+pageTitle: Организаторы
+tags: nav
+navtitle: Организаторы
+---
+
+<section class="team">
+  {%- for organizer in collections.organizers -%}
+    <article class="team__item">
+      <h1 class="team__title">
+        {%- if organizator.image -%}
+          <a href="{{ organizer.url | url }}">
+            <img src="{{ organizer.image | url }}" alt="{{ organizer.data.title }}">
+          </a>
+        {%- endif -%}
+        <a href="{{ organizer.url | url }}">{{ organizer.data.title }}</a>
+      </h1>
+    </article>
+  {%- endfor -%}
+</section>
