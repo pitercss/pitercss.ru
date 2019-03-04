@@ -1,5 +1,5 @@
 ---
-permalink: /people/{{ engTitle | safe }}/
+permalink: /{{ role }}/{{ engTitle }}/
 layout: layouts/base.njk
 templateClass: people
 ---
@@ -12,6 +12,7 @@ templateClass: people
 
 {{ content | safe }}
 
+
 <section class="breadcrumbs">
-  <p><a href="{{ '/speakers/' | url }}">← Все докладчики</a></p>
+  <p><a href="/{{ role | url }}">← Все {% if role != "speakers" %}организаторы {% else %}спикеры{% endif %}</a></p>
 </section>
