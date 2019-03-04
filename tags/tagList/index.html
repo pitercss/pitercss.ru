@@ -10,20 +10,28 @@
   </head>
   <body>
     <header class="header">
-      <a class="header__logo" href="/pitercss.ru/">
+      <a class="header__logo" href="/pitercss.ru/" aria-label="Home">
        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><path fill="#0094da" d="M0 0h160v160H0z"/><path fill="#fff" d="M69 46l-41 68h27l41-68H69z"/><path fill="#ffcb4d" d="M130.87 54.09l-2.94-4.8-6.89 5.24 1.17-8.53h-5.71l1.62 9.18-7.24-5.63-2.87 4.91 8.21 3.25-8.22 2.86 2.85 4.91 6.9-5.5-1.06 9.02 5.7-.01-1.62-8.71 7.16 5.48 2.8-4.79-8.78-3.62 8.92-3.26z"/></svg>
       </a>
-      <ul class="header__navigation"><li class="header__navigation-item">
-          <a href="/pitercss.ru/about/">О нас</a>
-        </li><li class="header__navigation-item">
-          <a href="/pitercss.ru/contacts/">Контакты</a>
-        </li><li class="header__navigation-item">
-          <a href="/pitercss.ru/">Митапы</a>
-        </li><li class="header__navigation-item">
-          <a href="/pitercss.ru/organizers/">Организаторы</a>
-        </li><li class="header__navigation-item">
-          <a href="/pitercss.ru/speakers/">Докладчики</a>
-        </li></ul>
+
+      <input class="header__burger visually-hidden" id="burger" type="checkbox" aria-label="Open menu" />
+      <label class="header__burger-icon" for="burger">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="header__navigation">
+        <ul><li class="header__navigation-item">
+            <a href="/pitercss.ru/about/">О нас</a>
+          </li><li class="header__navigation-item">
+            <a href="/pitercss.ru/contacts/">Контакты</a>
+          </li><li class="header__navigation-item">
+            <a href="/pitercss.ru/">Митапы</a>
+          </li><li class="header__navigation-item">
+            <a href="/pitercss.ru/organizers/">Организаторы</a>
+          </li><li class="header__navigation-item">
+            <a href="/pitercss.ru/speakers/">Докладчики</a>
+          </li></ul>
+      </nav>
     </header>
 
     <main class="main main--archive">
@@ -34,7 +42,7 @@
 <ol reversed class="postlist" style="counter-reset: start-from 6">
 
   <li class="postlist-item postlist-item-active">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="." class="post-preview__image">
         <img src="/pitercss.ru/img//intro.png" alt="pitercss_meetup ">
       </a>
@@ -49,7 +57,7 @@
   </li>
 
   <li class="postlist-item postlist-item-active">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="." class="post-preview__image">
         <img src="/pitercss.ru/img//intro.png" alt="pitercss_meetup ">
       </a>
@@ -64,7 +72,7 @@
   </li>
 
   <li class="postlist-item postlist-item-active">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="." class="post-preview__image">
         <img src="/pitercss.ru/img//intro.png" alt="pitercss_meetup ">
       </a>
@@ -79,7 +87,7 @@
   </li>
 
   <li class="postlist-item postlist-item-active">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="." class="post-preview__image">
         <img src="/pitercss.ru/img//intro.png" alt="pitercss_meetup ">
       </a>
@@ -94,7 +102,7 @@
   </li>
 
   <li class="postlist-item postlist-item-active">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="." class="post-preview__image">
         <img src="/pitercss.ru/img//intro.png" alt="pitercss_meetup ">
       </a>
@@ -117,7 +125,7 @@
   </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" aria-label="footer">
       <p>&copy; 2019 pitercss_meetup</p>
     </footer>
 

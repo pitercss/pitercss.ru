@@ -10,20 +10,28 @@
   </head>
   <body>
     <header class="header">
-      <a class="header__logo" href="/pitercss.ru/">
+      <a class="header__logo" href="/pitercss.ru/" aria-label="Home">
        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><path fill="#0094da" d="M0 0h160v160H0z"/><path fill="#fff" d="M69 46l-41 68h27l41-68H69z"/><path fill="#ffcb4d" d="M130.87 54.09l-2.94-4.8-6.89 5.24 1.17-8.53h-5.71l1.62 9.18-7.24-5.63-2.87 4.91 8.21 3.25-8.22 2.86 2.85 4.91 6.9-5.5-1.06 9.02 5.7-.01-1.62-8.71 7.16 5.48 2.8-4.79-8.78-3.62 8.92-3.26z"/></svg>
       </a>
-      <ul class="header__navigation"><li class="header__navigation-item">
-          <a href="/pitercss.ru/about/">О нас</a>
-        </li><li class="header__navigation-item">
-          <a href="/pitercss.ru/contacts/">Контакты</a>
-        </li><li class="header__navigation-item">
-          <a href="/pitercss.ru/">Митапы</a>
-        </li><li class="header__navigation-item">
-          <a href="/pitercss.ru/organizers/">Организаторы</a>
-        </li><li class="header__navigation-item">
-          <a href="/pitercss.ru/speakers/">Докладчики</a>
-        </li></ul>
+
+      <input class="header__burger visually-hidden" id="burger" type="checkbox" aria-label="Open menu" />
+      <label class="header__burger-icon" for="burger">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="header__navigation">
+        <ul><li class="header__navigation-item">
+            <a href="/pitercss.ru/about/">О нас</a>
+          </li><li class="header__navigation-item">
+            <a href="/pitercss.ru/contacts/">Контакты</a>
+          </li><li class="header__navigation-item">
+            <a href="/pitercss.ru/">Митапы</a>
+          </li><li class="header__navigation-item">
+            <a href="/pitercss.ru/organizers/">Организаторы</a>
+          </li><li class="header__navigation-item">
+            <a href="/pitercss.ru/speakers/">Докладчики</a>
+          </li></ul>
+      </nav>
     </header>
 
     <main class="main main--archive">
@@ -34,7 +42,7 @@
 <ol reversed class="postlist" style="counter-reset: start-from 24">
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/29/" class="post-preview__image">
         <img src="/pitercss.ru/img/29/intro.png" alt="pitercss_meetup 29">
       </a>
@@ -51,7 +59,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/22/" class="post-preview__image">
         <img src="/pitercss.ru/img/22/intro.png" alt="pitercss_meetup 22">
       </a>
@@ -68,7 +76,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/21/" class="post-preview__image">
         <img src="/pitercss.ru/img/21/intro.png" alt="pitercss_meetup 21">
       </a>
@@ -85,7 +93,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/20/" class="post-preview__image">
         <img src="/pitercss.ru/img/20/intro.png" alt="pitercss_meetup 20">
       </a>
@@ -102,7 +110,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/19/" class="post-preview__image">
         <img src="/pitercss.ru/img/19/intro.png" alt="pitercss_meetup 19">
       </a>
@@ -119,7 +127,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/18/" class="post-preview__image">
         <img src="/pitercss.ru/img/18/intro.png" alt="pitercss_meetup 18">
       </a>
@@ -136,7 +144,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/17/" class="post-preview__image">
         <img src="/pitercss.ru/img/17/intro.png" alt="pitercss_meetup 17">
       </a>
@@ -153,7 +161,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/16/" class="post-preview__image">
         <img src="/pitercss.ru/img/16/intro.png" alt="pitercss_meetup 16">
       </a>
@@ -170,7 +178,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/15/" class="post-preview__image">
         <img src="/pitercss.ru/img/15/intro.png" alt="pitercss_meetup 15">
       </a>
@@ -187,7 +195,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/14/" class="post-preview__image">
         <img src="/pitercss.ru/img/14/intro.png" alt="pitercss_meetup 14">
       </a>
@@ -204,7 +212,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/13/" class="post-preview__image">
         <img src="/pitercss.ru/img/13/intro.png" alt="pitercss_meetup 13">
       </a>
@@ -221,7 +229,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/12/" class="post-preview__image">
         <img src="/pitercss.ru/img/12/intro.png" alt="pitercss_meetup 12">
       </a>
@@ -238,7 +246,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/11/" class="post-preview__image">
         <img src="/pitercss.ru/img/11/intro.png" alt="pitercss_meetup 11">
       </a>
@@ -255,7 +263,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/10/" class="post-preview__image">
         <img src="/pitercss.ru/img/10/intro.png" alt="pitercss_meetup 10">
       </a>
@@ -272,7 +280,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/9/" class="post-preview__image">
         <img src="/pitercss.ru/img/9/intro.png" alt="pitercss_meetup 9">
       </a>
@@ -289,7 +297,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/8/" class="post-preview__image">
         <img src="/pitercss.ru/img/8/intro.png" alt="pitercss_meetup 8">
       </a>
@@ -306,7 +314,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/7/" class="post-preview__image">
         <img src="/pitercss.ru/img/7/intro.png" alt="pitercss_meetup 7">
       </a>
@@ -323,7 +331,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/6/" class="post-preview__image">
         <img src="/pitercss.ru/img/6/intro.png" alt="pitercss_meetup 6">
       </a>
@@ -340,7 +348,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/5/" class="post-preview__image">
         <img src="/pitercss.ru/img/5/intro.png" alt="pitercss_meetup 5">
       </a>
@@ -357,7 +365,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/4/" class="post-preview__image">
         <img src="/pitercss.ru/img/4/intro.png" alt="pitercss_meetup 4">
       </a>
@@ -374,7 +382,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/3/" class="post-preview__image">
         <img src="/pitercss.ru/img/3/intro.png" alt="pitercss_meetup 3">
       </a>
@@ -391,7 +399,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/2/" class="post-preview__image">
         <img src="/pitercss.ru/img/2/intro.png" alt="pitercss_meetup 2">
       </a>
@@ -408,7 +416,7 @@
   </li>
 
   <li class="postlist-item">
-    <article class="post-preview">
+    <article class="post-preview" aria-label="Post item">
       <a href="/pitercss.ru/meetups/1/" class="post-preview__image">
         <img src="/pitercss.ru/img/1/intro.png" alt="pitercss_meetup 1">
       </a>
@@ -433,7 +441,7 @@
   </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" aria-label="footer">
       <p>&copy; 2019 pitercss_meetup</p>
     </footer>
 
