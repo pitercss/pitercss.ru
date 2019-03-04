@@ -22,7 +22,7 @@
       </ul>
     </header>
 
-    <main class="main {%- if className -%}main--{{ className }}{%- endif -%}">
+    <main class="main {% if className %}main--{{ className }}{% endif %}">
       {{ content | safe }}
     </main>
 
