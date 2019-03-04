@@ -495,7 +495,7 @@ a[href].tag:visited {
   font-family: sans-serif;
   font-style: normal;
 
-  margin-left: .1em;
+  margin-left: 0.1em;
 
   text-decoration: none;
 }
@@ -514,7 +514,7 @@ a[href].direct-link:focus:visited,
 
 /* Breadcrumbs */
 .breadcrumbs {
-  margin-top: 15px;
+  margin-top: var(--indent);
 }
 
 /* Footer */
