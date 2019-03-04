@@ -11,7 +11,7 @@ renderData:
   title: Поиск по тегу “{{ tag }}”
 ---
 
-<h1>Поиск по тегу "{{ tag }}"</h1>
+<h1 class="title">Поиск по тегу "{{ tag }}"</h1>
 
 {% set postslist = collections[ tag ] %}
 {% include "postslist.njk" %}

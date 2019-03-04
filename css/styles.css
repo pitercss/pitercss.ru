@@ -185,6 +185,11 @@ code {
   }
 }
 
+/* Main title */
+.title {
+  margin-top: 0;
+}
+
 /* People */
 .people {
 

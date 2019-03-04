@@ -4,7 +4,7 @@ layout: layouts/base.njk
 templateClass: people
 ---
 
-<h1>{{ title }}</h1>
+<h1 class="title">{{ title }}</h1>
 
 {%- if image -%}
   <img src="{{ image | url }}" alt="{{ post.data.title }}">
