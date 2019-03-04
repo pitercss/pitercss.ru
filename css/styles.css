@@ -283,10 +283,6 @@ a[href]:visited {
     flex-direction: row;
   }
 
-  .header__navigation-item {
-    margin-right: var(--indent);
-  }
-
   .header__navigation-item a[href] {
     text-transform: none;
     color: var(--darkgray);
