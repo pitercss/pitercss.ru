@@ -302,7 +302,8 @@ a[href]:visited {
 
   .main--page,
   .main--archive,
-  .main--post {
+  .main--post,
+  .main--staff {
     max-width: 75%;
   }
 }
@@ -310,7 +311,8 @@ a[href]:visited {
 @media (min-width: 1024px) {
   .main--page,
   .main--archive,
-  .main--post {
+  .main--post,
+  .main--staff {
     max-width: 50%;
   }
 }
@@ -320,12 +322,12 @@ a[href]:visited {
   margin-top: 0;
 }
 
-/* People */
-.people {
+/* Staff */
+.staff {
 
 }
 
-.people__title {
+.staff__title {
   margin: 0;
 }
 
