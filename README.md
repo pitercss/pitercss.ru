@@ -18,28 +18,12 @@
 
 Ловите анонсы, становитесь докладчиками и до встречи на митапах!
 
-##  Run and build
+##  Запуск и сборка
 
-Install dependencies
-```
-npm install
-```
-
-Run build
-```
-npx eleventy
-```
-
-Build automatically when a template changes and host locally
-```
-npx eleventy --serve --watch
-```
-
-Or in debug mode:
-```
-DEBUG=* npx eleventy
-```
-
+- Установка зависимостей: `npm install`
+- Запуск с вотчером: `npm start`
+- Запуск сборки: `npm run build`
+- Запуск с отладкой: `debug`
 
 [travis-image]: https://img.shields.io/travis/pitercss/pitercss.ru.svg?style=flat-square
 [travis-url]: https://travis-ci.org/pitercss/pitercss.ru
