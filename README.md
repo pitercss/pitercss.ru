@@ -1,6 +1,6 @@
 # pitercss_meetup [![Build status][travis-image]][travis-url] [![Issues status][issues-image]][issues-url] [![devDependency status][dev-dependency-image]][dev-dependency-url]
 
-![pitercss_meetup](/img/about.jpg)
+![pitercss_meetup](src/img/about.jpg)
 
 **pitercss_meetup**  -  это ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.
 
