@@ -1,0 +1,22 @@
+---
+permalink: /hosts/
+layout: layouts/page.njk
+pageTitle: Площадки
+tags: nav
+navTitle: Площадки
+---
+
+<section class="team">
+  {%- for hosts in collections.hosts -%}
+    <article class="team__item">
+      <h1 class="team__title">
+        {%- if hosts.image -%}
+          <a href="{{ hosts.url | url }}">
+            <img src="{{ hosts.image | url }}" alt="{{ hosts.data.title }}">
+          </a>
+        {%- endif -%}
+        <a href="{{ hosts.url | url }}">{{ hosts.data.title }}</a>
+      </h1>
+    </article>
+  {%- endfor -%}
+</section>

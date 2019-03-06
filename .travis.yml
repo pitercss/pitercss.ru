@@ -5,7 +5,7 @@ before_script:
   - npm install @11ty/eleventy -g
 script: eleventy --pathprefix="/pitercss.ru/"
 deploy:
-  local-dir: _site
+  local-dir: dist
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN

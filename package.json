@@ -1,21 +1,11 @@
 {
   "name": "pitercss.ru",
-  "version": "1.0.0",
-  "description": "pitercss_meetup  -  это ежемесячные встречи с докладами по HTML, CSS, SVG, типографике и дизайну.",
+  "private": true,
   "scripts": {
-    "build": "npx eleventy",
-    "watch": "npx eleventy --watch",
-    "debug": "DEBUG=* npx eleventy"
+    "start": "eleventy --serve --quiet",
+    "build": "eleventy",
+    "debug": "DEBUG=* eleventy"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/pitercss/pitercss.ru.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pitercss/pitercss.ru/README.md"
-  },
-  "homepage": "https://pitercss.ru",
   "devDependencies": {
     "@11ty/eleventy": "^0.7.1",
     "@11ty/eleventy-plugin-rss": "^1.0.3",
