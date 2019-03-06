@@ -23,7 +23,7 @@
 - Установка зависимостей: `npm install`
 - Запуск с вотчером: `npm start`
 - Запуск сборки: `npm run build`
-- Запуск с отладкой: `debug`
+- Запуск с отладкой: `npm run debug`
 
 [travis-image]: https://img.shields.io/travis/pitercss/pitercss.ru.svg?style=flat-square
 [travis-url]: https://travis-ci.org/pitercss/pitercss.ru
