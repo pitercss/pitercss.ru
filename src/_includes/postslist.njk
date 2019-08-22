@@ -1,23 +1,23 @@
 <ol reversed class="postlist" style="counter-reset: start-from {{ postslist.length + 1 }}">
 {% for post in postslist | reverse %}
-  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-    <article class="post-preview" aria-label="Post item">
-      <a href="{{ post.url | url }}" class="post-preview__image">
-        <img src="{{ '/' | url }}img/{{ post.data.title }}/intro.png" alt="pitercss_meetup {{ post.data.title }}">
-      </a>
-      <h1 class="post-preview__heading"><a href="{{ post.url | url }}">{% if post.data.title %}pitercss_meetup {{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h1>
-      <footer class="post-preview__footer">
-        <time class="post-preview__date" datetime="{{ post.date | htmlDateString }}">
-          {{ post.date | readableDate }}
-        </time>
-        {% for tag in post.data.tags %}
-          {%- if tag != "posts" -%}
-          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-          <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-          {%- endif -%}
-        {% endfor %}
-      </footer>
-    </article>
-  </li>
+    <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+        <article class="post-preview" aria-label="Post item">
+            <a href="{{ post.url | url }}" class="post-preview__image">
+                <img src="{{ '/' | url }}img/{{ post.data.title }}/intro.png" alt="pitercss_meetup {{ post.data.title }}">
+            </a>
+            <h1 class="post-preview__heading"><a href="{{ post.url | url }}">{% if post.data.title %}pitercss_meetup {{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h1>
+            <footer class="post-preview__footer">
+                <time class="post-preview__date" datetime="{{ post.date | htmlDateString }}">
+                    {{ post.date | readableDate }}
+                </time>
+                {% for tag in post.data.tags %}
+                    {%- if tag != "posts" -%}
+                    {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+                    <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+                    {%- endif -%}
+                {% endfor %}
+            </footer>
+        </article>
+    </li>
 {% endfor %}
 </ol>
